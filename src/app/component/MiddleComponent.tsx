@@ -15,7 +15,7 @@ const DepartmentInfo: React.FC = () => {
         values when they come out from the institution.
       </p>
     <br/>
-    <br/>
+   
     <p className="text-justify text-black">
         Among all kinds of institutions one goes through in his/her lifespan,
         school is an important place where anyone spends the majority of
@@ -24,7 +24,7 @@ const DepartmentInfo: React.FC = () => {
         focused and healthy approach in life.
       </p>
       <br/>
-    <br/>
+    
     <p className="text-justify text-black"> 
         Though Vidya Bharti was formed with this intention only, the last
         decade driven by technology led us to think about the integration of
@@ -38,7 +38,7 @@ const DepartmentInfo: React.FC = () => {
         implementing them in schools and society.
     
       </p>
-      <br/>
+      
     <br/>
     <p className="text-justify text-black">
         In the last couple of months, E-cycle, Punjab Super 100, Tredul App,
