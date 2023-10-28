@@ -17,7 +17,7 @@ const AdvisoryCouncil2: React.FC<AdvisoryCouncilProps2> = ({ title, members }) =
     <div className="flex flex-col items-center bg-white p-5">
     <h2 className="text-2xl font-semibold mb-4 mt-4 text-black">{title}</h2>
     <div className="overflow-x-auto">
-      <table className="w-full table-auto py-5">
+      <table className="w-full table-auto py-2">
         <thead>
           <tr className="bg-gray-400">
             <th className="w-1/2 sm:w-1/4 px-1 py-2 border text-left text-black">Name</th>
