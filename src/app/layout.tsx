@@ -17,6 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+       <meta http-equiv="refresh" content="1000" />
+        <meta charSet="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Welcome to Department of Holistic Education | Vidya Bharati</title>
+        <meta name="keywords" content="Department of Holistic Education, DHE ,Vidya Bharati, National Conference on Recent Advances in School Education, Rase" />
+        <meta name="description" content="Joint Conference" />
+       <meta httpEquiv="cache-control" content="no-cache" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="-1" />
       <body className={inter.className}>{children}</body>
     </html>
     
