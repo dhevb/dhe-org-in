@@ -28,6 +28,5 @@ export default function RootLayout({
         <meta httpEquiv="Expires" content="-1" />
       <body className={inter.className}>{children}</body>
     </html>
-    
   )
 }
