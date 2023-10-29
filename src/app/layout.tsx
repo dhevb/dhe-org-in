@@ -38,7 +38,9 @@ export default function RootLayout({
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}
-         
+          crawl={false}
+          showSpinner={false}
+          shadow="0 0 10px #F44336,0 0 5px #F44336"
         />
       </div>
       <body className={inter.className}>{children}</body>
