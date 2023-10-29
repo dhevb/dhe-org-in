@@ -8,7 +8,7 @@ const CompanyInfo: React.FC = () => {
       <Image
         src="/logo.png"
         alt="Company Logo"
-        className="p-2 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full shadow-lg border-2 border-red-600"
+        className="p-2 w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 "
         width={500}
         height={500}
       />
@@ -19,7 +19,7 @@ const CompanyInfo: React.FC = () => {
           >
             Department of Holistic Education
           </Link>
-          <div>
+          </div>
     </div>
   );
 };
