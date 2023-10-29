@@ -19,6 +19,7 @@ const CompanyInfo: React.FC = () => {
           >
             Department of Holistic Education
           </Link>
+          <div>
     </div>
   );
 };
