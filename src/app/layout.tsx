@@ -38,8 +38,7 @@ export default function RootLayout({
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}
-          crawl={true}
-          showSpinner={true}
+         
         />
       </div>
       <body className={inter.className}>{children}</body>
