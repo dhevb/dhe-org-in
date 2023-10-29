@@ -1,18 +1,21 @@
 "use client";
 import React from "react";
-
+import Image from "next/image";
 const DirectorMessage: React.FC = () => {
   return (
     <div className="bg-white p-4 items-center">
-      <h2 className="text-2xl font-semibold mb-4 text-black">Director Message</h2>
-      <img
-  src="/director.JPG"
-  alt="Director's Image"
-  className="w-80 h-80 md:w-80 md:h-80 lg:w-80 lg:h-80 rounded-full shadow-lg border-2 border-red-600 mx-auto"
- 
-/>
+      <h2 className="text-2xl font-semibold mb-4 text-black">
+        Director Message
+      </h2>
+      <Image
+        src="/director.JPG"
+        alt="Director's Image"
+        className="w-80 h-80 md:w-80 md:h-80 lg:w-80 lg:h-80 rounded-full shadow-lg border-2 border-red-600 mx-auto"
+        width={500}
+        height={500}
+      />
 
-      <p className = "text-center font-semibold">
+      <p className="text-center font-semibold">
         <strong>Dr. Thakur SKR</strong>
         <br />
         Your thoughts decide your destiny
