@@ -1,9 +1,10 @@
 import React from "react";
 import Image from 'next/image'
+import Link from "next/link";
 
 const CompanyInfo: React.FC = () => {
   return (
-    <div className="flex items-center justify-center p-4 bg-white">
+    <div className="flex justify-between bg-white">
       <Image
         src="/logo.png"
         alt="Company Logo"
@@ -11,9 +12,13 @@ const CompanyInfo: React.FC = () => {
         width={500}
         height={500}
       />
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold ml-4 text-red-600">
-        Department of Holistic Education
-      </h1>
+      <div className="text-start">
+          <Link
+            href="/"
+            className="text-m md:text-l lg:text-xl font-semibold text-red-500"
+          >
+            Department of Holistic Education
+          </Link>
     </div>
   );
 };
