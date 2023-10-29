@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const CompanyInfo: React.FC = () => {
   return (
-    <div className="flex justify-between bg-white">
+    <div className="flex  p-4 bg-white">
       <Image
         src="/logo.png"
         alt="Company Logo"
