@@ -30,6 +30,7 @@ const advisoryMembers = [
   { name: "Mrs. Shyam Priya", designation: "Coordinator, Health Wisdom Cell", contact: "9318440221" },
   { name: "Dr. Gurbachan Singh", designation: "Coordinator, Sports Cell", contact: "9781998278" },
   { name: "Adv. Niharika Kamal", designation: "Coordinator, Spritual Cell", contact: "7508638699" },
+  { name: "Mr. Anuj Kumar", designation: "Co-coordinator, Spritual Cell", contact: "7508638699" },
   { name: "Adv. Poonam Thakur", designation: "Coordinator, Grievance Redressal Cell", contact: "7508337539" },
 ];
 
