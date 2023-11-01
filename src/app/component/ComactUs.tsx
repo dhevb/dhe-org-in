@@ -11,8 +11,8 @@ interface ContactInfo {
 }
 
 const contactData: ContactInfo = {
-  name: "Thakur Ramendra Pratap Singh",
-  title: "Coordinator",
+  name: "Thakur Ramendra Pratap Singh Rana",
+  title: "Project Manager",
   organization: "Department of Holistic Education",
   address: "Vidya Bharti\nPlot No. 1, Sector 71, SAS Nagar (Mohali) – 160071",
   email: "director@dhe.org.in | dhe2021vb@gmail.com",
