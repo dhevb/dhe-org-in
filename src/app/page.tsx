@@ -7,20 +7,28 @@ import SlideShow from "./component/SlideShow";
 export default function Home() {
   const slides1 = [
     {
+      src: "/k3.JPG",
+      alt: "Image 1",
+      legend: "Image 1",
+    },
+    {
+      src: "/sm1.JPG",
+      alt: "Image 1",
+      legend: "Image 1",
+    },
+    {
+      src: "/sm2.JPG",
+      alt: "Image 1",
+      legend: "Image 1",
+    },
+   
+    
+    {
       src: "/12.jpeg",
       alt: "Image 1",
       legend: "Image 1",
     },
-    {
-      src: "/11.JPG",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-    {
-      src: "/10.JPG",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
+
     {
       src: "/9.JPG",
       alt: "Image 1",
@@ -66,6 +74,21 @@ export default function Home() {
       alt: "Image 1",
       legend: "Image 1",
     },
+    {
+      src: "/mc1.jpeg",
+      alt: "Image 1",
+      legend: "Image 1",
+    },
+    {
+      src: "/11.JPG",
+      alt: "Image 1",
+      legend: "Image 1",
+    },
+    {
+      src: "/10.JPG",
+      alt: "Image 1",
+      legend: "Image 1",
+    },
   ];
   const MobileView = () => (
     <div className="flex flex-col space-y-4 items-center">
@@ -90,7 +113,7 @@ export default function Home() {
     </div>
   );
   return (
-    <div className = "bg-white">
+    <div className="bg-white">
       <CompanyInfo />
       <Header />
       <div>
