@@ -13,6 +13,7 @@ const menus: Menu[] = [
   { path: "/advisory", title: "Advisory Council" },
   { path: "/committee", title: "Working Committee" },
   { path: "/people", title: "People" },
+  { path: "/Recruitment-Policy.pdf", title: "Recruitment Policies" },
   { path: "/contact", title: "Contact" },
 ];
 
@@ -27,7 +28,7 @@ const Header: React.FC = () => {
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/">
-            <h1 className="text-3xl font-bold text-purple-600 cursor-pointer">
+            <h1 className="text-3xl font-bold text-gray-200 cursor-pointer">
               
             </h1>
           </Link>
@@ -77,7 +78,7 @@ const Header: React.FC = () => {
         >
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {menus.map((item, idx) => (
-              <li key={idx} className="text-hite-600 hover:text-indigo-600">
+              <li key={idx} className="text-hite-600 hover:text-gray-600">
                 <Link href={item.path}>
                   {item.title}
                 </Link>
