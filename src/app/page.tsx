@@ -34,21 +34,13 @@ export default function Home() {
       alt: "Image 1",
       legend: "Image 1",
     },
-    {
-      src: "/8.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
+   
     {
       src: "/7.jpg",
       alt: "Image 1",
       legend: "Image 1",
     },
-    {
-      src: "/6.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
+   
     {
       src: "/5.jpg",
       alt: "Image 1",
@@ -59,11 +51,7 @@ export default function Home() {
       alt: "Image 1",
       legend: "Image 1",
     },
-    {
-      src: "/3.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
+   
     {
       src: "/2.jpg",
       alt: "Image 1",
@@ -79,16 +67,7 @@ export default function Home() {
       alt: "Image 1",
       legend: "Image 1",
     },
-    {
-      src: "/11.JPG",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-    {
-      src: "/10.JPG",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
+   
   ];
   const MobileView = () => (
     <div className="flex flex-col space-y-4 items-center">
