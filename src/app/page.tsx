@@ -12,16 +12,6 @@ export default function Home() {
       legend: "Image 1",
     },
     {
-      src: "/2024K/k2.jpeg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-    {
-      src: "/2024K/k3.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-    {
       src: "/2024K/k4.jpg",
       alt: "Image 1",
       legend: "Image 1",
@@ -44,40 +34,6 @@ export default function Home() {
 
     {
       src: "/12.jpeg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-
-    {
-      src: "/9.JPG",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-
-    {
-      src: "/7.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-
-    {
-      src: "/5.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-    {
-      src: "/4.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-
-    {
-      src: "/2.jpg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
-    {
-      src: "/1.jpg",
       alt: "Image 1",
       legend: "Image 1",
     },
