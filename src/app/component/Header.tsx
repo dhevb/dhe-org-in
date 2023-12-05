@@ -13,7 +13,7 @@ const menus: Menu[] = [
   { path: "/advisory", title: "Advisory Council" },
   { path: "/committee", title: "Working Committee" },
   { path: "/people", title: "People" },
-  { path: "/publication", title: "Publication" },
+  { path: "/Publications", title: "Publication" },
   { path: "/Recruitment-Policy.pdf", title: "Recruitment Policies" },
   { path: "/contact", title: "Contact" },
 ];
