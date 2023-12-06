@@ -19,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <div>
+  
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -33,6 +34,9 @@ export default function RootLayout({
         <meta httpEquiv="cache-control" content="no-cache" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="-1" />
+        <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
+     crossorigin="anonymous"></script></head>
+     <meta name="google-adsense-account" content="ca-pub-4330032354977759"></meta>
         <NextTopLoader
           color="#F44336"
           initialPosition={0.08}
