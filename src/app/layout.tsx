@@ -19,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>{
-        process.env.NODE_ENV === "production" &&(
+        process.env.NODE_ENV === "production" && (
         <script 
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
-        crossorigin="anonymous"></script>)}</head>
+        crossOrigin="anonymous"></script>
+        )}
+      </head>
       <div>
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
