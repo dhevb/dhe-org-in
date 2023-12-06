@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>{
-        ProcessingInstruction.env.NODe_ENV === "production" &&(
+        process.env.NODE_ENV === "production" &&(
         <script 
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
