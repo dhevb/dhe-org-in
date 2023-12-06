@@ -18,8 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>{<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
-     crossorigin="anonymous"></script>}</head>
+      <head>{
+        ProcessingInstruction.env.NODe_ENV === "production" &&(
+        <script 
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
+        crossorigin="anonymous"></script>)}</head>
       <div>
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
