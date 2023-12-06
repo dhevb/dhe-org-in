@@ -108,7 +108,7 @@ const Publication: React.FC = () => {
           Read More
         </button>
       </div>
-      <p> <Link className="text-blue-400"  href="/ContactUs">{`To acquire a copy of this book, please don't hesitate to get in touch with us.`}</Link></p>
+      <p> <Link className="text-blue-400"  href="/contact">{`To acquire a copy of this book, please don't hesitate to get in touch with us.`}</Link></p>
       <div
         className={`whitespace-pre-line ${textClass} text-blue-400 underline`}
         onClick={openPDF}
