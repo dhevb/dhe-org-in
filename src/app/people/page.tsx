@@ -14,7 +14,7 @@ const advisoryMembers = [
   { name: "Mr. Sachin Tiwari", designation: "Coordinator, E-commerce Cell", contact: "8729012133" },
   { name: "Dr. Mohit Verma", designation: "Coordinator, TMS Cell", contact: "9872003823" },
   { name: "Mr. Arsh Agarwal", designation: "Coordinator, Udyam Cell", contact: "7986327876" },
-  { name: "Mr. Saurabh Sharma", designation: "Coordinator, Foreign Language Cell", contact: "9023519487" },
+  { name: "Shri Saurav Kumar", designation: "Coordinator, Foreign Language Cell", contact: "9023519487" },
   { name: "Ms. Sonu Sharma", designation: "Coordinator, Olympiad Cell", contact: "9988690588" },
   { name: "Ms. Neeru", designation: "Coordinator, LMS Cell", contact: "9467733337" },
   { name: "Dr. Girish Bali", designation: "Coordinator, CSR Cell", contact: "9530703711" },
