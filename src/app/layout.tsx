@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Department of Holestic Education",
-  description: "",
+  description: "Department of Holistic Education is the brainchild of Dr. Thakur SKR who is a renowned scientist of ISRO, dedicated RSS worker, and accomplishedauthor. Level of education shall not be gauged by marks alone. In true sense, it’s the complete transformation of a green cake into a valuableasset for society. The students shall be full of energy, skills, and values when they come out from the institution.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>
-          Welcome to Department of Holistic Education | Vidya Bharati
+          Department of Holistic Education - Vidya Bharati
         </title>
         <meta
           name="keywords"
