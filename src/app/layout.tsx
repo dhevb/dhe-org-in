@@ -35,7 +35,7 @@ export default function RootLayout({
         </title>
         <meta
           name="keywords"
-          content="Department of Holistic Education, DHE ,Vidya Bharati, National Conference on Recent Advances in School Education, Rase"
+          content="Department of Holistic Education,holistic department, DHE ,Vidya Bharati, National Conference on Recent Advances in School Education, Rase"
         />
         <meta name="description" content="Joint Conference" />
         <meta httpEquiv="cache-control" content="no-cache" />
