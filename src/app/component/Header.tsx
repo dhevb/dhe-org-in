@@ -13,6 +13,7 @@ const menus: Menu[] = [
   { path: "/advisory", title: "Advisory Council" },
   { path: "/committee", title: "Working Committee" },
   { path: "/people", title: "People" },
+  { path: "/cells", title: "Cells" },
   { path: "/Publications", title: "Publication" },
   { path: "/Recruitment-Policy.pdf", title: "Recruitment Policies" },
   { path: "/contact", title: "Contact" },
@@ -21,7 +22,7 @@ const menus: Menu[] = [
 const Header: React.FC = () => {
   const [state, setState] = useState(false);
   return (
-    <header className="bg-red-500 p-4">
+    <header className="bg-red-500 py-4">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
        
 
@@ -77,7 +78,7 @@ const Header: React.FC = () => {
             state ? "block" : "hidden"
           }`}
         >
-          <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+          <ul className="justify-center items-center space-y-8 md:flex md:space-x-5 md:space-y-0">
             {menus.map((item, idx) => (
               <li key={idx} className="text-hite-600 hover:text-gray-600">
                 <Link href={item.path}>
