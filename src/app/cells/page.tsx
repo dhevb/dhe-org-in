@@ -10,7 +10,7 @@ const MyPage = () => {
   const dataArray = [
     {
       title: "IT Cell",
-      objective: "The IT Cell of the Department of Holistic Education strives to be a one-stop solution for all IT-related needs of Vidya Bharati and the Sangh Parivar.",
+      objective: "The IT Cell of the Department of Holistic Education strives to be a one-stop solution for all IT-related needs of Vidya Bharti  and the Sangh Parivar.",
       footnote: "This initiative promotes digital literacy and connectivity."
     },
     {

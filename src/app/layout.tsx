@@ -31,11 +31,11 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>
-          Department of Holistic Education - Vidya Bharati
+          Department of Holistic Education - Vidya Bharti 
         </title>
         <meta
           name="keywords"
-          content="Department of Holistic Education,holistic department, DHE ,Vidya Bharati, National Conference on Recent Advances in School Education, Rase"
+          content="Department of Holistic Education,holistic department, DHE ,Vidya Bharti , National Conference on Recent Advances in School Education, Rase"
         />
         <meta name="description" content="Joint Conference" />
         <meta httpEquiv="cache-control" content="no-cache" />
