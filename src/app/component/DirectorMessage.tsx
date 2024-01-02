@@ -33,7 +33,6 @@ const DirectorMessage: React.FC = () => {
       requirement of skilled manforce, physical and mental illnesses, disturbed
       families, violence and unrest, etc.
       </p>
-      <br />
       <p className="text-justify text-black">
       The Department of Holistic Education at Vidya Bharti was conceptualized to
       effectively bridge this gap in the society by overhauling the education system.
@@ -44,7 +43,6 @@ const DirectorMessage: React.FC = () => {
       age so that we can mold these green cakes into not only skilled adults but also
       responsible humans who are an asset for the nation.
       </p>
-      <br />
       <p  className="text-justify text-black">
       I feel honored to be leading this Department and hope to revolutionize our
       system of education for the betterment of society.
