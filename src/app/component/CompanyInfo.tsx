@@ -12,14 +12,22 @@ const CompanyInfo: React.FC = () => {
         width={500}
         height={500}
       />
-      <div className="text-start">
-          <Link
-            href="/"
-            className="text-m md:text-l lg:text-xl font-semibold text-red-500"
-          >
-            Department of Holistic Education
-          </Link>
-          </div>
+      <div className="text-start flex-grow">
+        <Link
+          href="/"
+          className="text-m md:text-l lg:text-xl font-semibold text-red-500"
+        >
+          Department of Holistic Education
+        </Link>
+      </div>
+      <div className="ml-auto">
+        <Link
+          href="/contribute"
+          className="text-m md:text-l lg:text-l font-semibold text-red-500 pe-6"
+        >
+          Membership Form 
+        </Link>
+      </div>
     </div>
   );
 };
