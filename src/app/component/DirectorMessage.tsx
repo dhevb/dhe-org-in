@@ -25,23 +25,29 @@ const DirectorMessage: React.FC = () => {
         </a>
       </p>
       <p className="text-justify text-black">
-        Serving Society by Education is the Best Way of Serving the Nation. But
-        what kind of education it should be is the most important aspect. In
-        today’s era, on one side, the literacy rate is increasing, and on the
-        other side, there is a huge increase in mental patients, disturbed
-        families, violence, etc. Education should make a person more
-        compassionate, accommodative, and social. However, things are happening
-        just the opposite.
+      We believe that the best way to serve the nation is to empower the society by
+      means of education. In this regard, the quality of education which is being
+      imparted is pivotal. In today’s era, on one hand, with increasing number of
+      educational institutes, the literacy rate has been increasing steadfastly. However,
+      on the other hand, there is a huge increase in unemployment, huge gap in
+      requirement of skilled manforce, physical and mental illnesses, disturbed
+      families, violence and unrest, etc.
       </p>
+      <br />
       <p className="text-justify text-black">
-        Additionally, the scarcity of skilled workforce is all around. In this
-        scenario, the holistic approach to mold a child right from his or her
-        initial days is a must. Molding these green cakes should be in such a
-        way that they not only become skilled individuals but also more
-        compassionate, accommodative, and social. To inculcate this culture,
-        Department of Holistic Education at Sarvhitkari Educational Society was
-        conceptualized. I feel contented leading this futuristic Department and
-        thrive to make a difference in school education and society.
+      The Department of Holistic Education at Vidya Bharti was conceptualized to
+      effectively bridge this gap in the society by overhauling the education system.
+      We at DHE, are committed to make the education system more comprehensive
+      in nature by focusing not only on skill development but also aim at holistic
+      development of students ranging from physical fitness to emotional wellbeing.
+      Our vision is to impart this holistic education to children right from their young
+      age so that we can mold these green cakes into not only skilled adults but also
+      responsible humans who are an asset for the nation.
+      </p>
+      <br />
+      <p  className="text-justify text-black">
+      I feel honored to be leading this Department and hope to revolutionize our
+      system of education for the betterment of society.
       </p>
     </div>
   );
