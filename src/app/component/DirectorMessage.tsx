@@ -10,7 +10,8 @@ const DirectorMessage: React.FC = () => {
   src="/director.JPG"
   alt="Director's Image"
   className="w-80 h-80 md:w-80 md:h-80 lg:w-80 lg:h-80 rounded-full shadow-lg border-2 border-red-600 mx-auto"
- 
+ width={800}
+ height={800}
 />
 
       <p className = "text-center font-semibold text-black">
