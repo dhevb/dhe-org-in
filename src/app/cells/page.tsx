@@ -10,7 +10,7 @@ const MyPage = () => {
   const dataArray = [
     {
       title: "IT Cell",
-      objective: "The IT Cell of the Department of Holistic Education strives to be a one-stop solution for all IT-related needs of Vidya Bharti  and the Sangh Parivar.",
+      objective: "The IT Cell of the Department of Holistic Education strives to be a one-stop solution for all IT-related needs of Vidya Bharati and the Sangh Parivar.",
       footnote: "This initiative promotes digital literacy and connectivity."
     },
     {
@@ -46,8 +46,8 @@ const MyPage = () => {
         footnote:" Prioritizing progressive learning for every student."
     }, {
         title: "Udyam Cell",
-        objective:" The Udyam Cell is dedicated to fostering the culture of skills, startups, and entrepreneurship within schools, empowering students with hands-on experiences.",
-        footnote:"Nurturing healthy minds for a prosperous future."
+        objective:"The Udyam Cell fosters a spirit of innovation and enterprise, encouraging students to develop and implement their business ideas.",
+        footnote:"Cultivating a culture of self-reliance and creativity for making Bharat a developed nation."
     }, {
         title: " Foreign Language Cell",
         objective:"The Foreign Language Cell is dedicated to developing foreign language skills in schools, providing students with the tools to excel in global environments and establishing coordination for those planning to study abroad.",
@@ -84,11 +84,7 @@ const MyPage = () => {
         title: "Environment Cell",
         objective:"The Environment Cell stands as a bastion of environmental consciousness, committed to sensitizing, creating awareness, and educating students on the critical need for the preservation and conservation of our precious natural resources. At the heart of our mission is the cultivation of love and respect for nature among students. Through a myriad of activities, we aim to instill a deep understanding of the importance of protecting the environment.",
         footnote:" Nurturing environmental stewardship among students."
-    }, {
-        title: "Entrepreneurship Cell",
-        objective:"The Entrepreneurship Cell fosters a spirit of innovation and enterprise, encouraging students to develop and implement their business ideas.",
-        footnote:"Cultivating a culture of self-reliance and creativity for making Bharat a developed nation."
-    }, {
+    },  {
         title: "Parenting Cell",
         objective:"The Parenting Cell conducts programs that bridge the gap between school and home, fostering collaborative efforts between parents and educators for the holistic development of students.",
         footnote:"Parenting Cell"
