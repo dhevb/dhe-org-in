@@ -65,8 +65,8 @@ const MyPage = () => {
         objective:"The CSR Cell plays a pivotal role in securing essential funding for educational initiatives. Its primary objective is to accomplish necessary projects for schools through CSR and develop new activities for school education.",
         footnote:" Integrating compassion and social awareness."
     }, {
-        title: "R&D Cell",
-        objective:"The Research and Development (R&D) Cell is dedicated to promoting research in school education. It focuses on exploring and developing products like Edtech, AR/VR, AI, LMS, TMS, Paper Recycling, Plastic Recycling, Cloth Recycling, Herbal Garden, FMCG, Technology, etc., within schools.",
+        title: "R & D Cell",
+        objective:"The Research and Development (R & D) Cell is dedicated to promoting research in school education. It focuses on exploring and developing products like Edtech, AR/VR, AI, LMS, TMS, Paper Recycling, Plastic Recycling, Cloth Recycling, Herbal Garden, FMCG, Technology, etc., within schools.",
         footnote:"Driving educational excellence through continuous innovation."
     }, {
         title: "Art Cell",
