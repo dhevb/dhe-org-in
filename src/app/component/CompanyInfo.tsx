@@ -17,7 +17,7 @@ const CompanyInfo: React.FC = () => {
       <div className="text-center md:text-start flex-grow md:mt-0 mt-4">
         <Link
           href="/"
-          className="text-sm md:text-lg lg:text-xl font-semibold text-red-500"
+          className="text-xl md:text-lg lg:text-xl font-semibold text-red-500"
         >
           Department of Holistic Education
         </Link>
