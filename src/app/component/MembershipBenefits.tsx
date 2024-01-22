@@ -17,14 +17,14 @@ const MembershipBenefits = () => {
 
       <h2 className="text-2xl font-bold mb-4">Membership Fee</h2>
       <ul className="list-disc pl-6 mb-6">
-        <li>Life Member: 5000</li>
-        <li>Annual Member: 2000</li>
+        <li>Life Member: ₹ 5000</li>
+        <li>Annual Member: ₹ 2000</li>
       </ul>
 
       <h2 className="text-2xl font-bold mb-4">Membership Fee for Students</h2>
       <ul className="list-disc pl-6">
-        <li>Life Member: 2500</li>
-        <li>Annual Member: 1000</li>
+        <li>Life Member: ₹ 2500</li>
+        <li>Annual Member: ₹ 1000</li>
       </ul>
     </div>
     </div>
