@@ -32,7 +32,7 @@ const DepartmentInfo: React.FC = () => {
         education in the last couple of decades shall be addressed in an
         effective way. With this intention, Department of Holistic Education was
         incepted in Sarvhitkari Educational Society, which is a State Unit of
-        Vidya Bharti. At present, the Department has 27 Cells with dedicated
+        Vidya Bharti. At present, the Department has 25 Cells with dedicated
         coordinators to lead these cells. The in-depth research and development
         in each area are exhaustively done prior to run pilot projects and
         implementing them in schools and society.
