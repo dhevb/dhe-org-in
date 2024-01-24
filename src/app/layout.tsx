@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import BottomView from "./component/BottomView";
 import NextTopLoader from "nextjs-toploader";
+import Floating from "./component/Floating";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,7 +52,11 @@ export default function RootLayout({
           shadow="0 0 10px #F44336,0 0 5px #F44336"
         />
       </div>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} style={{ background: '#ffffff' }}>
+        {children}
+   
+      </body>
+      <Floating/>
     </html>
   );
 }
