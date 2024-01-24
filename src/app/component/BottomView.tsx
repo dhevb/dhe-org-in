@@ -124,6 +124,7 @@ const BottomView: React.FC = () => {
 </div>
 
 
+
       </div>
     </footer>
   );
