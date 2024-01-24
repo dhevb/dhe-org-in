@@ -91,34 +91,28 @@ const BottomView: React.FC = () => {
     &copy; {new Date().getFullYear()} Department of Holistic Education. All rights reserved.
   </div>
 
-  <div className="mt-4 flex items-end space-x-4 bg-white">
+  <div className=" flex items-end ">
+   
     <a
-      href="https://twitter.com/raseconferences"
+      href="https://www.facebook.com/profile.php?id=100090170940886&mibextid=ZbWKwL"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={faXTwitter} size="lg" className="text-white hover:text-blue-500" />
+      <FontAwesomeIcon icon={faFacebook}  className="text-white hover:text-blue-500 h-6 w-12" />
     </a>
     <a
-      href="https://www.facebook.com/raseconferences/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"
+      href="https://www.linkedin.com/company/department-of-holistic-education/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={faFacebook} size="lg" className="text-white hover:text-blue-500" />
+      <FontAwesomeIcon icon={faLinkedin} size="lg" className="text-white hover:text-blue-500 h-6 w-12" />
     </a>
     <a
-      href="https://www.linkedin.com/in/rase-conferences-3a4b71270"
+      href="https://www.instagram.com/dhebharat?igsh=MWg4Z2hvOGV3b3I0dA=="
       target="_blank"
       rel="noopener noreferrer"
     >
-      <FontAwesomeIcon icon={faLinkedin} size="lg" className="text-white hover:text-blue-500" />
-    </a>
-    <a
-      href="https://www.instagram.com/shikshamahakumbh/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <FontAwesomeIcon icon={faInstagram} size="lg" className="text-white hover:text-blue-500" />
+      <FontAwesomeIcon icon={faInstagram} size="lg" className="text-white hover:text-orange-500 h-6 w-12" />
     </a>
   </div>
 </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const CompanyInfo: React.FC = () => {
   return (
@@ -17,18 +19,23 @@ const CompanyInfo: React.FC = () => {
       <div className="text-center md:text-start flex-grow md:mt-0 mt-4">
         <Link
           href="/"
-          className="text-xl md:text-lg lg:text-xl font-semibold text-red-500"
+          className="text-l md:text-lg lg:text-xl font-semibold text-red-500"
         >
           Department of Holistic Education
         </Link>
       </div>
-      <div className="md:ml-auto flex item-center mt-4 md:mt-0">
-        <Link
-          href="/contribute" // Assuming you are using react-router-dom
-          className="text-sm md:text-md lg:text-md font-semibold text-white px-3 py-1 rounded-md bg-red-500"
-        >
-          Membership Form
-        </Link>
+      <div className="md:ml-auto hidden md:flex items-center">
+        <p className="md:text-base">
+          <span className="font-semibold text-red-500">For any Query:</span>{" "}
+        </p>
+        <FontAwesomeIcon
+          icon={faPhone}
+          size="lg"
+          className="text-red-500 h-3 w-6 my-1 "
+        />
+        <a href="tel:7627888222" className="text-red-500 font-semibold text-sm">
+          7627888222
+        </a>
       </div>
     </div>
   );

@@ -1,38 +1,80 @@
 'use client'
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Menu = {
   path: string;
   title: string;
+  subMenu?: Menu[];
 };
 
-const menus: Menu[] = [
-  { path: "/", title: "Home" },
-  { path: "/messages", title: "Director Message" },
-  { path: "/structure", title: "Department Structure" },
-  { path: "/advisory", title: "Advisory Council" },
-  { path: "/committee", title: "Working Committee" },
-  { path: "/people", title: "People" },
-  { path: "/cells", title: "Cells" },
-  { path: "/Publications", title: "Publication" },
+const menu: Menu[] = [
+  
+ 
+ 
+  
   { path: "/Recruitment-Policy.pdf", title: "Recruitment Policies" },
   { path: "/contact", title: "Contact" },
 ];
+const menus: Menu[] = [
+  { path: "/", title: "Home" },
+  {
+    path: "/",
+    title: "About Us",
+    subMenu: [
+      { path: "/messages", title: "Director Message" },
+  { path: "/structure", title: "Department Structure" },
+    ],
+  },
+  
+  {
+    path: "/",
+    title: " Committees",
+    subMenu: [
+      { path: "/advisory", title: "Advisory Council" },
+      { path: "/committee", title: "Working Committee" },
+      { path: "/people", title: "People" },
+    ],
+  },
+  { path: "/cells", title: "Cells" },
+  { path: "/Publications", title: "Publication" },
+  { path: "/Recruitment-Policy.pdf", title: "Careers" },
+  {
+    path: "/Contact",
+    title: "Contact Us",
+  },
+  {
+    path: "/contribute",
+    title: "Membership Form",
+  },
+  
+  
+];
+
+
 
 const Header: React.FC = () => {
   const [state, setState] = useState(false);
+  const [subMenuIndex, setSubMenuIndex] = useState(-1);
 
+  const handleSubMenuHover = (index: number) => {
+    setSubMenuIndex(index);
+  };
+  
+  const handleSubMenuLeave = () => {
+    setSubMenuIndex(-1);
+  };
+  
   return (
-    <header className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 py-4">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
-        <nav className="w-full border-b md:border-0 text-white">
-          <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-2">
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
-             
-              <div className="md:hidden">
+    <header className="pt-1 w-full">
+      <div className="w-full mx-auto flex flex-col lg:flex lg:flex-row items-center justify-between">
+        <nav className="w-full text-white text-xl">
+          <div className="items-center px-4 md:flex md:px-0">
+            <div className="flex items-center justify-between py-0 md:block">
+              <div className={`md:hidden order-1`}>
                 <button
-                  className="text-white p-2 rounded-md focus:border-white-400 focus:border"
+                  className="text-black outline-none p-2 rounded-md focus:border-black focus:border"
                   onClick={() => setState(!state)}
                 >
                   {state ? (
@@ -67,20 +109,53 @@ const Header: React.FC = () => {
                     </svg>
                   )}
                 </button>
-              </div>
+              </div > 
+              <Link href="/">
+                
+              </Link>
             </div>
             <div
-              className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              className={`flex-1 justify-self-center pb-3 mt-1 md:block md:pb-0 md:mt-0 ${
                 state ? "block" : "hidden"
               }`}
             >
-              <ul className="justify-center items-center space-y-4 md:flex md:space-x-4 md:space-y-0">
+              <ul
+                className={`flex ${
+                  state ? "flex-col items-start" : "space-x-4 items-center"
+                } justify-center space-y-0 md:flex md:space-x-0.5 md:space-y-0`}
+              >
                 {menus.map((item, idx) => (
                   <li
                     key={idx}
-                    className="text-white hover:text-gray-300 transition duration-300 ease-in-out"
+                    className={`py-2 px-2 md:text-white text-hite-100 cursor-pointer md:w-1/6 text-black md:bg-red-500 hover:text-red-500 md:hover:bg-white`}
+                    onMouseEnter={() => handleSubMenuHover(idx)}
+                    onMouseLeave={handleSubMenuLeave}
                   >
-                    <Link href={item.path}>{item.title}</Link>
+                    {item.subMenu ? (
+                      <div className="cursor-pointer">
+                        <span className="text-sm">{item.title}</span>
+                        <ul
+                          className={`absolute left-0 mx-10 md:mx-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
+                            subMenuIndex === idx ? "grid" : "hidden"
+                          }`}
+                        >
+                          {item.subMenu.map((subItem, subIdx) => (
+                            <li key={subIdx}>
+                              <Link
+                                href={subItem.path}
+                                className="block px-4 py-2 text-sm transition-all hover:text-red-500 hover:underline md:text-left"
+                              >
+                                {subItem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <Link href={item.path} className="text-sm">
+                        {item.title}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
