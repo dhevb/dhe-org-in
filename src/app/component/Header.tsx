@@ -41,7 +41,7 @@ const menus: Menu[] = [
   { path: "/Publications", title: "Publication" },
   { path: "/Recruitment-Policy.pdf", title: "Careers" },
   {
-    path: "/Contact",
+    path: "/contact",
     title: "Contact Us",
   },
   {
