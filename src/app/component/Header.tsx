@@ -131,6 +131,7 @@ const Header: React.FC = () => {
                     onMouseEnter={() => handleSubMenuHover(idx)}
                     onMouseLeave={handleSubMenuLeave}
                   >
+                    <Link href={item.path} className="text-sm block w-full h-full" >
                     {item.subMenu ? (
                       <div className="cursor-pointer">
                         <span className="text-sm">{item.title}</span>
@@ -152,10 +153,11 @@ const Header: React.FC = () => {
                         </ul>
                       </div>
                     ) : (
-                      <Link href={item.path} className="text-sm">
+                      <div  className="text-sm">
                         {item.title}
-                      </Link>
+                      </div>
                     )}
+                    </Link>
                   </li>
                 ))}
               </ul>
