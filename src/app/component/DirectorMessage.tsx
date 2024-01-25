@@ -10,7 +10,7 @@ const DirectorMessage: React.FC = () => {
         <div className="w-full md:w-1/5"></div>
         <div className="w-full md:w-1/5">
           <Image
-            src="/director.PNG"
+            src="/director.png"
             alt="Director's Image"
             className="w-80 h-80 md:w-80 md:h-80 lg:w-80 lg:h-80 rounded-lg shadow-lg border-2 border-red-600 mx-auto"
             width={800}
