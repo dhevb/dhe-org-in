@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                       <div className="cursor-pointer">
                         <span className="text-sm">{item.title}</span>
                         <ul
-                          className={`absolute left-0 mx-10 md:mx-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
+                          className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
                             subMenuIndex === idx ? "grid" : "hidden"
                           }`}
                         >
