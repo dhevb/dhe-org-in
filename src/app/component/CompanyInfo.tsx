@@ -19,21 +19,21 @@ const CompanyInfo: React.FC = () => {
       <div className="text-center md:text-start flex-grow md:mt-0 mt-4">
         <Link
           href="/"
-          className="text-l md:text-lg lg:text-xl font-semibold text-red-500"
+          className="text-l md:text-lg lg:text-2xl font-bold text-primary "
         >
           Department of Holistic Education
         </Link>
       </div>
       <div className="md:ml-auto hidden md:flex items-center">
         <p className="md:text-base">
-          <span className="font-semibold text-red-500">For any Query:</span>{" "}
+          <span className="font-semibold text-primary">For any Query:</span>{" "}
         </p>
         <FontAwesomeIcon
           icon={faPhone}
           size="lg"
-          className="text-red-500 h-3 w-6 my-1 "
+          className="text-primary h-3 w-6 my-1 "
         />
-        <a href="tel:7627888222" className="text-red-500 font-semibold text-sm">
+        <a href="tel:7627888222" className="text-primary font-semibold text-sm">
           7627888222
         </a>
       </div>

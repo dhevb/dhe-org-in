@@ -14,13 +14,13 @@ interface AdvisoryCouncilProps {
 const AdvisoryCouncil: React.FC<AdvisoryCouncilProps> = ({ title, members }) => {
   return (
     <div className="flex flex-col items-center bg-white p-4">
-      <h2 className="text-2xl font-semibold mb-4 mt-4 text-black">{title}</h2>
+      <h2 className="text-2xl font-semibold mb-4 mt-4 text-primary-color">{title}</h2>
       <table className="table-fixed max-width my-5">
         <thead>
-          <tr className="bg-gray-400">
-            <th className="w-1/3 p-2 border text-left text-black">Name</th>
-            <th className="w-1/3 p-2 border text-left text-black">Designation</th>
-            <th className="w-1/3 p-2 border text-left text-black">Contact</th>
+          <tr className="bg-primary-color">
+            <th className="w-1/3 p-2 border text-left text-white">Name</th>
+            <th className="w-1/3 p-2 border text-left text-white">Designation</th>
+            <th className="w-1/3 p-2 border text-left text-white">Contact</th>
           </tr>
         </thead>
         <tbody>

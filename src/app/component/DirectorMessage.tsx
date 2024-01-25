@@ -5,7 +5,7 @@ import React from "react";
 const DirectorMessage: React.FC = () => {
   return (
     <div className="bg-white p-4 items-center">
-      <h2 className="text-2xl font-semibold mb-4 text-black">Director Message</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-primary-color">Director Message</h2>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/5"></div>
         <div className="w-full md:w-1/5">

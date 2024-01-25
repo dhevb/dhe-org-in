@@ -9,8 +9,8 @@ const Floating: React.FC = () => {
     <Link href="https://wa.me/917627888222" target="_blank" rel="noopener noreferrer">
     
     <FloatButton
-      icon={<FontAwesomeIcon icon={faWhatsapp} size="lg" className="text-black" />}
-      type="default"
+      icon={<FontAwesomeIcon icon={faWhatsapp} size="lg" className="text-white" />}
+      type="primary"
       style={{ right: 24 }} // Change the background color here
     />
     </Link>

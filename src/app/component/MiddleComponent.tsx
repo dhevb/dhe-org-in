@@ -3,7 +3,7 @@ import React from "react";
 const DepartmentInfo: React.FC = () => {
   return (
     <div className="bg-white  p-8 flex flex-col  items-start ">
-    <h1 className="text-2xl font-semibold mb-4 text-black">
+    <h1 className="text-2xl font-semibold mb-4 text-primary-color">
         Welcome to Department of Holistic Education
       </h1>
       <p className="text-justify text-black">

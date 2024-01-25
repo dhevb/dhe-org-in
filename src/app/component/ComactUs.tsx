@@ -23,8 +23,8 @@ const contactData: ContactInfo = {
 const ContactUs: React.FC = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold pb-4 text-gray-800 text-center">Contact Us</h2>
-      <p className="text-gray-600">
+      <h2 className="text-2xl font-semibold pb-4 text-primary-color text-center">Contact Us</h2>
+      <p className="text-black">
         <strong>{contactData.name}</strong>
         <br />
         {contactData.title}

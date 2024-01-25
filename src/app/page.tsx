@@ -1,6 +1,6 @@
 import BottomView from "./component/BottomView";
 import CompanyInfo from "./component/CompanyInfo";
-import Header from "./component/Header";
+import Marquees from "./component/Marquees";
 import MiddleComponent from "./component/MiddleComponent";
 import SlideShow from "./component/SlideShow";
 
@@ -37,15 +37,13 @@ export default function Home() {
       alt: "Image 1",
       legend: "Image 1",
     },
-    {
-      src: "/mc1.jpeg",
-      alt: "Image 1",
-      legend: "Image 1",
-    },
+    
   ];
   const MobileView = () => (
     <div className="flex flex-col space-y-4 items-center">
+
       <SlideShow slides={slides1} />
+      <Marquees/>
       <MiddleComponent />
       <div></div>
       <div className="items-center"></div>
@@ -74,6 +72,7 @@ export default function Home() {
           <MobileView />
         </div>
         <div className="hidden sm:block">
+        <Marquees/>
           <DesktopView />
         </div>
       </div>

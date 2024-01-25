@@ -127,14 +127,14 @@ const Header: React.FC = () => {
                 {menus.map((item, idx) => (
                   <li
                     key={idx}
-                    className={`py-2 px-2 md:text-white text-hite-100 cursor-pointer md:w-1/6 text-black md:bg-red-500 hover:text-red-500 md:hover:bg-white`}
+                    className={`py-2 px-2 md:text-white text-hite-100 cursor-pointer md:w-1/6 text-black md:bg-primary hover:text-primary md:hover:bg-white`}
                     onMouseEnter={() => handleSubMenuHover(idx)}
                     onMouseLeave={handleSubMenuLeave}
                   >
-                    <Link href={item.path} className="text-sm block w-full h-full" >
+                    <Link href={item.path} className="text-l block w-full h-full" >
                     {item.subMenu ? (
                       <div className="cursor-pointer">
-                        <span className="text-sm">{item.title}</span>
+                        <span className="text-l">{item.title}</span>
                         <ul
                           className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
                             subMenuIndex === idx ? "grid" : "hidden"
@@ -144,7 +144,7 @@ const Header: React.FC = () => {
                             <li key={subIdx}>
                               <Link
                                 href={subItem.path}
-                                className="block px-4 py-2 text-sm transition-all hover:text-red-500 hover:underline md:text-left"
+                                className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-left"
                               >
                                 {subItem.title}
                               </Link>
@@ -153,7 +153,7 @@ const Header: React.FC = () => {
                         </ul>
                       </div>
                     ) : (
-                      <div  className="text-sm">
+                      <div  className="text-l">
                         {item.title}
                       </div>
                     )}

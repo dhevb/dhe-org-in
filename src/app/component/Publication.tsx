@@ -67,7 +67,7 @@ const Publication: React.FC = () => {
   return (
     <div className="bg-white p-2 flex flex-col justify-between items-start">
       <h1
-        className={`${textClassHeading} font-semibold py-6 text-black text-center text-3xl`}
+        className={`${textClassHeading} font-semibold py-6 text-primary-color text-center text-3xl`}
       >
         Journal
       </h1>
@@ -91,7 +91,7 @@ const Publication: React.FC = () => {
         click here for more inforamtion.....
       </div>
       <h1
-        className={`${textClassHeading} font-semibold py-4 text-black text-center`}
+        className={`${textClassHeading} font-semibold py-4 text-primary-color text-center`}
       >
         Books
       </h1>

@@ -119,7 +119,7 @@ const MyPage = () => {
   return (
     <div className='bg-white'>
       
-      <p className='text-center text-2xl font-bold p-4 text-black'> Cells</p>
+      <p className='text-center text-2xl font-bold p-4 text-primary-color '> Cells</p>
       {dataArray.map((data, index) => (
         <CellInfo
           key={index}
