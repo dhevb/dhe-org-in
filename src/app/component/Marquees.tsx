@@ -15,7 +15,7 @@ const AnnouncementWithMarquees: React.FC = () => {
     <div  className='flex flex-row bg-primary-light '>
      
     <div className='text-white bg-primary-color w-1/12 rounded-sm text-center pe-2 text-xl py-1 ' >
-      Anouncment
+    Announcement
     </div>
       <Marquee pauseOnHover gradient={false}>
         {marquees.map((marqueeContent, index) => (
