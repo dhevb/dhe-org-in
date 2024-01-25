@@ -41,14 +41,9 @@ export default function Home() {
   ];
   const MobileView = () => (
     <div className="flex flex-col space-y-4 items-center">
-
       <SlideShow slides={slides1} />
       <Marquees/>
       <MiddleComponent />
-      <div></div>
-      <div className="items-center"></div>
-      <div></div>
-      <div></div>
     </div>
   );
 
@@ -72,7 +67,7 @@ export default function Home() {
           <MobileView />
         </div>
         <div className="hidden sm:block">
-        <Marquees/>
+          <Marquees/>
           <DesktopView />
         </div>
       </div>

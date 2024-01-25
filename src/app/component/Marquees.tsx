@@ -5,19 +5,19 @@ const AnnouncementWithMarquees: React.FC = () => {
 
   const marquees = [
 
-    "Shiksha Mahakumbh IIT Ropar 4-6  October, 2024",
-    "Shiksha Kumbh NIT Drinagar  April 2024",
-    "Shiksha Kumbh NIT Delhi June 2024",
-    "Shiksha Kumbh NIT Hamirpur  August  2024"
+    "Shiksha Mahakumbh - IIT Ropar, 4-6  October, 2024",
+    "Shiksha-Kumbh - NIT Srinagar,  April, 2024",
+    "Shiksha-Kumbh -  NIT Delhi, June, 2024",
+    "Shiksha-Kumbh - NIT Hamirpur,  August,  2024"
   ];
 
   return (
-    <div  className='flex flex-row bg-primary-light '>
+    <div  className='flex flex-row bg-primary-light w-full'>
      
-    <div className='text-white bg-primary-color w-1/12 rounded-sm text-center pe-2 text-xl py-1 ' >
+    <div className='text-white bg-primary-color  rounded-sm text-center pe-2 text-xl py-1 ' >
     Announcement
     </div>
-      <Marquee pauseOnHover gradient={false}>
+      <Marquee  pauseOnHover={true}  pauseOnClick={true}>
         {marquees.map((marqueeContent, index) => (
           <div key={index} className='text-white pe-12'>{marqueeContent}</div>
         ))}
