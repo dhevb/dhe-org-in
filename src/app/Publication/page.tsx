@@ -1,6 +1,4 @@
-import BottomView from "../component/BottomView";
-import CompanyInfo from "../component/CompanyInfo";
-import Header from "../component/Header";
+
 import Publication from "../component/Publication";
 
 
@@ -24,8 +22,7 @@ export default function Home() {
       
   return (
     <div className="bg-white">
-      <CompanyInfo/>
-      <Header />
+      
       <div>
         {/* Show Mobile or Desktop View based on screen size */}
         <div className="hidden sm:block">
@@ -35,7 +32,7 @@ export default function Home() {
           <MobileView />
         </div>
       </div>
-      <BottomView />
+    
     </div>
   );
 }

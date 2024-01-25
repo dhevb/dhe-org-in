@@ -56,19 +56,18 @@ export default function Home() {
 
   // Components for Desktop View
   const DesktopView = () => (
-    <div className="flex flex-row space-x-4">
-      <div className="w-1/5"></div>
-      <div className="w-3/5">
-        <SlideShow slides={slides1} />
-        <MiddleComponent />
-      </div>
-      <div className="w-1/5"></div>
+    <div className="flex flex-col md:flex-row space-x-4 space-y-4">
+    <div className="flex flex-col md:flex-row w-full">
+      <SlideShow slides={slides1} />
+      <MiddleComponent />
     </div>
+  </div>
+  
+  
   );
   return (
     <div className="bg-white">
-      <CompanyInfo />
-      <Header />
+      
       <div>
         {/* Show Mobile or Desktop View based on screen size */}
         <div className="sm:hidden">
@@ -78,7 +77,7 @@ export default function Home() {
           <DesktopView />
         </div>
       </div>
-      <BottomView />
+    
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import BottomView from "./component/BottomView";
 import NextTopLoader from "nextjs-toploader";
 import Floating from "./component/Floating";
-
+import CompanyInfo from "./component/CompanyInfo";
+import Header from "./component/Header";
+import BottomView from "./component/BottomView";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -53,8 +54,10 @@ export default function RootLayout({
         />
       </div>
       <body className={inter.className} style={{ background: '#ffffff' }}>
+      <CompanyInfo/>
+    <Header />
         {children}
-   
+        <BottomView />
       </body>
       <Floating/>
     </html>

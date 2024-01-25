@@ -1,7 +1,4 @@
 import AdvisoryCouncil from "../component/AdvisoryCouncilComp";
-import BottomView from "../component/BottomView";
-import CompanyInfo from "../component/CompanyInfo";
-import Header from "../component/Header";
 
 
 const committeeMembers = [
@@ -24,10 +21,9 @@ const committeeMembers = [
 export default function Committee() {
   return (
     <>
-    <CompanyInfo/>
-    <Header />
+   
     <AdvisoryCouncil title=" Working Committee" members={committeeMembers} />
-    <BottomView />
+ 
   </>
   )
 }

@@ -2,9 +2,6 @@
 
 import React from 'react';
 import CellInfo from '../component/CellInfo';
-import CompanyInfo from '../component/CompanyInfo';
-import Header from '../component/Header';
-import BottomView from '../component/BottomView';
 
 const MyPage = () => {
   const dataArray = [
@@ -121,8 +118,7 @@ const MyPage = () => {
 
   return (
     <div className='bg-white'>
-      <CompanyInfo />
-      <Header />
+      
       <p className='text-center text-2xl font-bold p-4 text-black'> Cells</p>
       {dataArray.map((data, index) => (
         <CellInfo
@@ -132,7 +128,7 @@ const MyPage = () => {
           footnote={data.footnote}
         />
       ))}
-      <BottomView />
+   
     </div>
   );
 };

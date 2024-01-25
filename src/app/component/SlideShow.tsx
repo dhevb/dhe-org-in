@@ -34,7 +34,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ slides }) => {
   }, [currentIndex]);
 
   return (
-    <div>
+    <div className='sm:py-12 sm:px-4'>
       <Carousel
         selectedItem={currentIndex}
         showStatus={false} // Hide status indicator
@@ -49,6 +49,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ slides }) => {
               style={{ maxWidth: '100%', maxHeight: '60vh' }}
               width = "1000"
               height= "1000"
+              className='rounded-lg'
             />
           </div>
         ))}

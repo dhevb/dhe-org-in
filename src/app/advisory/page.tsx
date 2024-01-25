@@ -1,8 +1,6 @@
-import AdvisoryCouncil from "../component/AdvisoryCouncilComp";
-import BottomView from "../component/BottomView";
-import CompanyInfo from "../component/CompanyInfo";
+
 import AdvisoryCouncil2 from "../component/DesAdvisory";
-import Header from "../component/Header";
+
 
 
 const advisoryMembers2 = [
@@ -16,10 +14,7 @@ const advisoryMembers2 = [
 export default function Advisory() {
   return (
     <>
-    <CompanyInfo/>
-    <Header />
     <AdvisoryCouncil2 title="Advisory Council" members={advisoryMembers2} />
-    <BottomView />
   </>
   )
 }

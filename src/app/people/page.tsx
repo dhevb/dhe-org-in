@@ -1,8 +1,4 @@
 import AdvisoryCouncil from "../component/AdvisoryCouncilComp";
-import BottomView from "../component/BottomView";
-import CompanyInfo from "../component/CompanyInfo";
-import Header from "../component/Header";
-
 
 const advisoryMembers = [
   { name: "Dr. Neeraj Naithani", designation: "Coordinator, IT Cell", contact: "9995678372" },
@@ -38,11 +34,7 @@ const advisoryMembers = [
 export default function People() {
   return (
     <>
-    <CompanyInfo/>
-    <Header />
-
-    <AdvisoryCouncil title="People" members={advisoryMembers} />
-    <BottomView />
+    <AdvisoryCouncil title="People" members={advisoryMembers} />  
   </>
   )
 }
