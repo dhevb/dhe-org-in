@@ -1,14 +1,20 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 
-const AnnouncementWithMarquees: React.FC = () => {
+const Marquees: React.FC = () => {
 
-  const marquees = [
+  interface Item {
+    imageUrl: string;
+    text: string;
+    link: string;
+  }
 
-    "Shiksha Mahakumbh - IIT Ropar, 4-6  October, 2024",
-    "Shiksha-Kumbh - NIT Srinagar,  April, 2024",
-    "Shiksha-Kumbh -  NIT Delhi, June, 2024",
-    "Shiksha-Kumbh - NIT Hamirpur,  August,  2024"
+  const marquees: Item[] = [
+
+  { imageUrl: '/new.gif', text: "Shiksha Mahakumbh - IIT Ropar, 4-6  October, 2024", link: 'https://www.youtube.com/watch?v=FFfdSd8_XOw' },
+  { imageUrl: '/new.gif', text:"Shiksha-Kumbh - NIT Srinagar,  April, 2024",link: 'https://sk24.rase.co.in/' },
+  { imageUrl: '/new.gif', text:"Shiksha-Kumbh -  NIT Delhi, June, 2024",link: 'https://sk24.rase.co.in/' },
+  { imageUrl: '/new.gif', text: "Shiksha-Kumbh - NIT Hamirpur,  August,  2024", link: 'https://sk24.rase.co.in/' },
   ];
 
   return (
@@ -19,11 +25,11 @@ const AnnouncementWithMarquees: React.FC = () => {
     </div>
       <Marquee  pauseOnHover={true}  pauseOnClick={true}>
         {marquees.map((marqueeContent, index) => (
-          <div key={index} className='text-white pe-12'>{marqueeContent}</div>
+          <p key={index} className='text-white pe-12'>{marqueeContent.text}</p>
         ))}
       </Marquee>
     </div>
   );
 };
 
-export default AnnouncementWithMarquees;
+export default Marquees;

@@ -64,7 +64,11 @@ export default function Home() {
       <div>
         {/* Show Mobile or Desktop View based on screen size */}
         <div className="sm:hidden">
-          <MobileView />
+          <div className="flex flex-col space-y-4 items-center">
+            <SlideShow slides={slides1} />
+            <Marquees/>
+            <MiddleComponent />
+          </div>
         </div>
         <div className="hidden sm:block">
           <Marquees/>
