@@ -7,46 +7,23 @@ const DepartmentInfo: React.FC = () => {
         Welcome to Department of Holistic Education
       </h1>
       <p className="text-justify text-black">
-        Department of Holistic Education is the brainchild of Dr. Thakur SKR who
-        is a renowned scientist of ISRO, dedicated RSS worker, and accomplished
-        author. Level of education shall not be gauged by marks alone. In true
-        sense, it’s the complete transformation of a green cake into a valuable
-        asset for society. The students shall be full of energy, skills, and
-        values when they come out from the institution.
+      The Department of Holistic Education is the brainchild of Dr. Thakur SKR who is a distinguished scientist of ISRO, a dedicated social worker and an accomplished author.
       </p>
     <br/>
    
     <p className="text-justify text-black">
-        Among all kinds of institutions one goes through in his/her lifespan,
-        school is an important place where anyone spends the majority of
-        educational years, almost 15 years. Therefore, this place shall be built
-        and nurtured in such a way that the students passing from school with a
-        focused and healthy approach in life.
+    The foundation of DHE is based on the ideology that the level of education should not be gauged by academic scores alone. Rather, in true essence, education should aim at holistic development of children and should be multi-disciplinary focusing on skill development, physical fitness, emotional well being and development of strong ethics in students. Holistic education will transform young minds into not only professionally skilled adults but also responsible individuals who are an asset for the nation.
       </p>
       <br/>
     
     <p className="text-justify text-black"> 
-        Though Vidya Bharti was formed with this intention only, the last
-        decade driven by technology led us to think about the integration of
-        technology with value-based education. Further, the problems arose in
-        education in the last couple of decades shall be addressed in an
-        effective way. With this intention, Department of Holistic Education was
-        incepted in Sarvhitkari Educational Society, which is a State Unit of
-        Vidya Bharti. At present, the Department has 25 Cells with dedicated
-        coordinators to lead these cells. The in-depth research and development
-        in each area are exhaustively done prior to run pilot projects and
-        implementing them in schools and society.
+    Keeping pace with the technology driven world, there is an imperative need of integration of technology with value-based education. Considering the present lacunae and the dynamically evolving landscape of education, the structure of DHE has been designed to effectively bridge the gaps in present education system to make it more effective. At present, DHE has 25 dedicated cells- IT Cell, Industry Coordination Cell, Learning Management System Cell, CSR Cell, R&D Cell, Entrepreneurship Cell, Foreign Language Cell, Atal Tinkering Labs, Environment Cell, Sports Cell etc catering to various aspects of education system with dedicated co-ordinators to lead these cells. Exhaustive research and development is carried out prior to running pilot projects and implementing them in schools and society.
     
       </p>
       
     <br/>
     <p className="text-justify text-black">
-        In the last couple of months, E-cycle, Punjab Super 100, Tredul App,
-        Vidya Bharti App, Surbhi Diye, Surbhi Piggy Bag, Surbhi Flower Pot, etc.,
-        are the key outcomes of the Department which are revolutionizing the
-        school education and society. One child one hour work per day, Recycling
-        of clothes, paper and plastic, one school one product, International
-        recruitment, etc., are few of the upcoming projects of the Department.
+    Since inception, the Department has multiple revolutionary projects- E-cycle, Punjab Super 100, Tredul App, Sarvatr App, Swadeshi bazaar App, TUDU App. Jobs360o App, Surbhi Diye, Surbhi Piggy Bag, Surbhi Flower Pot, etc. to its credit. The department has successfully organised mass outreach events viz Shiksha Mahakumbh at NIT Jalandhar and Shiksha Kumbh at NIT Kurukshetra which were attended by dignitaries and stakeholders from all fields – viz politics, bureaucracy, educational stalwarts, corporate houses, media and speakers from all domains. DHE has also launched its quarterly journal “Viksit India” which offers comprehensive coverage of a multitude of educational aspects, from school education to higher education, language pedagogy to technological advancements, child pedagogy to scientific research and explores the realms of ever-evolving domain of education. With the same vigour and enthusiasm, the Department is gearing up for organisation of Shiksha Kumbh at NIT Srinagar and Shiksha Mahakumbh at IIT Ropar along with launch of various innovative projects- One child one hour work per day, Recycling of cloths, paper & plastic, One school one product, International collaborations, etc in the upcoming months.
       </p>
     </div>
   );
