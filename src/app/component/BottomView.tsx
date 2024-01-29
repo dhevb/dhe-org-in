@@ -120,14 +120,14 @@ const BottomView: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faXTwitter} size ="lg" className="text-white hover:text-oblue-500 h-6 w-12"  />
+            <FontAwesomeIcon icon={faXTwitter} size ="lg" className="text-white hover:text-blue-500 h-6 w-12"  />
           </a>
           <Link
             href="https://www.kooapp.com/profile/DHEBharat"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="/koo-app.svg" alt ="koo" className="text-white hover:text-oblue-500 h-6 w-12"  height={100} width={100} />
+            <Image src="/koo-app.svg" alt ="koo" className="text-white hover:text-yellow-500 h-6 w-12"  height={100} width={100} />
           </Link>
   </div>
 </div>
