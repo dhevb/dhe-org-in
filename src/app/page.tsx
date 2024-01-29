@@ -50,9 +50,27 @@ export default function Home() {
   // Components for Desktop View
   const DesktopView = () => (
     <div className="flex flex-col md:flex-row space-x-4 space-y-4">
-    <div className="flex flex-col md:flex-row w-full">
+    <div className="flex flex-col md:flex-row w-1/2">
       <SlideShow slides={slides1} />
-      <MiddleComponent />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
+        crossOrigin="anonymous"
+      ></script>
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-4330032354977759"
+        data-ad-slot="6774265057"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+   
+   
+    </div>
+    <div className="flex flex-col md:flex-row w-1/2">
+    <MiddleComponent />
     </div>
   </div>
   
