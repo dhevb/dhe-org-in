@@ -7,6 +7,7 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
 const BottomView: React.FC = () => {
   return (
@@ -40,7 +41,7 @@ const BottomView: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="font-semibold">Contact Us</h2>
+            <h2 className="font-semibold">Get in touch</h2>
            
             <p>director@dhe.org.in | dhe2021vb@gmail.com</p>
             <p>Department of Holistic Education, Vidya Bharti<br></br>Plot No. 1, Sector 71, SAS Nagar (Mohali) – 160071</p>
@@ -114,6 +115,20 @@ const BottomView: React.FC = () => {
     >
       <FontAwesomeIcon icon={faInstagram} size="lg" className="text-white hover:text-orange-500 h-6 w-12" />
     </a>
+    <a
+            href="https://twitter.com/DHEBharat1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faXTwitter} size ="lg" className="text-white hover:text-oblue-500 h-6 w-12"  />
+          </a>
+          <Link
+            href="https://www.kooapp.com/profile/DHEBharat"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src="/koo-app.svg" alt ="koo" className="text-white hover:text-oblue-500 h-6 w-12"  height={100} width={100} />
+          </Link>
   </div>
 </div>
 
