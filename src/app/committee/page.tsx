@@ -22,7 +22,7 @@ export default function Committee() {
   return (
     <>
    
-    <AdvisoryCouncil title=" Working Committee" members={committeeMembers} />
+    <AdvisoryCouncil title="LMC Members" members={committeeMembers} />
  
   </>
   )

@@ -41,7 +41,7 @@ const BottomView: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h2 className="font-semibold">Get in touch</h2>
+            <h2 className="font-semibold">Get in Touch</h2>
            
             <p>director@dhe.org.in | dhe2021vb@gmail.com</p>
             <p>Department of Holistic Education, Vidya Bharti<br></br>Plot No. 1, Sector 71, SAS Nagar (Mohali) – 160071</p>
@@ -87,9 +87,9 @@ const BottomView: React.FC = () => {
             ></iframe>
           </div>
         </div>
-       <div className="flex flex-row justify-between">
+       <div className="flex flex-col md:flex-row justify-between ">
   <div className="mt-4 text-white">
-    &copy; {new Date().getFullYear()} Department of Holistic Education. All rights reserved.
+    &copy;  Department of Holistic Education. 
   </div>
 
   <div className=" flex items-end ">

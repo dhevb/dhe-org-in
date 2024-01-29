@@ -24,19 +24,7 @@ const CompanyInfo: React.FC = () => {
           Department of Holistic Education
         </Link>
       </div>
-      <div className="md:ml-auto hidden md:flex items-center">
-        <p className="md:text-base">
-          <span className="font-semibold text-primary">For any Query:</span>{" "}
-        </p>
-        <FontAwesomeIcon
-          icon={faPhone}
-          size="lg"
-          className="text-primary h-3 w-6 my-1 "
-        />
-        <a href="tel:7627888222" className="text-primary font-semibold text-sm">
-          7627888222
-        </a>
-      </div>
+      
     </div>
   );
 };

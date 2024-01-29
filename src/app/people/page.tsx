@@ -34,7 +34,7 @@ const advisoryMembers = [
 export default function People() {
   return (
     <>
-    <AdvisoryCouncil title="People" members={advisoryMembers} />  
+    <AdvisoryCouncil title="Cell Co-ordinators" members={advisoryMembers} />  
   </>
   )
 }

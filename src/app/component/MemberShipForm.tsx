@@ -102,7 +102,7 @@ interface NgoData {
           <h1 className='text-primary text-center text-xl '>Membership Form </h1>
           <form onSubmit={handleSubmit} className='bg-white p-4'>
           <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">Name:</label>
+        <label className="block text-sm font-medium text-gray-600">Name</label>
         <input
           type="text"
           name="name"
@@ -116,7 +116,7 @@ interface NgoData {
    
 
     <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">Email:</label>
+        <label className="block text-sm font-medium text-gray-600">Email</label>
         <input
           type="email"
           name="email"
@@ -129,7 +129,7 @@ interface NgoData {
 
   
     <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">Phone Number:</label>
+        <label className="block text-sm font-medium text-gray-600">Phone Number</label>
         <input
           type="tel"
           name="PhoneNumber"
@@ -141,7 +141,7 @@ interface NgoData {
       </div>
     
     <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600"> Address:</label>
+        <label className="block text-sm font-medium text-gray-600"> Address</label>
         <input
           name="Address"
           type='text'
@@ -172,12 +172,14 @@ interface NgoData {
               <>
                 <div className='mb-4'>
                   <label className='block text-sm font-medium text-gray-600'>
-                    <b>Fees: {formData.type === 'vb' ? 2500 : 1000}</b>
+                    <b>₹: {formData.type === 'vb' ? 2500 : 1000
+                    }</b>
+                     <img className='p-2' src='/fee.png' alt='Fee' />
                   </label>
                 </div>
   
                 <div className='mb-4'>
-                  <label className='block text-sm font-medium text-gray-600'>Upload Payment Receipt:</label>
+                  <label className='block text-sm font-medium text-gray-600'>Upload Payment Receipt</label>
                   <input
                     type='file'
                     name='Attachments'

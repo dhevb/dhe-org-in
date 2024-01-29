@@ -25,18 +25,13 @@ const menus: Menu[] = [
     subMenu: [
       { path: "/messages", title: "Director Message" },
   { path: "/structure", title: "Department Structure" },
+  { path: "/advisory", title: "Advisory Council" },
+      { path: "/committee", title: "LMC Members" },
+      { path: "/people", title: "Cell Co-ordinators" },
     ],
   },
   
-  {
-    path: "/",
-    title: " Committees",
-    subMenu: [
-      { path: "/advisory", title: "Advisory Council" },
-      { path: "/committee", title: "Working Committee" },
-      { path: "/people", title: "People" },
-    ],
-  },
+
   { path: "/cells", title: "Cells" },
   { path: "/Publications", title: "Publication" },
   { path: "/Recruitment-Policy.pdf", title: "Careers" },
