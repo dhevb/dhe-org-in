@@ -41,9 +41,9 @@ const BottomView: React.FC = () => {
           </div>
           <div>
             <h2 className="font-semibold">Contact Us</h2>
-            <p className="mt-2">7627888222 | 7903431900 | 9417050631</p>
+           
             <p>director@dhe.org.in | dhe2021vb@gmail.com</p>
-            <p>Vidya Bharti<br></br>Plot No. 1, Sector 71, SAS Nagar (Mohali) – 160071</p>
+            <p>Department of Holistic Education, Vidya Bharti<br></br>Plot No. 1, Sector 71, SAS Nagar (Mohali) – 160071</p>
             <p>Mon.-Sat: 10 AM to 6 PM</p>
           </div>
           <div>

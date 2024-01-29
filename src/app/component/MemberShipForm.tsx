@@ -8,98 +8,100 @@ import { db } from '@/app/firebase';
 import  toast , { Toaster } from "react-hot-toast";
 interface NgoData {
     name: string;
-    Affiliation: string;
+    Address: string;
     email: string;
     PhoneNumber: string;
     Services: string;
+    type:string;
     Attachments: string;
   }
-  
-const MemberShipForm = () => {
+  const MemberShipForm = () => {
     const initialFormData: NgoData = {
-        name: '',
-         Affiliation: '',
-        email: '',    
-        PhoneNumber: '',
-        Services: '',
-        Attachments: '',
-      };
-    const [formData, setFormData] = useState<NgoData>({
-        name: '',
-         Affiliation: '',
-        email: '',
-        PhoneNumber: '',
-        Services: '',
-        Attachments: '',
-      });
+      name: '',
+      Address: '',
+      email: '',
+      PhoneNumber: '',
+      Services: '',
+      type: '',
+      Attachments: '',
+    };
+  
+    const [formData, setFormData] = useState<NgoData>(initialFormData);
     const [image, setImage] = useState<File | null>(null);
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [loading, setLoading] = useState(false); // Add loading state
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-   
-  };
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const selectedImage = e.target.files?.[0];
-    if (selectedImage) {
-      setImage(selectedImage);
-    }
-  };
-  const handleAddDocument = async (downloadURL: string | null) => {
-    try {
-      const docRef = await addDoc(collection(db, 'RegestrationVol'), { ...formData, feeReceipt: downloadURL });
-      console.log('Document added with ID:', docRef.id);
-      setLoading(false);
-      setFormData(initialFormData)
-      toast.success("Suceessfully Registered!");
-    } catch (error) {
-      setLoading(false);
-      toast.error("Something broke while registration!")
-      console.error('Error adding document:', error);
-    }
-  };
-  const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    setLoading(true);
-    // Upload image if it exists
-    if (image) {
-      try {
-        const imageRef = ref(storage, `images/${image.name}`);
-        await uploadBytes(imageRef, image);
-
-        // Get download URL using a Promise
-        const downloadURL = await getDownloadURL(imageRef);
-
-        // Update formData with the download URL
-        setFormData((prevData) => ({
-          ...prevData,
-          feeReceipt: downloadURL || '', // Use an empty string if downloadURL is undefined
-        }));
-
-        // Add document to Firestore
-        handleAddDocument(downloadURL);
-      } catch (error) {
-        console.error('Error uploading image:', error);
-        setLoading(false); 
+  
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const { name, value } = event.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    };
+  
+    const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const selectedImage = e.target.files?.[0];
+      if (selectedImage) {
+        setImage(selectedImage);
       }
-    } else {
-      // Add document to Firestore without image
-      handleAddDocument(null);
-    }
-
-    // Perform actions with the form data and updated image URL
-    console.log(formData);
-  };
-  return (
-    <div className='bg-white'>
-    <div className=' shadow-md rounded-md max-w-md mx-auto pt-8 bg-white text-black'> 
-    <h1 className='text-primary text-center text-xl '>Membership Form </h1>
-  <form onSubmit={handleSubmit} className='bg-white p-4'>
-    <div className="mb-4">
+    };
+  
+    const handleAddDocument = async (downloadURL: string | null) => {
+      try {
+        const docRef = await addDoc(collection(db, 'RegestrationVol'), { ...formData, feeReceipt: downloadURL });
+        console.log('Document added with ID:', docRef.id);
+        setLoading(false);
+        setFormData(initialFormData);
+        toast.success('Congratulations on becoming a DHE member! ');
+      } catch (error) {
+        setLoading(false);
+        toast.error('Something broke while registration!');
+        console.error('Error adding document:', error);
+      }
+    };
+  
+    const handleSubmit = async (event: FormEvent) => {
+      event.preventDefault();
+      setLoading(true);
+  
+    
+      const membershipFee = formData.type === 'vb' ? 2500 : 1000;
+  
+   
+      if (image) {
+        try {
+          const imageRef = ref(storage, `images/${image.name}`);
+          await uploadBytes(imageRef, image);
+  
+          const downloadURL = await getDownloadURL(imageRef);
+  
+          setFormData((prevData) => ({
+            ...prevData,
+            feeReceipt: downloadURL || '',
+            fee: membershipFee,
+          }));
+  
+          // Add document to Firestore
+          handleAddDocument(downloadURL);
+        } catch (error) {
+          console.error('Error uploading image:', error);
+          setLoading(false);
+        }
+      } else {
+        // Add document to Firestore without image
+        handleAddDocument(null);
+      }
+  
+      // Perform actions with the form data and updated image URL
+      console.log(formData);
+    };
+  
+    return (
+      <div className='bg-white mb-5'>
+        <div className=' shadow-md rounded-md md:w-1/3 mx-auto pt-8 bg-white text-black'>
+          <h1 className='text-primary text-center text-xl '>Membership Form </h1>
+          <form onSubmit={handleSubmit} className='bg-white p-4'>
+          <div className="mb-4">
         <label className="block text-sm font-medium text-gray-600">Name:</label>
         <input
           type="text"
@@ -111,17 +113,7 @@ const MemberShipForm = () => {
         />
       </div>
 
-    <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">Date of Birth::</label>
-        <input
-          type="date"
-          name="DOB"
-          value={formData.Affiliation}
-          onChange={handleInputChange}
-          required
-          className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
-        />
-      </div>
+   
 
     <div className="mb-4">
         <label className="block text-sm font-medium text-gray-600">Email:</label>
@@ -147,40 +139,68 @@ const MemberShipForm = () => {
           className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
         />
       </div>
-
+    
     <div className="mb-4">
         <label className="block text-sm font-medium text-gray-600"> Address:</label>
         <input
           name="Address"
-          value={formData.Services}
+          type='text'
+          value={formData.Address}
           onChange={handleInputChange}
           required
           className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
         />
       </div>
-
-    <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600">Upload your resume:</label>
-        <input
-          type="file"
-          name="Attachments"
-          accept=".pdf, .png, .jpg"
-          onChange={handleImageChange}
-          className="mt-4 p-2 block w-full rounded-md border-gray-300 text-black "
-
-        />
+            <div className='mb-4'>
+              <label className='block text-sm font-medium text-gray-600'>
+                Membership Type
+                <select
+                  name='type'
+                  value={formData.type}
+                  onChange={handleInputChange}
+                  required
+                  className='mt-4 p-2 block w-full rounded-md border border-gray-300 text-black'
+                >
+                  <option value=''>Select Type</option>
+                  <option value='vb'>Lifetime Member</option>
+                  <option value='nvb'>Annual Member</option>
+                </select>
+              </label>
+            </div>
+  
+            {formData.type && (
+              <>
+                <div className='mb-4'>
+                  <label className='block text-sm font-medium text-gray-600'>
+                    <b>Fees: {formData.type === 'vb' ? 2500 : 1000}</b>
+                  </label>
+                </div>
+  
+                <div className='mb-4'>
+                  <label className='block text-sm font-medium text-gray-600'>Upload Payment Receipt:</label>
+                  <input
+                    type='file'
+                    name='Attachments'
+                    accept='.pdf, .png, .jpg'
+                    onChange={handleImageChange}
+                    required
+                    className='mt-4 p-2 block w-full rounded-md border-gray-300 text-black bg-white'
+                  />
+                </div>
+              </>
+            )}
+  
+            <button
+              type='submit'
+              className='bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-color transition duration-300 mt-4 w-full'
+              disabled={loading} // Disable the button when loading
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-
-      <button
-        type="submit"
-        className="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 mt-4 w-full"
-        disabled={loading} // Disable the button when loading
-      >
-        Submit
-      </button> </form>
-    </div>
-    </div>
-  ) 
-}
-
-export default MemberShipForm
+    );
+  };
+  
+  export default MemberShipForm;

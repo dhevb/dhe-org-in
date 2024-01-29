@@ -7,6 +7,7 @@ import CompanyInfo from "./component/CompanyInfo";
 import Header from "./component/Header";
 import BottomView from "./component/BottomView";
 const inter = Inter({ subsets: ["latin"] });
+import  toast , { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Department of Holestic Education",
@@ -52,6 +53,7 @@ export default function RootLayout({
           showSpinner={false}
           shadow="0 0 10px #F44336,0 0 5px #F44336"
         />
+          <Toaster/>
       </div>
       <body className={inter.className} style={{ background: '#ffffff' }}>
       <CompanyInfo/>

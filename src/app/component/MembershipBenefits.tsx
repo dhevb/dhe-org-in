@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import MemberShipForm from './MemberShipForm';
 
 const MembershipBenefits = () => {
   return (
