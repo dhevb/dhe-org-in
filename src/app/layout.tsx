@@ -28,6 +28,8 @@ export default function RootLayout({
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
         crossOrigin="anonymous"></script>
         )}
+        <script async  src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script async src="https://mediafiles.botpress.cloud/0f206575-f12b-469c-a6f8-85ce1fa27cbd/webchat/config.js" defer></script>
       </head>
       <div>
         <meta http-equiv="refresh" content="1000" />
@@ -61,7 +63,7 @@ export default function RootLayout({
         {children}
         <BottomView />
       </body>
-      <Floating/>
+  
     </html>
   );
 }
