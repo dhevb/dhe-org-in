@@ -1,3 +1,4 @@
+"use client";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -8,17 +9,52 @@ import Header from "./component/Header";
 import BottomView from "./component/BottomView";
 const inter = Inter({ subsets: ["latin"] });
 import  toast , { Toaster } from "react-hot-toast";
+import Modal from "./component/Modal";
+import { useState, useEffect } from "react";
 
-export const metadata: Metadata = {
-  title: "Department of Holestic Education",
-  description: "Department of Holistic Education is the brainchild of Dr. Thakur SKR who is a renowned scientist of ISRO, dedicated RSS worker, and accomplishedauthor. Level of education shall not be gauged by marks alone. In true sense, it’s the complete transformation of a green cake into a valuableasset for society. The students shall be full of energy, skills, and values when they come out from the institution.",
-};
 
+interface CustomWindow extends Window {
+  localStream?: MediaStream;
+  localAudio?: HTMLAudioElement;
+}
+
+declare var window: CustomWindow;
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  }; 
+   const handlePermission = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+      window.localStream = stream;
+      
+      if (!window.localAudio) {
+        window.localAudio = new Audio();
+        document.body.appendChild(window.localAudio);
+      }
+
+      window.localAudio.srcObject = stream;
+      window.localAudio.autoplay = true;
+    } catch (err) {
+      console.error(`You got an error: ${err}`);
+    }
+  };
+
+  useEffect(() => {
+    // Uncomment the line below to automatically request permissions on page load (not recommended).
+    // handlePermission();
+  }, []);
+
   return (
     <html lang="en">
       <head>{
@@ -62,6 +98,11 @@ export default function RootLayout({
     <Header />
         {children}
         <BottomView />
+    
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <iframe  width="560" height="315" src="https://www.youtube.com/embed/n4MShOzVT_s?si=d66BKGSw4OVD0Vcf&amp;controls=0&amp;start=1&amp;autoplay=1" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+         </Modal>
+  
       </body>
   
     </html>
