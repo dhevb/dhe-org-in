@@ -28,6 +28,7 @@ const menus: Menu[] = [
   { path: "/advisory", title: "Advisory Council" },
       { path: "/committee", title: "LMC Members" },
       { path: "/people", title: "Cell Co-ordinators" },
+      { path: "/Members", title: "Members" },
     ],
   },
   

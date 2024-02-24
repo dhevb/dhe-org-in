@@ -67,7 +67,7 @@ export default function RootLayout({
         <script async src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
         <script async src="https://mediafiles.botpress.cloud/43d0bfc8-c142-41bd-b960-194d39853e8f/webchat/config.js" defer></script>
       </head>
-      <div>
+     
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -82,17 +82,7 @@ export default function RootLayout({
         <meta httpEquiv="cache-control" content="no-cache" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="-1" />
-        <NextTopLoader
-          color="#F44336"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={false}
-          showSpinner={false}
-          shadow="0 0 10px #F44336,0 0 5px #F44336"
-        />
-          <Toaster/>
-      </div>
+
       <body className={inter.className} style={{ background: '#ffffff' }}>
       <CompanyInfo/>
     <Header />
@@ -102,7 +92,16 @@ export default function RootLayout({
         <Modal isOpen={isModalOpen} onClose={closeModal}>
         <iframe  width="560" height="315" src="https://www.youtube.com/embed/n4MShOzVT_s?si=d66BKGSw4OVD0Vcf&amp;controls=0&amp;start=1&amp;autoplay=1" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
          </Modal>
-  
+         <NextTopLoader
+          color="#F44336"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={false}
+          showSpinner={false}
+          shadow="0 0 10px #F44336,0 0 5px #F44336"
+        />
+          <Toaster/>
       </body>
   
     </html>
