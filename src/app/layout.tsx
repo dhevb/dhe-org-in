@@ -64,9 +64,8 @@ export default function RootLayout({
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
         crossOrigin="anonymous"></script>
         )}
-        <script async src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-        <script async src="https://mediafiles.botpress.cloud/43d0bfc8-c142-41bd-b960-194d39853e8f/webchat/config.js" defer></script>
-      </head>
+      <script async src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script async src="https://mediafiles.botpress.cloud/94a7b285-719e-4be3-8c2b-9b06c8702257/webchat/config.js" defer></script> </head>
      
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
