@@ -51,11 +51,11 @@ const BottomView: React.FC = () => {
             <h2 className="font-semibold">Other Websites</h2>
             <ul className="mt-2">
               <li>
-              <a href="http://vidyabharati.net" target="_blank">vidyabharati.net</a>
+              <a href="https://vidyabharti.net/" target="_blank">vidyabharati.net</a>
 
               </li>
               <li>
-              <a href="http://vidyabhartialumni.org" target="_blank">vidyabhartialumni.org</a>
+              <a href="https://www.vidyabharatialumni.org/" target="_blank">vidyabhartialumni.org</a>
               </li>
               <li>
               <a href="https://swadeshibazaar.co.in/" target="_blank">swadeshibazaar.co.in</a>
