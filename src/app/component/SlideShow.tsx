@@ -51,8 +51,25 @@ const SlideShow: React.FC<SlideShowProps> = ({ slides }) => {
               height= "1000"
               className='rounded-lg'
             />
-          </div>
+
+
+           
+            <div className='invisible lg:visible'>
+{slide.alt!=="" &&
+            <div className="absolute bottom-0 px-4 py-3 bg-gray-500/50 w-full">
+    
+      <p className="text-gray-200">
+      {
+        slide.alt
+      }
+      <br />
+      <br />
+      </p>
+      </div>
+}</div>
+</div>
         ))}
+       
       </Carousel>
       
     </div>
