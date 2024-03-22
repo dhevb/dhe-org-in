@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,10 +10,6 @@ type Menu = {
 };
 
 const menu: Menu[] = [
-  
- 
- 
-  
   { path: "/Recruitment-Policy.pdf", title: "Recruitment Policies" },
   { path: "/contact", title: "Contact" },
 ];
@@ -24,14 +20,13 @@ const menus: Menu[] = [
     title: "About Us",
     subMenu: [
       { path: "/messages", title: "Director Message" },
-  { path: "/structure", title: "Department Structure" },
-  { path: "/advisory", title: "Advisory Council" },
+      { path: "/structure", title: "Department Structure" },
+      { path: "/advisory", title: "Advisory Council" },
       { path: "/committee", title: "LMC Members" },
       { path: "/people", title: "Cell Co-ordinators" },
       { path: "/Members", title: "Members" },
     ],
   },
-  
 
   { path: "/cells", title: "Cells" },
   { path: "/Publications", title: "Publication" },
@@ -41,14 +36,15 @@ const menus: Menu[] = [
     title: "Contact Us",
   },
   {
-    path: "/contribute",
-    title: "Membership Form",
+    path: "/",
+    title: "Forms",
+    subMenu: [
+      {path: "/contribute", title: "Membership Form"},
+      {path: "/registrationForm", title:"Registration Form"}
+    ]
   },
   
-  
 ];
-
-
 
 const Header: React.FC = () => {
   const [state, setState] = useState(false);
@@ -57,11 +53,11 @@ const Header: React.FC = () => {
   const handleSubMenuHover = (index: number) => {
     setSubMenuIndex(index);
   };
-  
+
   const handleSubMenuLeave = () => {
     setSubMenuIndex(-1);
   };
-  
+
   return (
     <header className="pt-1 w-full">
       <div className="w-full mx-auto flex flex-col lg:flex lg:flex-row items-center justify-between">
@@ -105,10 +101,8 @@ const Header: React.FC = () => {
                     </svg>
                   )}
                 </button>
-              </div > 
-              <Link href="/">
-                
-              </Link>
+              </div>
+              <Link href="/"></Link>
             </div>
             <div
               className={`flex-1 justify-self-center pb-3 mt-1 md:block md:pb-0 md:mt-0 ${
@@ -127,32 +121,33 @@ const Header: React.FC = () => {
                     onMouseEnter={() => handleSubMenuHover(idx)}
                     onMouseLeave={handleSubMenuLeave}
                   >
-                    <Link href={item.path} className="text-l block w-full h-full" >
-                    {item.subMenu ? (
-                      <div className="cursor-pointer">
-                        <span className="text-l">{item.title}</span>
-                        <ul
-                          className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
-                            subMenuIndex === idx ? "grid" : "hidden"
-                          }`}
-                        >
-                          {item.subMenu.map((subItem, subIdx) => (
-                            <li key={subIdx}>
-                              <Link
-                                href={subItem.path}
-                                className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-left"
-                              >
-                                {subItem.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ) : (
-                      <div  className="text-l">
-                        {item.title}
-                      </div>
-                    )}
+                    <Link
+                      href={item.path}
+                      className="text-l block w-full h-full"
+                    >
+                      {item.subMenu ? (
+                        <div className="cursor-pointer">
+                          <span className="text-l">{item.title}</span>
+                          <ul
+                            className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
+                              subMenuIndex === idx ? "grid" : "hidden"
+                            }`}
+                          >
+                            {item.subMenu.map((subItem, subIdx) => (
+                              <li key={subIdx}>
+                                <Link
+                                  href={subItem.path}
+                                  className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-left"
+                                >
+                                  {subItem.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : (
+                        <div className="text-l">{item.title}</div>
+                      )}
                     </Link>
                   </li>
                 ))}

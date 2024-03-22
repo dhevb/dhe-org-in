@@ -21,7 +21,7 @@
     "@mui/icons-material": "^5.15.3",
     "@mui/material": "^5.15.3",
     "@mui/styled-engine-sc": "^6.0.0-alpha.11",
-    "antd": "^5.13.2",
+    "antd": "^5.15.3",
     "firebase": "^10.7.2",
     "heroicons-react": "^1.4.1",
     "next": "13.5.4",
