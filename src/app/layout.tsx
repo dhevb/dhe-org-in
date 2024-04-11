@@ -69,6 +69,7 @@ export default function RootLayout({
      
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>
           Department of Holistic Education - Vidya Bharti
@@ -77,7 +78,7 @@ export default function RootLayout({
           name="keywords"
           content="Department of Holistic Education,holistic department, DHE ,Vidya Bharti, National Conference on Recent Advances in School Education, Rase"
         />
-        <meta name="description" content="Joint Conference" />
+        <meta name="description" content="Welcome to DHE" />
         <meta httpEquiv="cache-control" content="no-cache" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="-1" />
