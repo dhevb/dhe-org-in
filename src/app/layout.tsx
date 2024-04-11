@@ -69,7 +69,7 @@ export default function RootLayout({
      
         <meta http-equiv="refresh" content="1000" />
         <meta charSet="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="icon" href="/dhe.png" sizes="any" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>
           Department of Holistic Education - Vidya Bharti
