@@ -35,6 +35,12 @@ const menus: Menu[] = [
     path: "/contact",
     title: "Contact Us",
   },
+  
+  {
+    path: "/workshop",
+    title: "Workshop",
+  },
+
   {
     path: "/",
     title: "Forms",
