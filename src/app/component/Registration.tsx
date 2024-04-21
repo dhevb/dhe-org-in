@@ -1,142 +1,324 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "@/app/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/app/firebase";
+import toast, { Toaster } from "react-hot-toast";
+interface WorkShopData {
+  name: string;
+  Address: string;
+  email: string;
+  PhoneNumber: string;
+  School: string;
+  Services: string;
+  type: string;
+  Attachments: string;
+  class?: string;
+  select: string;
+}
 
-const Registration: React.FC = () => {
-    const [modal, setModal] = useState(false); 
-    const toggleModal = () => {
-        setModal(!modal)
+const Registration = () => {
+  const initialFormData: WorkShopData = {
+    name: "",
+    Address: "",
+    email: "",
+    PhoneNumber: "",
+    School: "",
+    Services: "",
+    type: "",
+    class: "",
+    Attachments: "",
+    select: "",
+  };
+
+  const [formData, setFormData] = useState<WorkShopData>(initialFormData);
+  const [image, setImage] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false); // Add loading state
+
+  const handleInputChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const selectedImage = e.target.files?.[0];
+    if (selectedImage) {
+      setImage(selectedImage);
     }
-    useEffect(() => {
-        if (modal) {
-            document.body.classList.add("active-modal");
-        } else {
-            document.body.classList.remove("active-modal");
-        }
+  };
 
-        return () => {
-            document.body.classList.remove("active-modal");
-        };
-    }, [modal]); 
+  const handleAddDocument = async (downloadURL: string | null) => {
+    try {
+      const docRef = await addDoc(collection(db, "Workshop"), {
+        ...formData,
+        feeReceipt: downloadURL,
+      });
+      console.log("Document added with ID:", docRef.id);
+      setLoading(false);
+      setFormData(initialFormData);
+      toast.success(
+        "Congratulations you have successfully enrolled for one-day workshop! "
+      );
+    } catch (error) {
+      setLoading(false);
+      toast.error("Something broke while registration!");
+      console.error("Error adding document:", error);
+    }
+  };
+
+  const validateForm = () => {
+    const {
+      name,
+      Address,
+      email,
+      PhoneNumber,
+      School,
+      Services,
+      type,
+      Attachments,
+      class: classField,
+      select,
+    } = formData;
+
+    // Check if any field is empty
+    if (
+      !name ||
+      !Address ||
+      !email ||
+      !PhoneNumber ||
+      !School ||
+      !Services ||
+      !type ||
+      !Attachments ||
+      !classField ||
+      !select
+    ) {
+      toast.error("All fields are required");
+      return false;
+    }
+
+    // Check if email contains "@gmail.com"
+    if (!email.includes("@gmail.com")) {
+      toast.error("Email must be a valid Gmail address");
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    setLoading(true);
+
+    if (!validateForm()) {
+      setLoading(false);
+      return;
+    }
+
+    const membershipFee = formData.type === "vb" ? 2500 : 1000;
+
+    if (image) {
+      try {
+        const imageRef = ref(storage, `images/${image.name}`);
+        await uploadBytes(imageRef, image);
+
+        const downloadURL = await getDownloadURL(imageRef);
+
+        setFormData((prevData) => ({
+          ...prevData,
+          feeReceipt: downloadURL || "",
+          fee: membershipFee,
+        }));
+
+        // Add document to Firestore
+        handleAddDocument(downloadURL);
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        setLoading(false);
+      }
+    } else {
+      // Add document to Firestore without image
+      handleAddDocument(null);
+    }
+
+    // Perform actions with the form data and updated image URL
+    console.log(formData);
+  };
+
   return (
-    <div className="mx-6 sm:mx-14 my-6 border-2 border-blue-400 rounded-lg ">
-      <div className="mt-6 text-center text-3xl sm:text-4xl font-bold text-primary">
-        Registration Form
-      </div>
-      <div className="p-4 sm:p-8">
-        <div className="flex flex-col  sm:flex-row gap-4">
-          <input
-            type="Name"
-            name="name"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="Full Name *"
-          />
-          <input
-            type="Name"
-            name="name"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="School Name *"
-          />
-        </div>
-        <div className="my-6 flex flex-col  sm:flex-row gap-4">
-          <input
-            type="tel"
-            name="text"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="Mobile No. *"
-          />
-          <input
-            type="email"
-            name="email"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="Email *"
-          />
-        </div>
-        <label className="my-6 flex flex-col  sm:flex-row gap-4">
-          <select
-            name="select"
-            id="select"
-            className="block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-500 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-          >
-            <option className="font-semibold text-slate-300">Type</option>
-
-            <option className="font-semibold text-slate-300">School</option>
-            <option className="font-semibold text-slate-300">Teacher</option>
-          </select>
-          <input
-            type="Name"
-            name="name"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="Class *"
-          />
-        </label>
-        <label className="my-6 flex flex-col  sm:flex-row gap-4">
-          <select
-            name="select"
-            id="select"
-            className="block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 font-semibold text-gray-500 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-          >
-            <option className="font-semibold text-slate-300">How did you come to know about workshop: </option>
-
-            <option className="font-semibold text-slate-300">Social Media</option>
-            <option className="font-semibold text-slate-300">Through School</option>
-            <option className="font-semibold text-slate-300">Friend</option>
-          </select>
-          <input
-            type="text"
-            name="name"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="Address *"
-          />
-        </label>
-        <div className="flex gap-4">
-          
-          <input
-            type="email"
-            name="email"
-            className="my-1 block w-full sm:w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 text-sm"
-            placeholder="Payable Amount 500/- "
-          />
-        </div>
-        {/* <div>
-          <textarea
-            name="textarea"
-            id="text"
-            cols={30}
-            rows={10}
-            className="mb-10 h-40 w-full resize-none rounded-md border border-slate-300 p-5 font-semibold text-gray-300"
-            placeholder="Message"
-          ></textarea>
-        </div> */}
-        
-        <div className="pt-10 text-center">
-          <button 
-          onClick={toggleModal}
-          className="cursor-pointer rounded-lg bg-primary-color px-8 py-5 text-sm font-semibold text-white">
-            Click to Pay
-          </button>
-          
-        </div>
-         {modal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none">
-          <div className="fixed inset-0 bg-black opacity-60" onClick={toggleModal}></div>
-          <div className="relative p-4 w-auto max-w-3xl">
-            {/* Content of modal */}
-            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              {/* Modal header */}
-              <div className="flex justify-end p-2">
-                <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" onClick={toggleModal}>
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                </button>
-              </div>
-              {/* Modal body */}
-              <div className="p-6 text-center">
-                <Image src="/fee.png" alt="fee" width={500} height={500} />
-              </div>
-            </div>
+    <div className="bg-white mb-5">
+      <div className=" shadow-md rounded-md md:w-1/3 mx-auto pt-8 bg-white text-black">
+        <h1 className="text-primary text-center text-xl ">
+          Workshop Registration
+        </h1>
+        <form onSubmit={handleSubmit} className="bg-white p-4">
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="*Your full name*"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+              className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+            />
           </div>
-        </div>
-      )}
+
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              placeholder="*your@example.com*"
+              onChange={handleInputChange}
+              required
+              className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              name="PhoneNumber"
+              placeholder="*1234567890*"
+              value={formData.PhoneNumber}
+              onChange={handleInputChange}
+              required
+              className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              School Name
+            </label>
+            <input
+              type="tel"
+              name="School"
+              value={formData.School}
+              placeholder="*ABC high School*"
+              onChange={handleInputChange}
+              required
+              className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              {" "}
+              Address
+            </label>
+            <input
+              name="Address"
+              type="text"
+              value={formData.Address}
+              placeholder="*Street, City, State, Country*"
+              onChange={handleInputChange}
+              required
+              className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              How did you come to know about the workshop:
+            </label>
+            <select
+              name="select"
+              value={formData.select}
+              onChange={handleInputChange}
+              required
+              className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+            >
+              <option value="">Select Option</option>
+              <option value="Social Media">Social Media</option>
+              <option value="Through School">Through School</option>
+              <option value="Friend">Friend</option>
+            </select>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-600">
+              Type
+              <select
+                name="type"
+                value={formData.type}
+                onChange={handleInputChange}
+                required
+                className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+              >
+                <option value="">Select Type</option>
+                <option value="vb">Student</option>
+                <option value="nvb">Teacher/Principle</option>
+                <option value="mvb">Management</option>
+              </select>
+            </label>
+          </div>
+
+          {formData.type && (
+            <>
+              {formData.type === "vb" && (
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-600">
+                    Class
+                  </label>
+                  <input
+                    type="text"
+                    name="class"
+                    value={formData.class}
+                    placeholder="*Your class*"
+                    onChange={handleInputChange}
+                    required
+                    className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
+                  />
+                </div>
+              )}
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-600">
+                  <b>₹: {formData.type === "vb" ? 500 : 1000}</b>
+                  <img className="p-2" src="/fee.png" alt="Fee" />
+                </label>
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-gray-600">
+                  Upload Payment Receipt
+                </label>
+                <input
+                  type="file"
+                  name="Attachments"
+                  accept=".pdf, .png, .jpg"
+                  onChange={handleImageChange}
+                  required
+                  className="mt-4 p-2 block w-full rounded-md border-gray-300 text-black bg-white"
+                />
+              </div>
+            </>
+          )}
+
+          <button
+            type="submit"
+            className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-color transition duration-300 mt-4 w-full"
+            disabled={loading} // Disable the button when loading
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );
