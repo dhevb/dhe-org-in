@@ -24,7 +24,7 @@ const menus: Menu[] = [
       { path: "/advisory", title: "Advisory Council" },
       { path: "/committee", title: "LMC Members" },
       { path: "/people", title: "Cell Co-ordinators" },
-      { path: "/Members", title: "Members" },
+      // { path: "/Members", title: "Members" },
     ],
   },
 
@@ -35,21 +35,25 @@ const menus: Menu[] = [
     path: "/contact",
     title: "Contact Us",
   },
-  
+
   {
-    path: "/workshop",
-    title: "Workshop",
+    path: "/",
+    title: "Events",
+    subMenu: [
+      { path: "/workshop", title: "Workshop" },
+      { path: "/", title: "Rase Conferences 2024" },
+      { path: "/", title: "Seminar" },
+    ],
   },
 
   {
     path: "/",
     title: "Forms",
     subMenu: [
-      {path: "/contribute", title: "Membership Form"},
-      {path: "/registrationForm", title:"Registration Form"}
-    ]
+      { path: "/contribute", title: "Membership Form" },
+      { path: "/registrationForm", title: "Registration Form" },
+    ],
   },
-  
 ];
 
 const Header: React.FC = () => {
@@ -67,7 +71,7 @@ const Header: React.FC = () => {
   return (
     <header className="pt-1 w-full">
       <div className="w-full mx-auto flex flex-col lg:flex lg:flex-row items-center justify-between">
-        <nav className="w-full text-white text-xl">
+        <nav className="w-full text-white text-center text-xl">
           <div className="items-center px-4 md:flex md:px-0">
             <div className="flex items-center justify-between py-0 md:block">
               <div className={`md:hidden order-1`}>
@@ -135,7 +139,7 @@ const Header: React.FC = () => {
                         <div className="cursor-pointer">
                           <span className="text-l">{item.title}</span>
                           <ul
-                            className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-white z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
+                            className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-[#FFEAE3] z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
                               subMenuIndex === idx ? "grid" : "hidden"
                             }`}
                           >

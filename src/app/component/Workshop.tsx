@@ -10,13 +10,13 @@ const Workshop = () => {
         </h2>
         <h2 className="text-xl font-bold mb-4 justify-between">
           Innovation and Entrepreneurship for School Students, Teachers and Atal
-          Tinkering Labs’ Co-ordinators
+          Tinkering Labs&apos; Co-ordinators
         </h2>
         <ul className="list-none pl-2 mb-6 text-justify pr-2">
           <li>
-            We are thrilled to announce a One-Day Workshop on "Innovation and
+            We are thrilled to announce a One-Day Workshop on &quot;Innovation and
             Entrepreneurship for School Students, Teachers and Atal Tinkering
-            Labs’ Co-ordinators" organized jointly by the Department of Holistic
+            Labs&apos; Co-ordinators&quot; organized jointly by the Department of Holistic
             Education (DHE) and CSIR-Central Scientific Instruments Organisation
             (CSIO) under the CSIR-CSIO Skill Integrated Initiative and PRISM
             Scheme.
@@ -55,7 +55,7 @@ const Workshop = () => {
         <ul className="list-decimal pl-6 mb-6">
           <li>Students (Grades 9-12)</li>
           <li>ATL Labs Coordinators</li>
-          <li>Science Teachers (TGT & PGT) from Tricity Schools</li>
+          <li>Science Teachers (TGT &amp; PGT) from Tricity Schools</li>
         </ul>
         <h2 className="text-2xl font-bold mb-4 text-red-800">
           Tentative Schedule of Workshop
@@ -80,7 +80,7 @@ const Workshop = () => {
           <h6 className="text-xl font-bold">Session-6</h6>
           <li>Visit of Mechatronics/Electronics Labs at CSIO Chandigarh</li>
           <h6 className="text-xl font-bold">Session-7</h6>
-          <li>Q&A and Networking</li>
+          <li>Q&amp;A and Networking</li>
         </ul>
         <h2 className="text-xl">
           For registration,{" "}
