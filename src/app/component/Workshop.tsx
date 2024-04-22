@@ -98,9 +98,63 @@ const Workshop = () => {
           <h6 className="text-xl font-bold">Session-7</h6>
           <li>Q&amp;A and Networking</li>
         </ul>
+        <h6 className="text-xl font-bold mb-4">Event Coordinators</h6>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-11/12 table-auto py-2">
+            <thead>
+              <tr className="bg-primary-color">
+                <th className="w-1/2 sm:w-1/5 px-1 py-2 border text-left text-white">
+                  Name
+                </th>
+                <th className="w-1/2 sm:w-1/5 px-1 py-2 border text-left text-white">
+                  Designation
+                </th>
+                <th className="w-1/2 sm:w-1/5 px-1 py-2 border text-left text-white">
+                  Contact
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  Dr. Pooja Devi
+                </td>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  Principal Scientist, CSIO, Chandigarh
+                </td>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  <a className="text-primary font-bold hover:text-blue-950" href="tel:7837907516" >7837907516</a> 
+                </td>
+              </tr>
+              <tr>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  Dr. Narinder Singh
+                </td>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  Principal Scientist and CAIR Integrated Skill Initiative Co-ordinator
+                </td>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  <a className="text-primary font-bold hover:text-blue-950" href="tel:7627888222">7627888222</a> 
+                </td>
+              </tr>
+              <tr>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  Mr. Ramendra Singh
+                </td>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  Co-ordinator, DHE
+                </td>
+                <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+                  <a className="text-primary font-bold hover:text-blue-950" href="tel:7903431900" >7903431900</a> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="font-semibold">For registration and further information, please contact above mentioned numbers</p>
         <h2 className="text-xl">
           For registration,{" "}
-          <a className="font-bold text-red-800" href="./registrationForm">
+          <a className="font-bold text-red-800 hover:text-blue-900" href="./registrationForm">
             click here
           </a>
         </h2>
