@@ -1,5 +1,7 @@
 import React from "react";
 import MemberShipForm from "./MemberShipForm";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Workshop = () => {
   return (
@@ -8,18 +10,32 @@ const Workshop = () => {
         <h2 className="text-2xl font-bold mb-4 text-red-950 text-center">
           Workshop Announcement
         </h2>
+        <Carousel>
+          <div className="h-[25vh] pl-1 pr-1 md:h-[60vh]">
+            <img src="/14.jpg" alt="" />
+          </div>
+          <div className="h-[25vh] pl-1 pr-1 md:h-[60vh]">
+            <img src="/15.jpg" alt="" />
+          </div>
+          <div className="h-[25vh] pl-1 pr-1 md:h-[60vh]">
+            <img src="/16.jpg" alt="" />
+          </div>
+          <div className="h-[25vh] pl-1 pr-1 md:h-[60vh]">
+            <img src="/17.jpg" alt="" />
+          </div>
+        </Carousel>
         <h2 className="text-xl font-bold mb-4 justify-between">
           Innovation and Entrepreneurship for School Students, Teachers and Atal
           Tinkering Labs&apos; Co-ordinators
         </h2>
         <ul className="list-none pl-2 mb-6 text-justify pr-2">
           <li>
-            We are thrilled to announce a One-Day Workshop on &quot;Innovation and
-            Entrepreneurship for School Students, Teachers and Atal Tinkering
-            Labs&apos; Co-ordinators&quot; organized jointly by the Department of Holistic
-            Education (DHE) and CSIR-Central Scientific Instruments Organisation
-            (CSIO) under the CSIR-CSIO Skill Integrated Initiative and PRISM
-            Scheme.
+            We are thrilled to announce a One-Day Workshop on &quot;Innovation
+            and Entrepreneurship for School Students, Teachers and Atal
+            Tinkering Labs&apos; Co-ordinators&quot; organized jointly by the
+            Department of Holistic Education (DHE) and CSIR-Central Scientific
+            Instruments Organisation (CSIO) under the CSIR-CSIO Skill Integrated
+            Initiative and PRISM Scheme.
           </li>
           <br />
           <li>
