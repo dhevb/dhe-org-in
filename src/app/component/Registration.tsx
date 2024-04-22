@@ -1,10 +1,11 @@
 "use client";
-import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "@/app/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/app/firebase";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+
 interface WorkShopData {
   name: string;
   Address: string;
@@ -14,7 +15,7 @@ interface WorkShopData {
   Services: string;
   type: string;
   Attachments: string;
-  class?: string;
+  class: string;
   select: string;
 }
 
@@ -34,8 +35,7 @@ const Registration = () => {
 
   const [formData, setFormData] = useState<WorkShopData>(initialFormData);
   const [image, setImage] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false); 
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -73,54 +73,9 @@ const Registration = () => {
     }
   };
 
-  const validateForm = () => {
-    const {
-      name,
-      Address,
-      email,
-      PhoneNumber,
-      School,
-      Services,
-      type,
-      Attachments,
-      class: classField,
-      select,
-    } = formData;
-
-    // Check if any field is empty
-    if (
-      !name ||
-      !Address ||
-      !email ||
-      !PhoneNumber ||
-      !School ||
-      !Services ||
-      !type ||
-      !Attachments ||
-      !classField ||
-      !select
-    ) {
-      toast.error("All fields are required");
-      return false;
-    }
-
-    // Check if email contains "@gmail.com"
-    if (!email.includes("@gmail.com")) {
-      toast.error("Email must be a valid Gmail address");
-      return false;
-    }
-
-    return true;
-  };
-
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
-
-    if (!validateForm()) {
-      setLoading(false);
-      return;
-    }
 
     const membershipFee = formData.type === "vb" ? 2500 : 1000;
 
@@ -137,18 +92,15 @@ const Registration = () => {
           fee: membershipFee,
         }));
 
-        // Add document to Firestore
         handleAddDocument(downloadURL);
       } catch (error) {
         console.error("Error uploading image:", error);
         setLoading(false);
       }
     } else {
-      // Add document to Firestore without image
       handleAddDocument(null);
     }
 
-    // Perform actions with the form data and updated image URL
     console.log(formData);
   };
 
@@ -169,7 +121,6 @@ const Registration = () => {
               placeholder="*Your full name*"
               value={formData.name}
               onChange={handleInputChange}
-              required
               className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
             />
           </div>
@@ -184,7 +135,6 @@ const Registration = () => {
               value={formData.email}
               placeholder="*your@example.com*"
               onChange={handleInputChange}
-              required
               className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
             />
           </div>
@@ -199,7 +149,6 @@ const Registration = () => {
               placeholder="*1234567890*"
               value={formData.PhoneNumber}
               onChange={handleInputChange}
-              required
               className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
             />
           </div>
@@ -214,7 +163,6 @@ const Registration = () => {
               value={formData.School}
               placeholder="*ABC high School*"
               onChange={handleInputChange}
-              required
               className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
             />
           </div>
@@ -230,7 +178,6 @@ const Registration = () => {
               value={formData.Address}
               placeholder="*Street, City, State, Country*"
               onChange={handleInputChange}
-              required
               className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
             />
           </div>
@@ -242,7 +189,6 @@ const Registration = () => {
               name="select"
               value={formData.select}
               onChange={handleInputChange}
-              required
               className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
             >
               <option value="">Select Option</option>
@@ -259,7 +205,6 @@ const Registration = () => {
                 name="type"
                 value={formData.type}
                 onChange={handleInputChange}
-                required
                 className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
               >
                 <option value="">Select Type</option>
@@ -283,7 +228,6 @@ const Registration = () => {
                     value={formData.class}
                     placeholder="*Your class*"
                     onChange={handleInputChange}
-                    required
                     className="mt-4 p-2 block w-full rounded-md border border-gray-300 text-black"
                   />
                 </div>
@@ -304,7 +248,6 @@ const Registration = () => {
                   name="Attachments"
                   accept=".pdf, .png, .jpg"
                   onChange={handleImageChange}
-                  required
                   className="mt-4 p-2 block w-full rounded-md border-gray-300 text-black bg-white"
                 />
               </div>
