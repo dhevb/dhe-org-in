@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 type Menu = {
   path: string;
@@ -136,18 +135,23 @@ const Header: React.FC = () => {
                       className="text-l block w-full h-full"
                     >
                       {item.subMenu ? (
-                        <div className="cursor-pointer">
+                        <div className="relative">
                           <span className="text-l">{item.title}</span>
                           <ul
-                            className={`absolute left-0 px-10 md:px-5 mt-2 space-y-2 text-black bg-[#FFEAE3] z-10 w-full grid grid-cols-1 md:grid-cols-3 md:w-11/12 md:gap-2 ${
-                              subMenuIndex === idx ? "grid" : "hidden"
+                            className={`absolute left-0 px-10 md:px-5 mt-2 h-30 space-y-2 text-base text-black bg-red-50 z-10 w-full md:w-80 md:max-w-xs ${
+                              subMenuIndex === idx ? "block" : "hidden"
                             }`}
+                            style={{ minHeight: "3rem", padding: "0.5rem 0" }}
                           >
                             {item.subMenu.map((subItem, subIdx) => (
-                              <li key={subIdx}>
+                              <li key={subIdx} className="py-1">
                                 <Link
                                   href={subItem.path}
                                   className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-left"
+                                  style={{
+                                    display: "block",
+                                    whiteSpace: "nowrap",
+                                  }}
                                 >
                                   {subItem.title}
                                 </Link>

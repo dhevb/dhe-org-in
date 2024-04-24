@@ -35,7 +35,7 @@ const Registration = () => {
 
   const [formData, setFormData] = useState<WorkShopData>(initialFormData);
   const [image, setImage] = useState<File | null>(null);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -232,9 +232,23 @@ const Registration = () => {
                   />
                 </div>
               )}
+              <div className="text-sm text-gray-600 mb-4">
+                Note: Registration will be valid only if you upload the payment
+                receipt successfully. The registration amount displayed above
+                the "Pay Now" button must be paid. Without that, the
+                registration will be canceled.
+              </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-600">
                   <b>₹: {formData.type === "vb" ? 500 : 1000}</b>
+                  {/* <a
+                    href="https://pay.jodo.in/pages/KFEUFQRASGBHzBk2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-color transition duration-300 mt-2 block text-center"
+                  >
+                    Pay Now
+                  </a> */}
                   <img className="p-2" src="/fee.png" alt="Fee" />
                 </label>
               </div>
@@ -257,7 +271,7 @@ const Registration = () => {
           <button
             type="submit"
             className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-color transition duration-300 mt-4 w-full"
-            disabled={loading} // Disable the button when loading
+            disabled={loading}
           >
             Submit
           </button>
