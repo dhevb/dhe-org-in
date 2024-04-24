@@ -235,7 +235,7 @@ const Registration = () => {
               <div className="text-sm text-gray-600 mb-4">
                 Note: Registration will be valid only if you upload the payment
                 receipt successfully. The registration amount displayed above
-                the "Pay Now" button must be paid. Without that, the
+                the &#34;Pay Now&#34; button must be paid. Without that, the
                 registration will be canceled.
               </div>
               <div className="mb-4">

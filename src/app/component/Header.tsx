@@ -39,9 +39,9 @@ const menus: Menu[] = [
     path: "/",
     title: "Events",
     subMenu: [
-      { path: "/workshop", title: "Workshop" },
+      { path: "/workshop", title: "Workshops" },
       { path: "/", title: "Rase Conferences 2024" },
-      { path: "/", title: "Seminar" },
+      { path: "/", title: "Seminars" },
     ],
   },
 
