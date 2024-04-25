@@ -7,9 +7,40 @@ import {
   faLinkedin,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image";
+import { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/app/firebase";
+import toast from "react-hot-toast";
+
+
 
 const BottomView: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      
+      const docRef = await addDoc(collection(db, "contactMessages"), {
+        email,
+        message,
+        timestamp: new Date(),
+      });
+      
+     
+      setEmail("");
+      setMessage("");
+
+    
+      toast.success("Message sent successfully!");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("Failed to send message. Please try again later.");
+    }
+  };
+
   return (
     <div>
       {/* Footer */}
@@ -209,7 +240,7 @@ const BottomView: React.FC = () => {
                 <h6 className="mb-3 flex justify-center font-bold uppercase md:justify-start text-black ">
                   Contact Us
                 </h6>
-                <form className="max-w-lg mx-auto mb-2">
+                <form className="max-w-lg mx-auto mb-2" onSubmit={handleSubmit}>
                   <div className="mb-0">
                     <label
                       className="block text-sm font-bold mb-1 text-black "
@@ -218,11 +249,14 @@ const BottomView: React.FC = () => {
                       Your Email
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full border rounded-md py-2 px-2 text-black "
-                      placeholder="abc@example.com"
+                       type="email"
+                       id="email"
+                       name="email"
+                       className="w-full border rounded-md py-2 px-2 text-black"
+                       placeholder="abc@example.com"
+                       value={email}
+                       onChange={(e) => setEmail(e.target.value)}
+                       required
                     />
                   </div>
                   <div className="mb-0">
@@ -238,6 +272,9 @@ const BottomView: React.FC = () => {
                       rows={1}
                       className="w-full border rounded-md py-2 px-2"
                       placeholder="Your message here"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
                     ></textarea>
                   </div>
                   <button
