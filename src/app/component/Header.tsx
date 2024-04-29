@@ -53,6 +53,10 @@ const menus: Menu[] = [
       { path: "/registrationForm", title: "Registration Form" },
     ],
   },
+  {
+    path: "/donation",
+    title: "Donation",
+  },
 ];
 
 const Header: React.FC = () => {
