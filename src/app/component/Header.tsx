@@ -142,7 +142,7 @@ const Header: React.FC = () => {
                         <div className="relative">
                           <span className="text-l">{item.title}</span>
                           <ul
-                            className={`absolute left-0 px-10 md:px-5 mt-2 h-30 space-y-2 text-base text-black bg-red-50 z-10 w-full md:w-80 md:max-w-xs ${
+                            className={`absolute left-0 px-10 md:px-5 mt-2 h-30 space-y-2 text-base text-black bg-red-50 z-10 w-auto md:w-80 md:max-w-xs ${
                               subMenuIndex === idx ? "block" : "hidden"
                             }`}
                             style={{ minHeight: "3rem", padding: "0.5rem 0" }}

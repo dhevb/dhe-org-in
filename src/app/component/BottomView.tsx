@@ -44,11 +44,11 @@ const BottomView: React.FC = () => {
   return (
     <div>
       {/* Footer */}
-      <footer className="bg-[#f8e6e1] text-center text-black lg:text-left">
+      <footer className="bg-[#171717] text-center text-white lg:text-left m-auto">
         {/* DHE's logos */}
-        <div className="flex flex-wrap justify-between items-center text-center border-b-2 border-gray-700 p-2 lg:justify-between">
+        <div className="bg-[#2a2a2a] flex flex-wrap justify-between items-center text-center border-b-2 border-gray-700 p-2 lg:justify-between">
           <hr />
-          <div className=" items-start mr-auto ml-2 mb-3 lg:block text-black font-bold">
+          <div className=" text-lg items-start mr-auto ml-2 lg:block text-white font-bold justify-center">
             <span>Department of Holistic Education</span>
           </div>
           {/* Logos */}
@@ -179,28 +179,28 @@ const BottomView: React.FC = () => {
         <div className=" p-3 m-6 text-center md:text-left">
           <div className="flex flex-row flex-wrap justify-between">
             {/* Help section */}
-            <div className="flex flex-col text-center">
-              <h6 className="mb-3 text-center justify-center font-bold uppercase md:justify-center text-black ">
+            <div className="flex flex-col text-center mb-4">
+              <h6 className="mb-4 text-center justify-center font-bold uppercase md:justify-center text-white ">
                 Quick Links
               </h6>
               <div className="flex flex-row">
                 <div className="text-left lg:block mr-4">
-                  <p className="text-black mb-3 ">
+                  <p className="text-white mb-3 ">
                     <Link href="/" className="hover:text-primary">
                       Home
                     </Link>
                   </p>
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link href="" className="hover:text-primary">
                       About Us
                     </Link>
                   </p>
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link href="/" className="hover:text-primary">
                       Projects
                     </Link>
                   </p>
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link
                       href="https://rase.co.in/"
                       className="hover:text-primary"
@@ -211,22 +211,22 @@ const BottomView: React.FC = () => {
                 </div>
 
                 <div className="text-left lg:block">
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link href="" className="hover:text-primary">
                       Skill Development
                     </Link>
                   </p>
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link href="/contact" className="hover:text-primary">
                       Contact Us
                     </Link>
                   </p>
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link href="" className="hover:text-primary">
                       Vacancies
                     </Link>
                   </p>
-                  <p className="text-black mb-3">
+                  <p className="text-white mb-3">
                     <Link href="" className="hover:text-primary">
                       Vidya Bharti Alumni
                     </Link>
@@ -236,14 +236,14 @@ const BottomView: React.FC = () => {
             </div>
             {/* Contact section */}
             <div>
-              <div className="md:w-48 lg:w-64 pl-4 pr-4 font-semibold mb-4">
-                <h6 className="mb-3 flex justify-center font-bold uppercase md:justify-start text-black ">
+              <div className="ml-4 mb-4 md:w-full flex flex-col lg:w-full lg:ml-0 pl-4 pr-4 justify-center font-semibold">
+                <h6 className="mb-3 flex justify-center font-bold uppercase md:justify-start text-white ">
                   Contact Us
                 </h6>
                 <form className="max-w-lg mx-auto mb-2" onSubmit={handleSubmit}>
                   <div className="mb-0">
                     <label
-                      className="block text-sm font-bold mb-1 text-black "
+                      className="block text-sm font-bold mb-1 text-white "
                       htmlFor="email"
                     >
                       Your Email
@@ -252,7 +252,7 @@ const BottomView: React.FC = () => {
                        type="email"
                        id="email"
                        name="email"
-                       className="w-full border rounded-md py-2 px-2 text-black"
+                       className="w-full border rounded-md py-2 px-2 text-white"
                        placeholder="abc@example.com"
                        value={email}
                        onChange={(e) => setEmail(e.target.value)}
@@ -261,7 +261,7 @@ const BottomView: React.FC = () => {
                   </div>
                   <div className="mb-0">
                     <label
-                      className="block text-sm font-bold mb-1 text-black "
+                      className="block text-sm font-bold mb-1 text-white "
                       htmlFor="message"
                     >
                       Message
@@ -290,7 +290,7 @@ const BottomView: React.FC = () => {
             {/* Follow Us and Map */}
             <div className="">
               {/* Follow Us */}
-              <h6 className="mb-3 flex justify-center font-semibold uppercase md:justify-start text-black">
+              <h6 className="mb-3 flex justify-center font-semibold uppercase md:justify-start text-white">
                 Follow Us
               </h6>
               {/* Include Map */}
@@ -310,7 +310,7 @@ const BottomView: React.FC = () => {
                 >
                   <FontAwesomeIcon
                     icon={faFacebook}
-                    className="text-black hover:text-blue-500 h-6 w-12"
+                    className="text-white hover:text-blue-500 h-6 w-12"
                   />
                 </a>
                 <a
@@ -321,7 +321,7 @@ const BottomView: React.FC = () => {
                   <FontAwesomeIcon
                     icon={faLinkedin}
                     size="lg"
-                    className="text-black hover:text-blue-500 h-6 w-12"
+                    className="text-white hover:text-blue-500 h-6 w-12"
                   />
                 </a>
                 <a
@@ -332,7 +332,7 @@ const BottomView: React.FC = () => {
                   <FontAwesomeIcon
                     icon={faInstagram}
                     size="lg"
-                    className="text-black hover:text-orange-500 h-6 w-12"
+                    className="text-white hover:text-orange-500 h-6 w-12"
                   />
                 </a>
                 <a
@@ -343,7 +343,7 @@ const BottomView: React.FC = () => {
                   <FontAwesomeIcon
                     icon={faXTwitter}
                     size="lg"
-                    className="text-black hover:text-blue-500 h-6 w-12"
+                    className="text-white hover:text-blue-500 h-6 w-12"
                   />
                 </a>
               </div>
@@ -352,7 +352,7 @@ const BottomView: React.FC = () => {
         </div>
 
         {/* Copyright section */}
-        <div className="bg-neutral-900 p-4 text-center ">
+        <div className="bg-[#2a2a2a] border-t-2 border-gray-700 p-4 text-center font-bold ">
           <span className="text-white">
             © {new Date().getFullYear()}{" "}
             <a
