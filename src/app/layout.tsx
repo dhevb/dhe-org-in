@@ -78,7 +78,7 @@ export default function RootLayout({
       <meta charSet="utf-8" />
       <link rel="icon" href="/dhe.png" sizes="any" />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <title>Department of Holistic Education - Vidya Bharti</title>
+      <title>Department of Holistic Education &minus; Vidya Bharti</title>
       <meta
         name="keywords"
         content="Department of Holistic Education,holistic department, DHE ,Vidya Bharti, National Conference on Recent Advances in School Education, Rase"
