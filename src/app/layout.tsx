@@ -8,10 +8,9 @@ import CompanyInfo from "./component/CompanyInfo";
 import Header from "./component/Header";
 import BottomView from "./component/BottomView";
 const inter = Inter({ subsets: ["latin"] });
-import  toast , { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Modal from "./component/Modal";
 import { useState, useEffect } from "react";
-
 
 interface CustomWindow extends Window {
   localStream?: MediaStream;
@@ -32,12 +31,15 @@ export default function RootLayout({
 
   const closeModal = () => {
     setIsModalOpen(false);
-  }; 
-   const handlePermission = async () => {
+  };
+  const handlePermission = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: false, audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: false,
+        audio: true,
+      });
       window.localStream = stream;
-      
+
       if (!window.localAudio) {
         window.localAudio = new Audio();
         document.body.appendChild(window.localAudio);
@@ -57,42 +59,50 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>{
-        process.env.NODE_ENV === "production" && (
-        <script 
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
-        crossOrigin="anonymous"></script>
+      <head>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4330032354977759"
+            crossOrigin="anonymous"
+          ></script>
         )}
-      <script async src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script async src="https://mediafiles.botpress.cloud/94a7b285-719e-4be3-8c2b-9b06c8702257/webchat/config.js" defer></script> </head>
-     
-        <meta http-equiv="refresh" content="1000" />
-        <meta charSet="utf-8" />
-        <link rel="icon" href="/dhe.png" sizes="any" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>
-          Department of Holistic Education - Vidya Bharti
-        </title>
-        <meta
-          name="keywords"
-          content="Department of Holistic Education,holistic department, DHE ,Vidya Bharti, National Conference on Recent Advances in School Education, Rase"
-        />
-        <meta name="description" content="Welcome to DHE" />
-        <meta httpEquiv="cache-control" content="no-cache" />
-        <meta httpEquiv="Pragma" content="no-cache" />
-        <meta httpEquiv="Expires" content="-1" />
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script
+          src="https://mediafiles.botpress.cloud/fa60123e-045a-48d8-862e-81258c3ccc9a/webchat/config.js"
+          defer
+        ></script>{" "}
+      </head>
 
-      <body className={inter.className} style={{ background: '#ffffff' }}>
-      <CompanyInfo/>
-    <Header />
+      <meta http-equiv="refresh" content="1000" />
+      <meta charSet="utf-8" />
+      <link rel="icon" href="/dhe.png" sizes="any" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Department of Holistic Education - Vidya Bharti</title>
+      <meta
+        name="keywords"
+        content="Department of Holistic Education,holistic department, DHE ,Vidya Bharti, National Conference on Recent Advances in School Education, Rase"
+      />
+      <meta name="description" content="Welcome to DHE" />
+      <meta httpEquiv="cache-control" content="no-cache" />
+      <meta httpEquiv="Pragma" content="no-cache" />
+      <meta httpEquiv="Expires" content="-1" />
+
+      <body className={inter.className} style={{ background: "#ffffff" }}>
+        <CompanyInfo />
+        <Header />
         {children}
         <BottomView />
-    
+
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <iframe  className="w-full h-full" src="https://www.youtube.com/embed/n4MShOzVT_s?si=d66BKGSw4OVD0Vcf&amp;controls=0&amp;start=1&amp;autoplay=1" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
-         </Modal>
-         <NextTopLoader
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/n4MShOzVT_s?si=d66BKGSw4OVD0Vcf&amp;controls=0&amp;start=1&amp;autoplay=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </Modal>
+        <NextTopLoader
           color="#F44336"
           initialPosition={0.08}
           crawlSpeed={200}
@@ -101,9 +111,8 @@ export default function RootLayout({
           showSpinner={false}
           shadow="0 0 10px #F44336,0 0 5px #F44336"
         />
-          <Toaster/>
+        <Toaster />
       </body>
-  
     </html>
   );
 }

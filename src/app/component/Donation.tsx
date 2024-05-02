@@ -13,7 +13,7 @@ interface DonationData {
   Amount: string;
 }
 
-const Registration = () => {
+const Donation = () => {
   const initialFormData: DonationData = {
     name: "",
     email: "",
@@ -25,9 +25,7 @@ const Registration = () => {
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (
-    event: ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -60,36 +58,52 @@ const Registration = () => {
       console.error("Error adding document:", error);
     }
   };
-  
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
 
-    if (image) {
-      try {
-        const imageRef = ref(storage, `images/${image.name}`);
-        await uploadBytes(imageRef, image);
-
-        const downloadURL = await getDownloadURL(imageRef);
-
-        setFormData((prevData) => ({
-          ...prevData,
-          feeReceipt: downloadURL || "",
-        }));
-
-        handleAddDocument(downloadURL);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        setLoading(false);
+    try {
+      // Validate form data
+      if (
+        !formData.name ||
+        !formData.email ||
+        !formData.PhoneNumber ||
+        !formData.Amount
+      ) {
+        throw new Error("Please fill in all required fields.");
       }
-    } else {
-      handleAddDocument(null);
+
+      // Check if an image is uploaded
+      if (!image) {
+        throw new Error("Please upload a donation receipt.");
+      }
+
+      // Upload image to storage
+      const imageRef = ref(storage, `images/${image.name}`);
+      await uploadBytes(imageRef, image);
+      const downloadURL = await getDownloadURL(imageRef);
+
+      // Add document to Firestore
+      await addDoc(collection(db, "Donation"), {
+        ...formData,
+        Attachments: downloadURL || "", // Include attachment URL in the string column
+      });
+
+      // Reset form data and show success message
+      setLoading(false);
+      setFormData(initialFormData);
+      toast.success(
+        "Thank you for your generous donation! Your support means a lot to us."
+      );
+    } catch (error) {
+      setLoading(false);
+      toast.error(
+        "Something went wrong while processing your donation: "
+      );
+      console.error("Error adding document:", error);
     }
-
-    console.log(formData);
   };
-
   return (
     <div className="bg-white mb-5">
       <div className=" shadow-md rounded-md md:w-1/3 mx-auto pt-8 bg-white text-black">
@@ -193,4 +207,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Donation;
