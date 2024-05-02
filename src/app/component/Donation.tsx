@@ -44,7 +44,7 @@ const Donation = () => {
     try {
       const docRef = await addDoc(collection(db, "Donation"), {
         ...formData,
-        Attachments: downloadURL || "", // Include attachment URL in the string column
+        Attachments: downloadURL || "", 
       });
       console.log("Document added with ID:", docRef.id);
       setLoading(false);
@@ -54,7 +54,7 @@ const Donation = () => {
       );
     } catch (error) {
       setLoading(false);
-      toast.error("Something broke while processing your donation!");
+      toast.error("Something broke while processing your donation");
       console.error("Error adding document:", error);
     }
   };

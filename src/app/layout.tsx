@@ -71,7 +71,7 @@ export default function RootLayout({
         <script
           src="https://mediafiles.botpress.cloud/fa60123e-045a-48d8-862e-81258c3ccc9a/webchat/config.js"
           defer
-        ></script>{" "}
+        ></script>
       </head>
 
       <meta http-equiv="refresh" content="1000" />
