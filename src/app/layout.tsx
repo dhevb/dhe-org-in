@@ -67,8 +67,9 @@ export default function RootLayout({
             crossOrigin="anonymous"
           ></script>
         )}
-        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script async src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
         <script
+          async
           src="https://mediafiles.botpress.cloud/fa60123e-045a-48d8-862e-81258c3ccc9a/webchat/config.js"
           defer
         ></script>
