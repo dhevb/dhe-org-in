@@ -99,7 +99,7 @@ const Donation = () => {
     } catch (error) {
       setLoading(false);
       toast.error(
-        "Something went wrong while processing your donation: "
+        "Please fill all feilds"
       );
       console.error("Error adding document:", error);
     }
