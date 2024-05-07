@@ -158,7 +158,7 @@ const Registration = () => {
               School Name
             </label>
             <input
-              type="tel"
+              type="text"
               name="School"
               value={formData.School}
               placeholder="*ABC high School*"
