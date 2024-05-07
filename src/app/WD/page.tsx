@@ -6,6 +6,7 @@ import * as XLSX from 'xlsx';
 import { useQRCode } from 'next-qrcode';
 import { jsPDF } from 'jspdf'; // Import jsPDF
 import autoTable from 'jspdf-autotable';
+import QRCode from 'qrcode';
 
 
 // Define the WorkshopData interface
@@ -17,12 +18,13 @@ interface WorkshopData {
   PhoneNumber: string;
 }
 
-const downloadAsPDF = (formDataList: WorkshopData[]) => {
+
+const downloadAsPDF = async (formDataList: WorkshopData[]) => {
   // Generate PDF
-  const doc = new jsPDF({ orientation: 'landscape' });
+  const doc = new jsPDF("landscape"); // No need to specify orientation here
   
   const tableColumn = ["Sr. No.", "Name", "Address", "Email", "Contact Number"];
-  const tableRows: string[][] = [];
+  const tableRows: any[][] = [];
 
   formDataList.forEach(formData => {
     const data = [
@@ -35,16 +37,45 @@ const downloadAsPDF = (formDataList: WorkshopData[]) => {
     tableRows.push(data);
   });
 
-  autoTable(doc, {
-    head: [tableColumn],
-    body: tableRows,
-    startY: 40,
-    theme: 'grid'
-  });
+  const pageHeight = doc.internal.pageSize.height;
+  let currentY = 40;
+  let currentRow = 0;
+
+  // Function to add QR code for a row
+  const addQRCodeForRow = async (formData: WorkshopData, yPos: number) => {
+    const qrCanvas = document.createElement('canvas');
+    await QRCode.toCanvas(qrCanvas, JSON.stringify(formData), { errorCorrectionLevel: 'M', margin: 3, scale: 4 });
+    const qrDataUrl = qrCanvas.toDataURL('image/png');
+    doc.addImage(qrDataUrl, 'PNG', 15, yPos - 3, 20, 20);
+  };
+
+  while (currentRow < formDataList.length) {
+    // Add row to table
+    autoTable(doc, {
+      head: [tableColumn],
+      body: [tableRows[currentRow]],
+      startY: currentY,
+      theme: 'grid'
+    });
+
+    // Add QR code for the current row
+    await addQRCodeForRow(formDataList[currentRow], currentY + 20);
+
+    // Move to the next row and adjust Y position
+    currentRow++;
+    currentY += 40; // increase for the row height and space for QR code
+
+    // Check if there's enough space for the next row and QR code
+    if (currentY + 40 > pageHeight) {
+      doc.addPage(); // No need to specify orientation here
+      currentY = 40; // reset Y position for new page
+    }
+  }
 
   // Save PDF
   doc.save('workshop_data.pdf');
 };
+
 
 
 const Page: React.FC = () => {
