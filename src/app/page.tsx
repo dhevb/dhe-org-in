@@ -7,6 +7,11 @@ import SlideShow from "./component/SlideShow";
 export default function Home() {
   const slides1 = [
     {
+      src:"/2024K/k6.jpg",
+      alt:"Dr. Thakur SKR, Sci/Engr-SF at ISRO and Director of the Department of Holistic Education & Vidya Bharti Institute of Training and Research, along with Prof. Rajeev Ahuja, Director of IIT Ropar, had the honor of meeting Smt. Droupadi Murmu, the Hon’ble President of India, regarding the Shiksha Mahakumbh 2024.",
+      legend:""
+    },
+    {
       src:"/R1.jpeg",
       alt:"DHE की HEI को-ऑर्डिनेशन सेल  ने मार्च 11, 2024 को राष्ट्रीय स्तर के संस्थान INST मोहाली के साथ शिक्षा के क्षेत्र में संयुक्त रूप से कार्य करने के लिए एक MoU साइन किया। IIT रोपड, NIT जालंधर, सेंट्रल यूनिवर्सिटी भटिंडा, DAV यूनिवर्सिटी जालंधर, के बाद DHE का ये पाँचवा MoU है। इस मौक़े पर विद्या भारती उत्तर क्षेत्र के संगठन मंत्री माननीय विजय नड्डा जी, ISRO के वरिष्ठ वैज्ञानिक एवं DHE & VBITR के निदेशक डॉक्टर सुदेश जी, INST के निदेशक प्रो. अमिताव पात्रा जी एवं INST में डीन डॉक्टर इंद्रनिल सरकार मौजूद रहे।",
       legend:""
