@@ -2,7 +2,7 @@ import React from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 import "tailwindcss/tailwind.css";
 
-const Structure = () => (
+const StructurePage = () => (
   <div className="flex justify-center p-4">
     <div className="text-white font-semibold text-sm overflow-x-auto">
       <Tree
@@ -298,4 +298,4 @@ const Structure = () => (
   </div>
 );
 
-export default Structure;
+export default StructurePage;
