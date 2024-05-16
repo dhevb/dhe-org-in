@@ -16,7 +16,7 @@ const DepartmentInfo: React.FC = () => {
         education, society, scientists, and other experts like advocates and
         chartered accountants. DHE was conceptualized in 2021 by visionary ISRO
         scientist Dr Thakur SKR under the guidance of educationist and social
-        reformer Shri Vijay Kumar Nadda, Organising Secretary, Vidya Bharti-
+        reformer Shri Vijay Kumar Nadda, Organising Secretary, Vidya Bharti&#45;
         North Zine as a pilot project under Vidya Bharti Punjab. Recognizing its
         remarkable growth and contributions to education, it was elevated to an
         independent organization under the auspices of Vidya Bharti Institute of
@@ -28,7 +28,7 @@ const DepartmentInfo: React.FC = () => {
         Currently, DHE operates under the trust's umbrella. With 25 dedicated
         cells led by coordinators, DHE spearheads various initiatives aimed at
         transforming the education system. These include groundbreaking projects
-        such as E-cycle, Punjab Super 100, Tredul, Sarvatr, Holistic Harbour,
+        such as E&#45;cycle, Punjab Super 100, Tredul, Sarvatr, Holistic Harbour,
         PoojaWala, TuDu, Swadeshi Bazaar, Jobs360o. DHE has also revived the
         glorious saga of having dedicated Kumbh/Mahkumbh for each major issue of
         society prevailing in ancient Bharat by creating annual large scale
@@ -38,7 +38,7 @@ const DepartmentInfo: React.FC = () => {
         range of educational topics to make Bharat a self reliant hub in terms
         of educational and scientific publication. The Department comprises 310
         professionals from diverse backgrounds who are volunteering their
-        service to shape the nation through education apart from 4 full-time
+        service to shape the nation through education apart from 4 full&#45;time
         employees and 20 graduate engineer trainees.
       </p>
     </div>
