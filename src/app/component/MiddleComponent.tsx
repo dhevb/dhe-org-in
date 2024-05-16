@@ -34,7 +34,7 @@ const DepartmentInfo: React.FC = () => {
         society prevailing in ancient Bharat by creating annual large scale
         events in the form of Shiksha Mahakumbh and Shiksha Kumbh, attracting
         dignitaries and stakeholders from diverse fields. Additionally, DHE laid
-        foundation of a quarterly journal called "Viksit India," covering a wide
+        foundation of a quarterly journal called &#149;Viksit India,&#148; covering a wide
         range of educational topics to make Bharat a self reliant hub in terms
         of educational and scientific publication. The Department comprises 310
         professionals from diverse backgrounds who are volunteering their
