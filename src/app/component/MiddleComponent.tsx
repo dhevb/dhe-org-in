@@ -8,7 +8,7 @@ const DepartmentInfo: React.FC = () => {
       </h1>
 
       <p className="text-justify text-black">
-        The foundation of the Department of Holistic Education (DHE) is rooted
+        The foundation of the Department of Holistic Education &#40;DHE&#41; is rooted
         in the ideology that education should extend beyond academic
         institutions. Vidya Bharti, the largest educational NGO globally,
         established a dedicated think tank Department comprising professionals
