@@ -25,7 +25,7 @@ const DepartmentInfo: React.FC = () => {
       <br />
 
       <p className="text-justify text-black">
-        Currently, DHE operates under the trust&#146;s umbrella. With 25 dedicated
+        Currently, DHE operates under the trust&apos;s umbrella. With 25 dedicated
         cells led by coordinators, DHE spearheads various initiatives aimed at
         transforming the education system. These include groundbreaking projects
         such as E&#45;cycle, Punjab Super 100, Tredul, Sarvatr, Holistic Harbour,
@@ -34,7 +34,7 @@ const DepartmentInfo: React.FC = () => {
         society prevailing in ancient Bharat by creating annual large scale
         events in the form of Shiksha Mahakumbh and Shiksha Kumbh, attracting
         dignitaries and stakeholders from diverse fields. Additionally, DHE laid
-        foundation of a quarterly journal called &#149;Viksit India,&#148; covering a wide
+        foundation of a quarterly journal called 	&quot;Viksit India,&quot; covering a wide
         range of educational topics to make Bharat a self reliant hub in terms
         of educational and scientific publication. The Department comprises 310
         professionals from diverse backgrounds who are volunteering their
