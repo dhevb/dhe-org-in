@@ -25,7 +25,7 @@ const DepartmentInfo: React.FC = () => {
       <br />
 
       <p className="text-justify text-black">
-        Currently, DHE operates under the trust's umbrella. With 25 dedicated
+        Currently, DHE operates under the trust&#146;s umbrella. With 25 dedicated
         cells led by coordinators, DHE spearheads various initiatives aimed at
         transforming the education system. These include groundbreaking projects
         such as E&#45;cycle, Punjab Super 100, Tredul, Sarvatr, Holistic Harbour,
