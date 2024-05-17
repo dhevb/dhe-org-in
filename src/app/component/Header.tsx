@@ -19,7 +19,7 @@ const menus: Menu[] = [
     title: "About Us",
     subMenu: [
       { path: "/messages", title: "Director Message" },
-      { path: "/structure", title: "Department Structure" },
+      { path: "/structure", title: "Cells" },
       { path: "/advisory", title: "Advisory Council" },
       { path: "/committee", title: "LMC Members" },
       { path: "/people", title: "Cell Co-ordinators" },
@@ -27,7 +27,7 @@ const menus: Menu[] = [
     ],
   },
 
-  { path: "/cells", title: "Cells" },
+ 
   { path: "/Publications", title: "Publication" },
   { path: "/Recruitment-Policy.pdf", title: "Careers" },
   {
@@ -46,12 +46,9 @@ const menus: Menu[] = [
   },
 
   {
-    path: "/",
-    title: "Forms",
-    subMenu: [
-      { path: "/contribute", title: "Membership Form" },
-      { path: "/registrationForm", title: "Registration Form" },
-    ],
+    path: "/contribute",
+    title: "Membership Form",
+    
   },
   {
     path: "/donation",
