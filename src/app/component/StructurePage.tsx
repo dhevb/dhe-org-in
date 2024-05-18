@@ -1,109 +1,41 @@
-import React from "react";
-import { Tree, TreeNode } from "react-organizational-chart";
-import "tailwindcss/tailwind.css";
-import Link from "next/link";
+import React, { useEffect } from 'react';
+import { Tree, TreeNode } from 'react-organizational-chart';
+import 'tailwindcss/tailwind.css';
+import Link from 'next/link';
 
 const StructurePage: React.FC = () => {
+
+  useEffect(() => {
+    // This useEffect will only run on the client side
+    if (typeof window !== 'undefined') {
+      // Client-side specific logic can go here if needed
+    }
+  }, []);
+
   return (
-  <div className="flex justify-center p-4">
-    <div className="text-white font-semibold text-sm overflow-x-auto">
-      <Tree
-        lineWidth={"2px"}
-        lineColor={"green"}
-        lineBorderRadius={"10px"}
-        label={
-          <div className="text-center p-2">
-            <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+    <div className="flex justify-center p-4">
+      <div className="text-white font-semibold text-sm overflow-x-auto">
+        <Tree
+          lineWidth={"2px"}
+          lineColor={"green"}
+          lineBorderRadius={"10px"}
+          label={
+            <div className="text-center p-2">
               <Link href="/messages">
-              Director
-              <br />
-              Department of Holistic Education
-            </Link>
-            </button>
-          </div>
-        }
-      >
-
-
-        <TreeNode
-          label={
-            <div className="text-center p-2">
-              <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                Working Committee
-              </button>
-            </div>
-          }
-        ></TreeNode>
-
-
-        <TreeNode
-          label={
-            <div className="text-center p-2">
-              <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">Cells</button>
+                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                  Director
+                  <br />
+                  Department of Holistic Education
+                </button>
+              </Link>
             </div>
           }
         >
-
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/it">IT Cell</Link></button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/event">Event Management Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/super100">Super 100 Cell</Link>
-                    </button>
-                  </div>
-                }
-              />
-            
-            </TreeNode>
-          </TreeNode>
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/ipr">IPR Cell</Link></button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/industry">Industry Coordination Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/hei">HEI Coordination Cell</Link>
-                    </button>
-                  </div>
-                }
-              />
-            </TreeNode>
-          </TreeNode>
           <TreeNode
             label={
               <div className="text-center p-2">
                 <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <Link href="/cells/ecommerce">E Commerce Cell</Link>
+                  Working Committee
                 </button>
               </div>
             }
@@ -111,197 +43,319 @@ const StructurePage: React.FC = () => {
             <TreeNode
               label={
                 <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/tms">TMS Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
+                  <Link href="/cells/it">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/udyam">Udyam Cell</Link>
+                      IT Cell
                     </button>
-                  </div>
-                }
-              />
-            </TreeNode>
-          </TreeNode>
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <Link href="/cells/foreign">Foreign Language Cell</Link>
-                </button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/olympiad">Olympiad Cell</Link>
-                  </button>
+                  </Link>
                 </div>
               }
             >
               <TreeNode
                 label={
                   <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/lms">LMS Cell</Link>
-                    </button>
-                  </div>
-                }
-              />
-            </TreeNode>
-          </TreeNode>
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/csr">CSR Cell</Link></button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/rd">R and D Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/art">Art Cell</Link>
-                    </button>
-                  </div>
-                }
-              />
-            </TreeNode>
-          </TreeNode>
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/atl">ATL Cell</Link></button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/publication">Publications and Promotions Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/environment">Environment Cell</Link>
-                      
-                    </button>
-                  </div>
-                }
-              />
-            </TreeNode>
-          </TreeNode>
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <Link href="/cells/parenting">Parenting Cell</Link>
-                </button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/astrology">Astrology Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/premiumschool">Premium School Cell</Link>
-                    </button>
-                  </div>
-                }
-              />
-            </TreeNode>
-          </TreeNode>
-
-
-          <TreeNode
-            label={
-              <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <Link href="/cells/health">Health Wisdom Cell</Link>
-                </button>
-              </div>
-            }
-          >
-            <TreeNode
-              label={
-                <div className="text-center p-2">
-                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <Link href="/cells/sports">Sports Cell</Link>
-                  </button>
-                </div>
-              }
-            >
-              <TreeNode
-                label={
-                  <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/spritual">Spritual Cell</Link>
-                    </button>
+                    <Link href="/cells/event">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        Event Management Cell
+                      </button>
+                    </Link>
                   </div>
                 }
               >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/super100">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          Super 100 Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
+            </TreeNode>
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/ipr">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      IPR Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
               <TreeNode
                 label={
                   <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <Link href="/cells/grievance">Grievance Redressal Cell</Link>
-                    </button>
+                    <Link href="/cells/industry">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        Industry Coordination Cell
+                      </button>
+                    </Link>
                   </div>
                 }
               >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/hei">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          HEI Coordination Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
             </TreeNode>
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/ecommerce">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      E Commerce Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
+              <TreeNode
+                label={
+                  <div className="text-center p-2">
+                    <Link href="/cells/tms">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        TMS Cell
+                      </button>
+                    </Link>
+                  </div>
+                }
+              >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/udyam">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          Udyam Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
             </TreeNode>
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/foreign">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      Foreign Language Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
+              <TreeNode
+                label={
+                  <div className="text-center p-2">
+                    <Link href="/cells/olympiad">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        Olympiad Cell
+                      </button>
+                    </Link>
+                  </div>
+                }
+              >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/lms">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          LMS Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
             </TreeNode>
-            
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/csr">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      CSR Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
+              <TreeNode
+                label={
+                  <div className="text-center p-2">
+                    <Link href="/cells/rd">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        R and D Cell
+                      </button>
+                    </Link>
+                  </div>
+                }
+              >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/art">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          Art Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
+            </TreeNode>
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/atl">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      ATL Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
+              <TreeNode
+                label={
+                  <div className="text-center p-2">
+                    <Link href="/cells/publication">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        Publications and Promotions Cell
+                      </button>
+                    </Link>
+                  </div>
+                }
+              >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/environment">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          Environment Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
+            </TreeNode>
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/parenting">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      Parenting Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
+              <TreeNode
+                label={
+                  <div className="text-center p-2">
+                    <Link href="/cells/astrology">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        Astrology Cell
+                      </button>
+                    </Link>
+                  </div>
+                }
+              >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/premiumschool">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          Premium School Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                />
+              </TreeNode>
+            </TreeNode>
+
+            <TreeNode
+              label={
+                <div className="text-center p-2">
+                  <Link href="/cells/health">
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                      Health Wisdom Cell
+                    </button>
+                  </Link>
+                </div>
+              }
+            >
+              <TreeNode
+                label={
+                  <div className="text-center p-2">
+                    <Link href="/cells/sports">
+                      <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                        Sports Cell
+                      </button>
+                    </Link>
+                  </div>
+                }
+              >
+                <TreeNode
+                  label={
+                    <div className="text-center p-2">
+                      <Link href="/cells/spritual">
+                        <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                          Spiritual Cell
+                        </button>
+                      </Link>
+                    </div>
+                  }
+                >
+                  <TreeNode
+                    label={
+                      <div className="text-center p-2">
+                        <Link href="/cells/grievance">
+                          <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                            Grievance Redressal Cell
+                          </button>
+                        </Link>
+                      </div>
+                    }
+                  />
+                </TreeNode>
+              </TreeNode>
+            </TreeNode>
           </TreeNode>
 
-
-        </TreeNode>
-       
-       
-        <TreeNode
-          label={
-            <div className="text-center p-2">
-              <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                <Link href="/advisory">Advisory Committee</Link>
-              </button>
-            </div>
-          }
-        ></TreeNode>
-      </Tree>
+          <TreeNode
+            label={
+              <div className="text-center p-2">
+                <Link href="/advisory">
+                  <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
+                    Advisory Committee
+                  </button>
+                </Link>
+              </div>
+            }
+          />
+        </Tree>
+      </div>
     </div>
-  </div>
- );
+  );
 };
-
 
 export default StructurePage;
