@@ -1,6 +1,7 @@
 import React from "react";
 import { Tree, TreeNode } from "react-organizational-chart";
 import "tailwindcss/tailwind.css";
+import Link from "next/link";
 
 const StructurePage: React.FC = () => {
   if (typeof document === "undefined") {
@@ -18,11 +19,11 @@ const StructurePage: React.FC = () => {
         label={
           <div className="text-center p-2">
             <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-              <a href="/messages">
+              <Link href="/messages">
               Director
               <br />
               Department of Holistic Education
-            </a>
+            </Link>
             </button>
           </div>
         }
@@ -51,7 +52,7 @@ const StructurePage: React.FC = () => {
           <TreeNode
             label={
               <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><a href="/cells/it">IT Cell</a></button>
+                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/it">IT Cell</Link></button>
               </div>
             }
           >
@@ -59,7 +60,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/event">Event Management Cell</a>
+                    <Link href="/cells/event">Event Management Cell</Link>
                   </button>
                 </div>
               }
@@ -68,7 +69,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/super100">Super 100 Cell</a>
+                      <Link href="/cells/super100">Super 100 Cell</Link>
                     </button>
                   </div>
                 }
@@ -79,7 +80,7 @@ const StructurePage: React.FC = () => {
           <TreeNode
             label={
               <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><a href="/cells/ipr">IPR Cell</a></button>
+                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/ipr">IPR Cell</Link></button>
               </div>
             }
           >
@@ -87,7 +88,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/industry">Industry Coordination Cell</a>
+                    <Link href="/cells/industry">Industry Coordination Cell</Link>
                   </button>
                 </div>
               }
@@ -96,7 +97,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/hei">HEI Coordination Cell</a>
+                      <Link href="/cells/hei">HEI Coordination Cell</Link>
                     </button>
                   </div>
                 }
@@ -107,7 +108,7 @@ const StructurePage: React.FC = () => {
             label={
               <div className="text-center p-2">
                 <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <a href="/cells/ecommerce">E Commerce Cell</a>
+                  <Link href="/cells/ecommerce">E Commerce Cell</Link>
                 </button>
               </div>
             }
@@ -116,7 +117,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/tms">TMS Cell</a>
+                    <Link href="/cells/tms">TMS Cell</Link>
                   </button>
                 </div>
               }
@@ -125,7 +126,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/udyam">Udyam Cell</a>
+                      <Link href="/cells/udyam">Udyam Cell</Link>
                     </button>
                   </div>
                 }
@@ -136,7 +137,7 @@ const StructurePage: React.FC = () => {
             label={
               <div className="text-center p-2">
                 <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <a href="/cells/foreign">Foreign Language Cell</a>
+                  <Link href="/cells/foreign">Foreign Language Cell</Link>
                 </button>
               </div>
             }
@@ -145,7 +146,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/olympiad">Olympiad Cell</a>
+                    <Link href="/cells/olympiad">Olympiad Cell</Link>
                   </button>
                 </div>
               }
@@ -154,7 +155,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/lms">LMS Cell</a>
+                      <Link href="/cells/lms">LMS Cell</Link>
                     </button>
                   </div>
                 }
@@ -164,7 +165,7 @@ const StructurePage: React.FC = () => {
           <TreeNode
             label={
               <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><a href="/cells/csr">CSR Cell</a></button>
+                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/csr">CSR Cell</Link></button>
               </div>
             }
           >
@@ -172,7 +173,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/rd">R and D Cell</a>
+                    <Link href="/cells/rd">R and D Cell</Link>
                   </button>
                 </div>
               }
@@ -181,7 +182,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/art">Art Cell</a>
+                      <Link href="/cells/art">Art Cell</Link>
                     </button>
                   </div>
                 }
@@ -191,7 +192,7 @@ const StructurePage: React.FC = () => {
           <TreeNode
             label={
               <div className="text-center p-2">
-                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><a href="/cells/atl">ATL Cell</a></button>
+                <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/atl">ATL Cell</Link></button>
               </div>
             }
           >
@@ -199,7 +200,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/publication">Publications and Promotions Cell</a>
+                    <Link href="/cells/publication">Publications and Promotions Cell</Link>
                   </button>
                 </div>
               }
@@ -207,7 +208,7 @@ const StructurePage: React.FC = () => {
               <TreeNode
                 label={
                   <div className="text-center p-2">
-                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><a href="/cells/environment">Environment Cell</a>
+                    <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary"><Link href="/cells/environment">Environment Cell</Link>
                       
                     </button>
                   </div>
@@ -219,7 +220,7 @@ const StructurePage: React.FC = () => {
             label={
               <div className="text-center p-2">
                 <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <a href="/cells/parenting">Parenting Cell</a>
+                  <Link href="/cells/parenting">Parenting Cell</Link>
                 </button>
               </div>
             }
@@ -228,7 +229,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/astrology">Astrology Cell</a>
+                    <Link href="/cells/astrology">Astrology Cell</Link>
                   </button>
                 </div>
               }
@@ -237,7 +238,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/premiumschool">Premium School Cell</a>
+                      <Link href="/cells/premiumschool">Premium School Cell</Link>
                     </button>
                   </div>
                 }
@@ -250,7 +251,7 @@ const StructurePage: React.FC = () => {
             label={
               <div className="text-center p-2">
                 <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                  <a href="/cells/health">Health Wisdom Cell</a>
+                  <Link href="/cells/health">Health Wisdom Cell</Link>
                 </button>
               </div>
             }
@@ -259,7 +260,7 @@ const StructurePage: React.FC = () => {
               label={
                 <div className="text-center p-2">
                   <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                    <a href="/cells/sports">Sports Cell</a>
+                    <Link href="/cells/sports">Sports Cell</Link>
                   </button>
                 </div>
               }
@@ -268,7 +269,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/spritual">Spritual Cell</a>
+                      <Link href="/cells/spritual">Spritual Cell</Link>
                     </button>
                   </div>
                 }
@@ -277,7 +278,7 @@ const StructurePage: React.FC = () => {
                 label={
                   <div className="text-center p-2">
                     <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                      <a href="/cells/grievance">Grievance Redressal Cell</a>
+                      <Link href="/cells/grievance">Grievance Redressal Cell</Link>
                     </button>
                   </div>
                 }
@@ -296,7 +297,7 @@ const StructurePage: React.FC = () => {
           label={
             <div className="text-center p-2">
               <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                <a href="/advisory">Advisory Committee</a>
+                <Link href="/advisory">Advisory Committee</Link>
               </button>
             </div>
           }
