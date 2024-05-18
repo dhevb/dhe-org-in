@@ -1,10 +1,12 @@
-import React from 'react'
-import Registration from '../component/Registration'
+import React from "react";
+import Registration from "../component/Registration";
 
 const page = () => {
   return (
-    <div><Registration/></div>
-  )
-}
+    <div>
+      <Registration />
+    </div>
+  );
+};
 
-export default page
+export default page;

@@ -4,11 +4,6 @@ import "tailwindcss/tailwind.css";
 import Link from "next/link";
 
 const StructurePage: React.FC = () => {
-  if (typeof document === "undefined") {
-    // Return null during server-side rendering
-    return null;
-  }
-
   return (
   <div className="flex justify-center p-4">
     <div className="text-white font-semibold text-sm overflow-x-auto">

@@ -1,14 +1,11 @@
-"use client"
+
 import React from "react";
+import StructurePage from "../component/StructurePage";
 
-const StructurePage = React.lazy(() => import("../component/StructurePage"));
-
-const Structure = () => (
-  <>
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <StructurePage />
-    </React.Suspense>
-  </>
+const page = () => (
+  <div>
+    <StructurePage />
+  </div>
 );
 
-export default Structure;
+export default page;
