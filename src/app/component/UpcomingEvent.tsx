@@ -28,7 +28,7 @@ const UpcomingEvent: React.FC = () => {
         <tbody>
         <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Role of Academic-driven Startups in Developing Economy of J&K   
+            Role of Academic&#45;driven Startups in Developing Economy of J&amp;K   
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             June 29&#45;30, 2024
@@ -70,7 +70,7 @@ const UpcomingEvent: React.FC = () => {
           </tr>
           <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Role of Academic-Driven Startups in Economy
+            Role of Academic&#45;Driven Startups in Economy
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             December 30, 2023

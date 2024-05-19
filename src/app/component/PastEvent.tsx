@@ -28,7 +28,7 @@ const PastEvent: React.FC = () => {
         <tbody>
         <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Innovation and Entrepreneurship for School Students, Teachers and Atal Tinkering Labs' Co-ordinators
+            Innovation and Entrepreneurship for School Students, Teachers and Atal Tinkering Labs Co&#45;ordinators
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             May 10, 2024
@@ -70,7 +70,7 @@ const PastEvent: React.FC = () => {
           </tr>
           <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Role of Academic-Driven Startups in Economy
+            Role of Academic&#45;Driven Startups in Economy
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             December 30, 2023
