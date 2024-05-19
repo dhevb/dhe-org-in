@@ -8,10 +8,7 @@ type Menu = {
   subMenu?: Menu[];
 };
 
-const menu: Menu[] = [
-  { path: "/Recruitment-Policy.pdf", title: "Recruitment Policies" },
-  { path: "/contact", title: "Contact" },
-];
+
 const menus: Menu[] = [
   { path: "/", title: "Home" },
   {
@@ -23,37 +20,21 @@ const menus: Menu[] = [
       { path: "/advisory", title: "Advisory Council" },
       { path: "/committee", title: "LMC Members" },
       { path: "/people", title: "Cell Co-ordinators" },
-      // { path: "/Members", title: "Members" },
     ],
   },
-
- 
   { path: "/Publications", title: "Publication" },
   { path: "/Recruitment-Policy.pdf", title: "Careers" },
-  {
-    path: "/contact",
-    title: "Contact Us",
-  },
-
+  { path: "/contact", title: "Contact Us" },
   {
     path: "/",
     title: "Events",
     subMenu: [
-      { path: "/workshop", title: "Workshops" },
-      { path: "/", title: "Rase Conferences 2024" },
-      { path: "/", title: "Seminars" },
+      { path: "/pastevent", title: "Past Events" },
+      { path: "/upcomingevent", title: "Upcoming Events" },
     ],
   },
-
-  {
-    path: "/contribute",
-    title: "Membership Form",
-    
-  },
-  {
-    path: "/donation",
-    title: "Donation",
-  },
+  { path: "/contribute", title: "Membership Form" },
+  { path: "/donation", title: "Donation" },
 ];
 
 const Header: React.FC = () => {
@@ -112,7 +93,8 @@ const Header: React.FC = () => {
                   )}
                 </button>
               </div>
-              <Link href="/"></Link>
+              <Link href="/">
+              </Link>
             </div>
             <div
               className={`flex-1 justify-self-center pb-3 mt-1 md:block md:pb-0 md:mt-0 ${
@@ -131,23 +113,21 @@ const Header: React.FC = () => {
                     onMouseEnter={() => handleSubMenuHover(idx)}
                     onMouseLeave={handleSubMenuLeave}
                   >
-                    <Link
-                      href={item.path}
-                      className="text-l block w-full h-full"
-                    >
-                      {item.subMenu ? (
-                        <div className="relative">
+                    {item.subMenu ? (
+                      <div className="relative">
+                        <Link href={item.path}>
                           <span className="text-l">{item.title}</span>
-                          <ul
-                            className={`absolute left-0 px-10 md:px-5 mt-2 h-30 space-y-2 text-base text-black bg-red-50 z-10 w-auto md:w-80 md:max-w-xs ${
-                              subMenuIndex === idx ? "block" : "hidden"
-                            }`}
-                            style={{ minHeight: "3rem", padding: "0.5rem 0" }}
-                          >
-                            {item.subMenu.map((subItem, subIdx) => (
-                              <li key={subIdx} className="py-1">
-                                <Link
-                                  href={subItem.path}
+                        </Link>
+                        <ul
+                          className={`absolute left-0 px-10 md:px-5 mt-2 h-30 space-y-2 text-base font-bold text-black bg-red-50 z-10 w-auto md:w-80 md:max-w-xs ${
+                            subMenuIndex === idx ? "block" : "hidden"
+                          }`}
+                          style={{ minHeight: "3rem", padding: "0.5rem 0" }}
+                        >
+                          {item.subMenu.map((subItem, subIdx) => (
+                            <li key={subIdx} className="py-1">
+                              <Link href={subItem.path}>
+                                <span
                                   className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-left"
                                   style={{
                                     display: "block",
@@ -155,15 +135,17 @@ const Header: React.FC = () => {
                                   }}
                                 >
                                   {subItem.title}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : (
-                        <div className="text-l">{item.title}</div>
-                      )}
-                    </Link>
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <Link href={item.path}>
+                        <span className="text-l block w-full h-full">{item.title}</span>
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

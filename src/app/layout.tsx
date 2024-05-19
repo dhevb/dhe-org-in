@@ -18,6 +18,7 @@ interface CustomWindow extends Window {
 }
 
 declare var window: CustomWindow;
+
 export default function RootLayout({
   children,
 }: {
@@ -32,6 +33,7 @@ export default function RootLayout({
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
   const handlePermission = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -75,10 +77,10 @@ export default function RootLayout({
         ></script>
       </head>
 
-      <meta http-equiv="refresh" content="1000" />
+      <meta httpEquiv="refresh" content="1000" />
       <meta charSet="utf-8" />
       <link rel="icon" href="/dhe.png" sizes="any" />
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <title>Department of Holistic Education &minus; Vidya Bharti</title>
       <meta
         name="keywords"

@@ -1,9 +1,8 @@
 import React from "react";
-import MemberShipForm from "./MemberShipForm";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Workshop = () => {
+const Workshop: React.FC = () => {
   return (
     <div className="bg-white">
       <div className="max-w-5xl mx-auto pt-4 bg-white text-primary-color p-2">
@@ -153,7 +152,7 @@ const Workshop = () => {
         </div>
         <p className="font-semibold">For registration and further information, please contact above mentioned numbers</p>
         <h2 className="text-xl">
-          For registration,{" "}
+          For registration,
           <a className="font-bold text-red-800 hover:text-blue-900" href="./registrationForm">
             click here
           </a>
