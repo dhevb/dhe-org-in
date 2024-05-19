@@ -31,7 +31,7 @@ const PastEvent: React.FC = () => {
             Innovation and Entrepreneurship for School Students, Teachers and Atal Tinkering Labs' Co-ordinators
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            `May 10, 2024`
+            May 10, 2024
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
              CSIO Chandigarh
@@ -45,7 +45,7 @@ const PastEvent: React.FC = () => {
             Teacher Development Program in Collebration with NITTTER
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            {`March 12-17, 2024`}
+            March 12&#45;17, 2024
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
               NITTTER Chandigarh
@@ -59,7 +59,7 @@ const PastEvent: React.FC = () => {
             Sponken English Workshop
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              {`Januaury 25-31, 2024`}
+            Januaury 25&#45;31, 2024
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             GITA NIKETAN, Kurukshetra
@@ -73,7 +73,7 @@ const PastEvent: React.FC = () => {
             Role of Academic-Driven Startups in Economy
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            {`December 30, 2023`}
+            December 30, 2023
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
               National Institute of Technology Kurukshetra
@@ -87,7 +87,7 @@ const PastEvent: React.FC = () => {
             Recent Advances in School Education
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            {`June 09-11, 2023`}
+            June 09&#45;11, 2023
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
               National Institute of Technology Jalandhar
