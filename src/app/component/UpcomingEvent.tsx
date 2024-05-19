@@ -31,7 +31,7 @@ const UpcomingEvent: React.FC = () => {
             Role of Academic-driven Startups in Developing Economy of J&K   
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            June 29-30, 2024
+            `June 29-30, 2024`
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             National Institute of Technology Srinagar
@@ -45,7 +45,7 @@ const UpcomingEvent: React.FC = () => {
             Indian Education System for Global Developement
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            October 4-6, 2024
+            `October 4-6, 2024`
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             Indian Institute of Technology Ropar
