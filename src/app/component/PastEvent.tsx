@@ -42,7 +42,7 @@ const PastEvent: React.FC = () => {
           </tr>
           <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Teacher Development Program in Collebration with NITTTER
+            Teacher Development Program in Collaboration with NITTTER
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             March 12&#45;17, 2024
@@ -62,7 +62,7 @@ const PastEvent: React.FC = () => {
             Januaury 25&#45;31, 2024
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            GITA NIKETAN, Kurukshetra
+            Gita Niketan, Kurukshetra
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
               <Link href="/" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
@@ -70,10 +70,10 @@ const PastEvent: React.FC = () => {
           </tr>
           <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Role of Academic&#45;Driven Startups in Economy
+            Role of Academic&#45;driven Startups in Economy
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            December 30, 2023
+            December 20, 2023
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
               National Institute of Technology Kurukshetra

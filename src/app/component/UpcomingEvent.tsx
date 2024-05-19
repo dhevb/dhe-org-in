@@ -54,48 +54,7 @@ const UpcomingEvent: React.FC = () => {
               <Link href="/" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
             </td>
           </tr>
-          <tr>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Sponken English Workshop
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Januaury 25&#45;31, 2024
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            GITA NIKETAN, Kurukshetra
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              <Link href="/" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
-            </td>
-          </tr>
-          <tr>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Role of Academic&#45;Driven Startups in Economy
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            December 30, 2023
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              National Institute of Technology Kurukshetra
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              <Link href="/" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
-            </td>
-          </tr>
-          <tr>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Recent Advances in School Education
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            June 09&#45;11, 2023
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              National Institute of Technology Jalandhar
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              <Link href="/" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
-            </td>
-          </tr>
+          
         </tbody>
       </table>
     </div>
