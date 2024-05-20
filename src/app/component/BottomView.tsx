@@ -173,6 +173,28 @@ const BottomView: React.FC = () => {
                 className="h-10 w-10 mr-4"
               />
             </a>
+            <a
+              href="https://tudu.co.in//"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/Tudu.png"
+                alt="Tudu"
+                className="h-10 w-10 mr-4"
+              />
+            </a>
+            <a
+              href="https://punjabsuper100.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/pb100.png"
+                alt="Punjab Super 100"
+                className="h-10 w-auto mr-4"
+              />
+            </a>
           </div>
         </div>
 
