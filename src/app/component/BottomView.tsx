@@ -11,6 +11,7 @@ import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/app/firebase";
 import toast from "react-hot-toast";
+import VisitorCounts from "./VisitorCounts";
 
 
 
@@ -347,6 +348,7 @@ const BottomView: React.FC = () => {
                   />
                 </a>
               </div>
+              <VisitorCounts/>
             </div>
           </div>
         </div>
@@ -354,13 +356,13 @@ const BottomView: React.FC = () => {
         {/* Copyright section */}
         <div className="bg-[#2a2a2a] border-t-2 border-gray-700 p-4 text-center font-bold ">
           <span className="text-white">
-            © {new Date().getFullYear()}{" "}
+            ©
             <a
               href="https://www.dhe.org.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {" "}
+              
               Department of Holistic Education.
             </a>
           </span>
