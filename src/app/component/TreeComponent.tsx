@@ -28,9 +28,11 @@ const TreeComponent: React.FC = () => {
         <TreeNode
           label={
             <div className="text-center p-2">
+              <Link href="/committee" passHref>
               <button className="bg-primary p-2 rounded-lg hover:bg-white hover:text-primary">
-                Working Committee
+                LMC Members
               </button>
+              </Link>
             </div>
           }
         />

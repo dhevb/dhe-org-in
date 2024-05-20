@@ -192,12 +192,12 @@ const BottomView: React.FC = () => {
                     </Link>
                   </p>
                   <p className="text-white mb-3">
-                    <Link href="" className="hover:text-primary">
+                    <Link href="/structure" className="hover:text-primary">
                       About Us
                     </Link>
                   </p>
                   <p className="text-white mb-3">
-                    <Link href="/" className="hover:text-primary">
+                    <Link href="/structure" className="hover:text-primary">
                       Projects
                     </Link>
                   </p>
@@ -223,7 +223,7 @@ const BottomView: React.FC = () => {
                     </Link>
                   </p>
                   <p className="text-white mb-3">
-                    <Link href="" className="hover:text-primary">
+                    <Link href="./Recruitment-Policy.pdf" className="hover:text-primary">
                       Vacancies
                     </Link>
                   </p>
