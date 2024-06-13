@@ -38,7 +38,6 @@ const menus: Menu[] = [
     path: "/",
     title: "Membership",
     subMenu: [
-      { path: "/", title: "Members" },
       { path: "/contribute", title: "Join DHE" },
     ],
   },
