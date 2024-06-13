@@ -27,7 +27,7 @@ const menus: Menu[] = [
     path: "/",
     title: "Careers",
     subMenu: [
-      { path: "/https://ep.sarvatr.co.in/public/careers/8d8a9c3384a936495a752596fe2a0b4d", title: "Careers" },
+      { path: "https://ep.sarvatr.co.in/public/careers/8d8a9c3384a936495a752596fe2a0b4d", title: "Careers" },
       { path: "/Recruitment-Policy.pdf", title: "Recruitment-Policy" },
     ],
   },
