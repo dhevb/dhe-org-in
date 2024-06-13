@@ -33,7 +33,15 @@ const menus: Menu[] = [
       { path: "/upcomingevent", title: "Upcoming Events" },
     ],
   },
-  { path: "/contribute", title: "Membership Form" },
+
+  {
+    path: "/",
+    title: "Membership",
+    subMenu: [
+      { path: "/", title: "Members" },
+      { path: "/contribute", title: "Join DHE" },
+    ],
+  },
   { path: "/donation", title: "Donation" },
 ];
 
