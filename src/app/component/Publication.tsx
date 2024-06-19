@@ -27,7 +27,7 @@ const Publication: React.FC = () => {
   };
   const handleGoToHome = () => {
     // Redirect to the home page (replace '/home' with your actual home page URL)
-    window.location.href = "http://vi.rase.co.in";
+    window.location.href = "http://pub.rase.co.in";
   };
   const openPDF = () => {
     // Open the PDF in a new tab or window
