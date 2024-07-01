@@ -8,7 +8,6 @@ type Menu = {
   subMenu?: Menu[];
 };
 
-
 const menus: Menu[] = [
   { path: "/", title: "Home" },
   {
@@ -27,7 +26,10 @@ const menus: Menu[] = [
     path: "/",
     title: "Careers",
     subMenu: [
-      { path: "https://ep.sarvatr.co.in/public/careers/8d8a9c3384a936495a752596fe2a0b4d", title: "Careers" },
+      {
+        path: "https://ep.sarvatr.co.in/public/careers/8d8a9c3384a936495a752596fe2a0b4d",
+        title: "Careers",
+      },
       { path: "/Recruitment-Policy.pdf", title: "Recruitment-Policy" },
     ],
   },
@@ -40,15 +42,17 @@ const menus: Menu[] = [
       { path: "/upcomingevent", title: "Upcoming Events" },
     ],
   },
-
   {
     path: "/",
     title: "Membership",
-    subMenu: [
-      { path: "/contribute", title: "Join DHE" },
-    ],
+    subMenu: [{ path: "/contribute", title: "Join DHE" }],
   },
   { path: "/donation", title: "Donation" },
+  {
+    path: "/",
+    title: "DHE’s Chapters",
+    subMenu: [{ path: "/", title: "NIT Srinagar" }],
+  },
 ];
 
 const Header: React.FC = () => {
@@ -107,8 +111,7 @@ const Header: React.FC = () => {
                   )}
                 </button>
               </div>
-              <Link href="/">
-              </Link>
+              <Link href="/"></Link>
             </div>
             <div
               className={`flex-1 justify-self-center pb-3 mt-1 md:block md:pb-0 md:mt-0 ${
@@ -116,14 +119,12 @@ const Header: React.FC = () => {
               }`}
             >
               <ul
-                className={`flex ${
-                  state ? "flex-col items-start" : "space-x-4 items-center"
-                } justify-center space-y-0 md:flex md:space-x-0.5 md:space-y-0`}
+                className={`flex flex-col md:flex-row md:space-x-0.5`}
               >
                 {menus.map((item, idx) => (
                   <li
                     key={idx}
-                    className={`py-2 px-2 md:text-white text-hite-100 cursor-pointer md:w-1/6 text-black md:bg-primary hover:text-primary md:hover:bg-white`}
+                    className={`py-2 px-2 md:text-white cursor-pointer md:w-1/6 text-black md:bg-primary hover:text-primary md:hover:bg-white flex-1 flex items-center justify-center`}
                     onMouseEnter={() => handleSubMenuHover(idx)}
                     onMouseLeave={handleSubMenuLeave}
                   >
