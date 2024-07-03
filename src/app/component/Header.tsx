@@ -51,7 +51,7 @@ const menus: Menu[] = [
   {
     path: "/",
     title: "DHE’s Chapters",
-    subMenu: [{ path: "/", title: "NIT Srinagar" }],
+    subMenu: [{ path: "/comingsoon", title: "NIT Srinagar" }],
   },
 ];
 
