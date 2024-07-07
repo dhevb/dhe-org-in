@@ -17,7 +17,7 @@ const Marquees: React.FC = () => {
 
   return (
     <div className='flex flex-row bg-primary-light w-full'>
-      <div className='text-white bg-primary-color rounded-sm text-center pe-2 text-xl py-1'>
+      <div className='text-white justify-center items-center bg-primary-color rounded-sm text-center pe-2 text-xl py-1'>
         Announcement
       </div>
       <Marquee pauseOnHover={true} pauseOnClick={true}>
