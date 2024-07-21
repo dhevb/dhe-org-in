@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 
 type Menu = {
@@ -8,6 +8,7 @@ type Menu = {
   subMenu?: Menu[];
 };
 
+const Header: React.FC = () => {
 const menus: Menu[] = [
   { path: "/", title: "Home" },
   {
@@ -51,13 +52,17 @@ const menus: Menu[] = [
   {
     path: "/",
     title: "DHE’s Chapters",
-    subMenu: [{ path: "/comingsoon", title: "NIT Srinagar" }],
+    subMenu: [
+      { path: "/comingsoon", title: "NIT Srinagar" },
+      { path: "/comingsoon", title: "IIT Ropar" },
+
+    ],
   },
 ];
 
-const Header: React.FC = () => {
-  const [state, setState] = useState(false);
+const [state, setState] = useState(false);
   const [subMenuIndex, setSubMenuIndex] = useState(-1);
+  const menuRef = useRef<HTMLElement>(null);
 
   const handleSubMenuHover = (index: number) => {
     setSubMenuIndex(index);
@@ -68,14 +73,14 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="pt-1 w-full">
+    <header className="pt-1 w-full" ref={menuRef}>
       <div className="w-full mx-auto flex flex-col lg:flex lg:flex-row items-center justify-between">
-        <nav className="w-full text-white text-center text-xl">
+        <nav className="w-full text-white text-center text-base font-semibold">
           <div className="items-center px-4 md:flex md:px-0">
             <div className="flex items-center justify-between py-0 md:block">
               <div className={`md:hidden order-1`}>
                 <button
-                  className="text-black outline-none p-2 rounded-md focus:border-black focus:border"
+                  className="text-black outline-none p-2 rounded-md"
                   onClick={() => setState(!state)}
                 >
                   {state ? (
@@ -118,15 +123,12 @@ const Header: React.FC = () => {
                 state ? "block" : "hidden"
               }`}
             >
-              <ul
-                className={`flex flex-col md:flex-row md:space-x-0.5`}
-              >
+              <ul className={`flex flex-col md:flex-row md:space-x-0.5`}>
                 {menus.map((item, idx) => (
                   <li
                     key={idx}
-                    className={`py-2 px-2 md:text-white cursor-pointer md:w-1/6 text-black md:bg-primary hover:text-primary md:hover:bg-white flex-1 flex items-center justify-center`}
+                    className={`py-2 px-2 md:text-white cursor-pointer md:w-1/6 text-black md:bg-primary hover:text-primary md:hover:bg-white flex-1 flex items-center justify-center relative`}
                     onMouseEnter={() => handleSubMenuHover(idx)}
-                    onMouseLeave={handleSubMenuLeave}
                   >
                     {item.subMenu ? (
                       <div className="relative">
@@ -134,20 +136,25 @@ const Header: React.FC = () => {
                           <span className="text-l">{item.title}</span>
                         </Link>
                         <ul
-                          className={`absolute left-0 px-10 md:px-5 mt-2 h-30 space-y-2 text-base font-bold text-black bg-red-50 z-10 w-auto md:w-80 md:max-w-xs ${
+                          className={`absolute top-full left-1/2 transform -translate-x-1/2 px-10 md:px-5 mt-2 h-30 space-y-2 text-base font-bold text-black bg-[#f8e6e1] z-10 w-auto md:w-80 md:max-w-xs ${
                             subMenuIndex === idx ? "block" : "hidden"
                           }`}
                           style={{ minHeight: "3rem", padding: "0.5rem 0" }}
+                          onMouseLeave={handleSubMenuLeave}
                         >
                           {item.subMenu.map((subItem, subIdx) => (
-                            <li key={subIdx} className="py-1">
+                            <li
+                              key={subIdx}
+                              className="py-1 flex justify-center"
+                            >
                               <Link href={subItem.path}>
                                 <span
-                                  className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-left"
+                                  className="block px-4 py-2 text-m transition-all hover:text-primary hover:underline md:text-center"
                                   style={{
                                     display: "block",
                                     whiteSpace: "nowrap",
                                   }}
+                                  onClick={handleSubMenuLeave}
                                 >
                                   {subItem.title}
                                 </span>
@@ -158,7 +165,9 @@ const Header: React.FC = () => {
                       </div>
                     ) : (
                       <Link href={item.path}>
-                        <span className="text-l block w-full h-full">{item.title}</span>
+                        <span className="text-l block w-full h-full">
+                          {item.title}
+                        </span>
                       </Link>
                     )}
                   </li>
