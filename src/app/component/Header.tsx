@@ -58,6 +58,7 @@ const menus: Menu[] = [
 
     ],
   },
+  { path: "/feedback", title: "Feedback" },
 ];
 
 const [state, setState] = useState(false);
