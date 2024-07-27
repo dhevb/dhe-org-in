@@ -30,6 +30,7 @@
     "d3-shape": "^3.2.0",
     "file-saver": "^2.0.5",
     "firebase": "^10.7.2",
+    "framer-motion": "^11.3.18",
     "heroicons-react": "^1.4.1",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.8.2",
