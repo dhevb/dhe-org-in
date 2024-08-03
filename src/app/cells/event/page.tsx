@@ -2,6 +2,7 @@
 
 import React from 'react';
 import CellInfo from '@/app/component/CellInfo';
+import SlideShow from "@/app/component/SlideShow"; 
 
 const MyPage = () => {
   const dataArray = [
@@ -15,19 +16,65 @@ const MyPage = () => {
     // Add more data objects if needed
   ];
 
+  const slides = [
+    {
+      src: "/cells/eventmanagementcell/k6.jpg", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/banwari_lal_purohit.JPG", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/bandaru_dattareya.jpg", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/anurag_singh_thakur.JPG", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/raghunandan.JPG", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/shankarananda.JPG", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/kashmiri_lal.JPG", // Update with actual image paths
+      alt: "",
+    },
+    {
+      src: "/cells/eventmanagementcell/satish_kumar.JPG", // Update with actual image paths
+      alt: "",
+    },
+   
+  ];
+
   return (
-    <div className='bg-white'>
-      
-      <p className='text-center text-2xl font-bold p-4 text-primary-color '> Cells</p>
+    <div className="bg-white sm:w-3/5 m-auto px-2">
+      <p className="text-center text-2xl font-bold p-4 text-primary-color">
+        Cells
+      </p>
+
+      <h2 className="text-left text-2xl font-bold text-primary-color sm:mb-0 mb-4">
+      Event Management Cell
+      </h2>
+
+      <div className="flex justify-center ">
+        <div className="sm:-mt-8 sm:-mb-8">
+          <SlideShow slides={slides} />
+        </div>
+      </div>
+
       {dataArray.map((data, index) => (
         <CellInfo
           key={index}
-          title={data.title}
           objective={data.objective}
           footnote={data.footnote}
         />
       ))}
-   
     </div>
   );
 };
