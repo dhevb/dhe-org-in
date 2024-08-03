@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 
 interface ITCellInfoProps {
-  title: string;
+  title?: string;
   objective: string;
   footnote: string;
 }

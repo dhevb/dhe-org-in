@@ -8,7 +8,7 @@ export default function Home() {
   const slides1 = [
     {
       src:"/2024K/k6.jpg",
-      alt:"Dr. Thakur SKR, Sci/Engr-SF at ISRO and Director of the Department of Holistic Education & Vidya Bharti Institute of Training and Research, along with Prof. Rajeev Ahuja, Director of IIT Ropar, had the honor of meeting Smt. Droupadi Murmu, the Hon’ble President of India, regarding the Shiksha Mahakumbh 2024.",
+      alt:"Prof. Rajeev Ahuja and Dr. Thakur SKR invited Smt. Droupadi Murmu, the Hon’ble President of Bharat, for the Shiksha Mahakumbh 2024",
       legend:""
     },
     {
