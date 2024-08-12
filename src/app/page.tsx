@@ -12,6 +12,11 @@ export default function Home() {
       legend:""
     },
     {
+      src:"/2024K/up_cm.jpg",
+      alt:"Shiksha Mahakumbh team inviting Hon’ble Chief Minister, UP to 2nd Edition",
+      legend:""
+    },
+    {
       src:"/R1.jpeg",
       alt:"DHE की HEI को-ऑर्डिनेशन सेल ने 11 मार्च 2024 को INST मोहाली के साथ शिक्षा के क्षेत्र में एक MoU साइन किया",
       legend:""
