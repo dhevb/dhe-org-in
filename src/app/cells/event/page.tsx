@@ -26,27 +26,27 @@ const MyPage = () => {
       alt: "",
     },
     {
-      src: "/cells/eventmanagementcell/bandaru_dattareya.jpg", // Update with actual image paths
+      src: "/cells/eventmanagementcell/bandaru_dattareya.jpg", 
       alt: "",
     },
     {
-      src: "/cells/eventmanagementcell/anurag_singh_thakur.JPG", // Update with actual image paths
+      src: "/cells/eventmanagementcell/anurag_singh_thakur.JPG",  
       alt: "",
     },
     {
-      src: "/cells/eventmanagementcell/raghunandan.JPG", // Update with actual image paths
+      src: "/cells/eventmanagementcell/raghunandan.JPG",
       alt: "",
     },
     {
-      src: "/cells/eventmanagementcell/shankarananda.JPG", // Update with actual image paths
+      src: "/cells/eventmanagementcell/shankarananda.JPG",
       alt: "",
     },
     {
-      src: "/cells/eventmanagementcell/kashmiri_lal.JPG", // Update with actual image paths
+      src: "/cells/eventmanagementcell/kashmiri_lal.JPG",
       alt: "",
     },
     {
-      src: "/cells/eventmanagementcell/satish_kumar.JPG", // Update with actual image paths
+      src: "/cells/eventmanagementcell/satish_kumar.JPG",
       alt: "",
     },
    

@@ -26,20 +26,7 @@ const UpcomingEvent: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-        <tr>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            Role of Academic&#45;driven Startups in Developing Economy of J&amp;K   
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            June 29&#45;30, 2024
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-            National Institute of Technology Srinagar
-            </td>
-            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
-              <Link href="https://sk24.rase.co.in" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
-            </td>
-          </tr>
+
           <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             Indian Education System for Global Developement
@@ -49,6 +36,34 @@ const UpcomingEvent: React.FC = () => {
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             Indian Institute of Technology Ropar
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+              <Link href="/sm24.rase.co.in" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
+            </td>
+          </tr>
+          <tr>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            Shiksha Kumbh 2025
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            To be announced soon
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            Indian Institute of Technology Jammu
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+              <Link href="/sk25.rase.co.in" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
+            </td>
+          </tr>
+          <tr>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            Shiksha Mahakumbh 2025
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            To be announced soon
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            Jawaharlal Nehru University
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
               <Link href="/" className="text-primary font-bold hover:text-blue-950">Click here</Link> 

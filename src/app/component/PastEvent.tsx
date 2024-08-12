@@ -28,6 +28,20 @@ const PastEvent: React.FC = () => {
         <tbody>
         <tr>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            Role of Academic&#45;driven Startups in Developing Economy of J&amp;K   
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            June 29&#45;30, 2024
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+            National Institute of Technology Srinagar
+            </td>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
+              <Link href="https://sk24.rase.co.in" className="text-primary font-bold hover:text-blue-950">Click here</Link> 
+            </td>
+          </tr>
+        <tr>
+            <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
             Innovation and Entrepreneurship for School Students, Teachers and Atal Tinkering Labs Co&#45;ordinators
             </td>
             <td className="w-full sm:w-1/5 px-1 py-2 border text-left text-black">
