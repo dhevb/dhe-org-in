@@ -58,7 +58,7 @@ const menus: Menu[] = [
 
     ],
   },
-  { path: "/logos", title: "Logo's" },
+  { path: "/logos", title: "Logos" },
   { path: "/feedback", title: "Feedback" },
 ];
 
