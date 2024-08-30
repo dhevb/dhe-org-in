@@ -1,51 +1,21 @@
 import React from "react";
 import Link from "next/link";
 
-const PastEvent: React.FC = () => {
+const ResidentialCamps: React.FC = () => {
   const events = [
     {
-      title: "Role of Academic-driven Startups in Developing Economy of J&K",
-      date: "June 29-30, 2024",
-      venue: "National Institute of Technology Srinagar",
-      link: "https://sk24.rase.co.in",
+      title: "Comming Soon",
+      date: "Comming Soon",
+      venue: "Comming Soon",
+      link: "Comming Soon",
     },
-    {
-      title:
-        "Innovation and Entrepreneurship for School Students, Teachers and Atal Tinkering Labs Coordinators",
-      date: "May 10, 2024",
-      venue: "CSIO Chandigarh",
-      link: "/workshop",
-    },
-    {
-      title: "Teacher Development Program in Collaboration with NITTTER",
-      date: "March 12-17, 2024",
-      venue: "NITTTER Chandigarh",
-      link: "https://itrchandigarh.org",
-    },
-    {
-      title: "Spoken English Workshop",
-      date: "January 25-31, 2024",
-      venue: "Gita Niketan, Kurukshetra",
-      link: "https://itrchandigarh.org",
-    },
-    {
-      title: "Role of Academic-driven Startups in Economy",
-      date: "December 20, 2023",
-      venue: "National Institute of Technology Kurukshetra",
-      link: "https://sk23.rase.co.in",
-    },
-    {
-      title: "Recent Advances in School Education",
-      date: "June 09-11, 2023",
-      venue: "National Institute of Technology Jalandhar",
-      link: "https://sm23.rase.co.in",
-    },
+    
   ];
 
   return (
     <div className="p-2 mt-4 h-auto min-h-[70vh]">
       <h2 className="text-2xl text-center font-bold mb-4 text-primary-color">
-        Our Past Events
+        Residential Camps
       </h2>
       <div className="overflow-x-auto mb-6">
         <table className="w-auto table-auto py-2">
@@ -94,4 +64,4 @@ const PastEvent: React.FC = () => {
   );
 };
 
-export default PastEvent;
+export default ResidentialCamps;

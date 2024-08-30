@@ -6,6 +6,7 @@ import {
   faXTwitter as faXTwitter,
   faLinkedin,
   faInstagram,
+  faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
@@ -365,6 +366,17 @@ const BottomView: React.FC = () => {
                 >
                   <FontAwesomeIcon
                     icon={faXTwitter}
+                    size="lg"
+                    className="text-white hover:text-blue-500 h-6 w-12"
+                  />
+                </a>
+                <a
+                  href="https://www.youtube.com/@DepartmentofHolisticEducation"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon
+                    icon={faYoutube}
                     size="lg"
                     className="text-white hover:text-blue-500 h-6 w-12"
                   />

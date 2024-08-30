@@ -23,7 +23,7 @@ const DepartmentInfo: React.FC = () => {
           className="font-bold text-primary hover:underline"
         >
           Dr. Thakur SKR
-        </a>{" "}
+        </a>
         under the guidance of educationist and social reformer Mr. Vijay Kumar
         Nadda, Organising Secretary, Vidya Bharti &#45; North Zone as a pilot
         project under Vidya Bharti Punjab. Recognizing its remarkable growth and
@@ -37,7 +37,7 @@ const DepartmentInfo: React.FC = () => {
         Currently, DHE operates under the trust&apos;s umbrella. With 25
         dedicated cells led by coordinators, DHE spearheads various initiatives
         aimed at transforming the education system. These include groundbreaking
-        projects such as E&#45;cycle,{" "}
+        projects such as E&#45;cycle,
         <a
           href="https://punjabsuper100.com/"
           target="_blank"
