@@ -60,6 +60,7 @@ const menus: Menu[] = [
   },
   { path: "/logos", title: "Logos" },
   { path: "/accountdetails", title: "Accounts" },
+  { path: "/residentialcamps", title: "Residential Camps" },
   { path: "/feedback", title: "Feedback" },
 ];
 

@@ -6,36 +6,123 @@ import {
   faXTwitter as faXTwitter,
   faLinkedin,
   faInstagram,
-  faYoutube
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "@/app/firebase";
 import toast from "react-hot-toast";
 import VisitorCounts from "./VisitorCounts";
-
-
+import { db } from "@/app/firebase";
+import { doc, onSnapshot, updateDoc, getDoc, increment, setDoc } from "firebase/firestore";
+import { Spin } from 'antd'; 
 
 const BottomView: React.FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [dailyVisitors, setDailyVisitors] = useState<number | null>(null);
+  const [totalVisitors, setTotalVisitors] = useState<number | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  useEffect(() => {
+    const totalDocRef = doc(db, "visitors", "total");
+    const dailyDocRef = doc(db, "visitors", "daily");
+    const yesterdayDocRef = doc(db, "visitors", "yesterday");
+
+    const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+
+    const resetDailyCount = async () => {
+      try {
+        const dailyDocSnap = await getDoc(dailyDocRef);
+        
+        if (dailyDocSnap.exists()) {
+          const dailyData = dailyDocSnap.data();
+
+          if (dailyData.date !== today) {
+            // Store the previous day's count
+            await setDoc(yesterdayDocRef, { count: dailyData.count, date: dailyData.date });
+
+            // Reset daily count for the new day
+            await setDoc(dailyDocRef, { count: 0, date: today });
+          }
+        }
+      } catch (error) {
+        console.error("Error resetting daily visitor count:", error);
+      }
+    };
+
+    const updateVisitorCount = async () => {
+      try {
+        const totalDocSnap = await getDoc(totalDocRef);
+        const dailyDocSnap = await getDoc(dailyDocRef);
+
+        // Initialize total and daily counts if they don't exist
+        if (!totalDocSnap.exists()) {
+          await setDoc(totalDocRef, { count: 0 });
+        }
+        if (!dailyDocSnap.exists()) {
+          await setDoc(dailyDocRef, { count: 0, date: today });
+        } else {
+          const dailyData = dailyDocSnap.data();
+          if (dailyData.date !== today) {
+            await resetDailyCount();
+          }
+        }
+
+        // Increment counts
+        await updateDoc(totalDocRef, { count: increment(1) });
+        await updateDoc(dailyDocRef, { count: increment(1) });
+
+        console.log("Visitor count updated successfully.");
+      } catch (error) {
+        console.error("Error updating visitor counts:", error);
+      }
+    };
+
+    updateVisitorCount();
+
+    const unsubscribeTotal = onSnapshot(totalDocRef, (docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setTotalVisitors(data.count);
+        setLoading(false); 
+      }
+    });
+
+    const unsubscribeDaily = onSnapshot(dailyDocRef, (docSnap) => {
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setDailyVisitors(data.count);
+        setLoading(false); 
+      }
+    });
+
+    // Schedule the daily reset at midnight
+    const now = new Date();
+    const timeUntilMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0).getTime() - now.getTime();
+
+    const resetAtMidnight = setTimeout(() => {
+      resetDailyCount();
+    }, timeUntilMidnight);
+
+    return () => {
+      unsubscribeTotal();
+      unsubscribeDaily();
+      clearTimeout(resetAtMidnight);
+    };
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
-      
       const docRef = await addDoc(collection(db, "contactMessages"), {
         email,
         message,
         timestamp: new Date(),
       });
-      
-     
+
       setEmail("");
       setMessage("");
 
-    
       toast.success("Message sent successfully!");
     } catch (error) {
       console.error("Error sending message:", error);
@@ -68,11 +155,7 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/shiksha.png"
-                alt="rase"
-                className="h-10 w-10 mr-4"
-              />
+              <img src="/shiksha.png" alt="rase" className="h-10 w-10 mr-4" />
             </a>
             {/* VIDHYA BHARTI */}
             <a
@@ -116,11 +199,7 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/job360.png"
-                alt="job"
-                className="h-10 w-10 mr-4"
-              />
+              <img src="/job360.png" alt="job" className="h-10 w-10 mr-4" />
             </a>
             {/* Poojawala */}
             <a
@@ -128,11 +207,7 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/pooja.png"
-                alt="pooja"
-                className="h-10 w-10 mr-4"
-              />
+              <img src="/pooja.png" alt="pooja" className="h-10 w-10 mr-4" />
             </a>
             {/* Swadeshi Bazar */}
             <a href="" target="_blank" rel="noopener noreferrer">
@@ -148,11 +223,7 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/tre-dul.png"
-                alt="tredul"
-                className="h-10 w-10 mr-4"
-              />
+              <img src="/tre-dul.png" alt="tredul" className="h-10 w-10 mr-4" />
             </a>
             {/* ITR */}
             <a
@@ -168,22 +239,14 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/vi.png"
-                alt="vikas"
-                className="h-10 w-10 mr-4"
-              />
+              <img src="/vi.png" alt="vikas" className="h-10 w-10 mr-4" />
             </a>
             <a
               href="https://tudu.co.in//"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/Tudu.png"
-                alt="Tudu"
-                className="h-10 w-10 mr-4"
-              />
+              <img src="/Tudu.png" alt="Tudu" className="h-10 w-10 mr-4" />
             </a>
             <a
               href="https://punjabsuper100.com/"
@@ -246,7 +309,10 @@ const BottomView: React.FC = () => {
                     </Link>
                   </p>
                   <p className="text-white mb-3">
-                    <Link href="./Recruitment-Policy.pdf" className="hover:text-primary">
+                    <Link
+                      href="./Recruitment-Policy.pdf"
+                      className="hover:text-primary"
+                    >
                       Vacancies
                     </Link>
                   </p>
@@ -273,14 +339,14 @@ const BottomView: React.FC = () => {
                       Your Email
                     </label>
                     <input
-                       type="email"
-                       id="email"
-                       name="email"
-                       className="w-full border rounded-md py-2 px-2 text-white"
-                       placeholder="abc@example.com"
-                       value={email}
-                       onChange={(e) => setEmail(e.target.value)}
-                       required
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full border rounded-md py-2 px-2 text-white"
+                      placeholder="abc@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
                     />
                   </div>
                   <div className="mb-0">
@@ -382,7 +448,23 @@ const BottomView: React.FC = () => {
                   />
                 </a>
               </div>
-              <VisitorCounts/>
+              {/* <VisitorCounts/> */}
+              <div className="flex flex-row p-2 rounded-lg space-x-4 text-primary font-bold">
+                <div className="">
+                  <p>
+                    <span className="text-lg font-semibold text-white">
+                      Daily Visitors:
+                    </span>
+                    {loading ? <Spin className="ml-2" /> : ` ${dailyVisitors}`}
+                  </p>
+                  <p>
+                    <span className="text-lg font-semibold text-white">
+                      Total Visitors:
+                    </span>
+                    {loading ? <Spin className="ml-2" /> : ` ${totalVisitors}`}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -396,7 +478,6 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              
               Department of Holistic Education.
             </a>
           </span>

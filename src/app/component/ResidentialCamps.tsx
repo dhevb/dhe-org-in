@@ -4,10 +4,10 @@ import Link from "next/link";
 const ResidentialCamps: React.FC = () => {
   const events = [
     {
-      title: "Comming Soon",
-      date: "Comming Soon",
-      venue: "Comming Soon",
-      link: "Comming Soon",
+      title: "DHE प्रथम  आवासीय आवास वर्ग",
+      date: "September 07-08, 2024",
+      venue: "IIT Ropar",
+      link: "/residentialcamps/DHE_प्रथम _आवासीय_आवास_वर्ग.pdf",
     },
     
   ];
@@ -17,8 +17,8 @@ const ResidentialCamps: React.FC = () => {
       <h2 className="text-2xl text-center font-bold mb-4 text-primary-color">
         Residential Camps
       </h2>
-      <div className="overflow-x-auto mb-6">
-        <table className="w-auto table-auto py-2">
+      <div className="overflow-x-auto mb-6 ">
+        <table className="w-auto table-auto ml-auto mr-auto py-2">
           <thead>
             <tr className="bg-primary-color">
               <th className="w-1/2 sm:w-1/5 px-1 py-2 border text-left text-white">

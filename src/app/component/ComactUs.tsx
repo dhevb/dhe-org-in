@@ -16,7 +16,7 @@ const contactData: ContactInfo = {
   organization: "Department of Holistic Education",
   address: "Vidya Bharti\nPlot No. 1, Sector 71, SAS Nagar (Mohali) – 160071",
   email: "director@dhe.org.in | dhe2021vb@gmail.com",
-  phone: "7627888222 | 7903431900 | 9417050631",
+  phone: "7903431900 | 9417050631",
   website: "dhe.org.in",
 };
 
