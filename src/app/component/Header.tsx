@@ -22,7 +22,12 @@ const menus: Menu[] = [
       { path: "/people", title: "Cell Co-ordinators" },
     ],
   },
-  { path: "/Publications", title: "Publication" },
+  { path: "/", title: "Publication",
+    subMenu: [
+      { path: "/journals", title: "Jounals" },
+      { path: "/books", title: "Books" },
+    ],
+   },
   {
     path: "/",
     title: "Careers",

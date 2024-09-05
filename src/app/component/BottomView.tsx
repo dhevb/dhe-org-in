@@ -11,7 +11,6 @@ import {
 import { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import toast from "react-hot-toast";
-import VisitorCounts from "./VisitorCounts";
 import { db } from "@/app/firebase";
 import { doc, onSnapshot, updateDoc, getDoc, increment, setDoc } from "firebase/firestore";
 import { Spin } from 'antd'; 
@@ -155,7 +154,7 @@ const BottomView: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/shiksha.png" alt="rase" className="h-10 w-10 mr-4" />
+              <img src="/logos/rase.png" alt="rase" className="h-10 w-10 mr-4" />
             </a>
             {/* VIDHYA BHARTI */}
             <a
@@ -210,7 +209,7 @@ const BottomView: React.FC = () => {
               <img src="/pooja.png" alt="pooja" className="h-10 w-10 mr-4" />
             </a>
             {/* Swadeshi Bazar */}
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.swadeshibazaar.co.in/" target="_blank" rel="noopener noreferrer">
               <img
                 src="/sb.png"
                 alt="Logo Alt Text"
