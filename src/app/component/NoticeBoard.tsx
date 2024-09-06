@@ -158,8 +158,6 @@ const EventsComponent: React.FC = () => {
             <div className="text-center mt-4">
               <Button type="link" onClick={() => router.push('/noticeboard')}>
                 Read More
-
-                
               </Button>
             </div>
           )}
