@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import NoticeBoard from '../component/NoticeBoard'
 
 interface Slide {
   src: string;
@@ -35,6 +36,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ slides }) => {
 
   return (
     <div className='sm:py-12 sm:px-4'>
+      
       <Carousel
         selectedItem={currentIndex}
         showStatus={false} // Hide status indicator
@@ -71,6 +73,8 @@ const SlideShow: React.FC<SlideShowProps> = ({ slides }) => {
         ))}
        
       </Carousel>
+  
+      
       
     </div>
   );
