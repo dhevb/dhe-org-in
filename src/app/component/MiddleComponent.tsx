@@ -2,7 +2,7 @@ import React from "react";
 
 const DepartmentInfo: React.FC = () => {
   return (
-    <div className="bg-white -mt-2 flex flex-col  items-start ">
+    <div className="bg-white -mt-2 flex flex-col p-2  items-start ">
       <h1 className="text-2xl font-semibold mb-4 text-primary-color">
         Welcome to Department of Holistic Education
       </h1>
