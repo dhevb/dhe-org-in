@@ -58,8 +58,10 @@ const menus: Menu[] = [
     path: "/",
     title: "DHE’s Chapters",
     subMenu: [
-      { path: "/comingsoon", title: "NIT Srinagar" },
-      { path: "/comingsoon", title: "IIT Ropar" },
+      { path: "https://nitsri.dhe.org.in", title: "NIT Srinagar" },
+      { path: "https://iitrpr.dhe.org.in", title: "IIT Ropar" },
+      { path: "https://nitj.dhe.org.in", title: "NIT Jalandhar" },
+      { path: "https://nitkkr.dhe.org.in", title: "NIT Kurukshetra" },
 
     ],
   },
