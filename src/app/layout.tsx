@@ -98,12 +98,8 @@ export default function RootLayout({
         <BottomView />
 
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/n4MShOzVT_s?si=d66BKGSw4OVD0Vcf&amp;controls=0&amp;start=1&amp;autoplay=1"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
+          <div className="text-white p-2 rounded-lg flex justify-center text-center text-base md:text-2xl font-semibold bg-primary">2nd Edition of Shiksha Mahakumbh is postponed due to unavoidable circumstances. All registrations and papers submitted will be valid in the rescheduled programme. Further the process of registrations and invitations will continued as earlier. Inconvenience caused due to postponement of the programme is deeply regretted. Stay tuned with us at our website and social media handles for more updates.
+          </div>
         </Modal>
         <NextTopLoader
           color="#F44336"

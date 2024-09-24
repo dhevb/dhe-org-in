@@ -1,4 +1,5 @@
-"use client";import React, { ReactNode } from 'react';
+"use client";
+import React, { ReactNode } from 'react';
 import { usePathname } from 'next/navigation'
 
 interface ModalProps {
@@ -23,6 +24,7 @@ console.log(pathname);
           >
             Close
           </button>
+          
           {children}
         </div>
       </div>

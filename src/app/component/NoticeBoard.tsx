@@ -231,17 +231,7 @@ const EventsComponent: React.FC = () => {
             type="text"
           />
         </div>
-        <span className=" p-2 flex text-center font-semibold justify-center border-b border-gray-300 items-center">
-          <img src="new.gif" height='20px' width='40px' alt="" />&nbsp;
-          <a
-            href="./tentative_schdule.xlsx"
-            className="text-base text-blue-600 hover:text-primary"
-          >
-            Tentative Schdule for shiksha Mahakumbh 2024
-          </a>
-          <img src="new.gif" height='20px' width='40px' alt="" />&nbsp;
-          {/* &nbsp;<img src="new.gif" alt="" /> */}
-        </span>
+    
         {error && (
           <Alert
             message="Error"
