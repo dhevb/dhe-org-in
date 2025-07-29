@@ -97,11 +97,11 @@ export default function RootLayout({
         {children}
         <BottomView />
 
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
+{/*         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <div className="text-white p-2 rounded-lg flex justify-center text-center text-base md:text-2xl font-semibold bg-primary">2nd Edition of Shiksha Mahakumbh is postponed due to unavoidable circumstances. All registrations and papers submitted will be valid in the rescheduled programme. Further the process of registrations and invitations will continued as earlier. Inconvenience caused due to postponement of the programme is deeply regretted. Stay tuned with us at our website and social media handles for more updates.
           </div>
-        </Modal>
-        <NextTopLoader
+        </Modal> */}
+{/*         <NextTopLoader
           color="#F44336"
           initialPosition={0.08}
           crawlSpeed={200}
@@ -109,7 +109,7 @@ export default function RootLayout({
           crawl={false}
           showSpinner={false}
           shadow="0 0 10px #F44336,0 0 5px #F44336"
-        />
+        /> */}
         <Toaster />
       </body>
     </html>
